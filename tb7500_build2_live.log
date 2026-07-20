@@ -1,0 +1,63 @@
+ck: it=38 D=56,250,000 nroots=3
+    theta=[-116.59196649 -116.59168168 -116.58544638]
+    rn   =[7.84463559e-06 1.11384858e-05 1.24619883e-05]
+    |X_k|=[1. 1. 1.] (renormalizing)
+-> tb7500_warm_resume.npz (vecs (3, 56250000), e_roots (3,))
+=== STAGE tb7500-resume NT=64 Fri Jul 17 01:30:34 UTC 2026 ===
+[      0.0s] G0 PASS payload hashes + probes
+[      0.2s] === S1 chunked build: N=7500 D=56,250,000 NCH=512 NW=20 ===
+[      1.5s] exact nnz_tri prediction: 127,975,471,122 (~1.54 TB on disk; 1s)
+[    233.7s] chunk 0 parent build: kept 78,622,608 (232s)
+[    572.5s] G1 PASS chunk-0 parent/worker builds identical
+[    902.9s]   S1 25/512 chunks, kept 3,649,138,085 (669s, ETA 13036s)
+[   1217.2s]   S1 50/512 chunks, kept 8,378,209,064 (983s, ETA 9087s)
+[   1573.7s]   S1 75/512 chunks, kept 13,507,634,324 (1340s, ETA 7807s)
+[   1940.4s]   S1 100/512 chunks, kept 18,677,776,757 (1707s, ETA 7032s)
+[   2478.3s]   S1 125/512 chunks, kept 24,436,929,242 (2245s, ETA 6949s)
+[   2825.9s]   S1 150/512 chunks, kept 30,813,413,367 (2592s, ETA 6256s)
+[   3182.2s]   S1 175/512 chunks, kept 37,290,072,739 (2948s, ETA 5678s)
+[   3579.9s]   S1 200/512 chunks, kept 42,509,397,908 (3346s, ETA 5220s)
+[   4076.6s]   S1 225/512 chunks, kept 47,972,739,742 (3843s, ETA 4902s)
+[   4477.3s]   S1 250/512 chunks, kept 53,998,608,905 (4244s, ETA 4447s)
+[   4848.4s]   S1 275/512 chunks, kept 60,894,554,323 (4615s, ETA 3977s)
+[   5212.8s]   S1 300/512 chunks, kept 67,001,021,752 (4979s, ETA 3519s)
+[   5721.8s]   S1 325/512 chunks, kept 73,207,941,325 (5488s, ETA 3158s)
+[   6102.3s]   S1 350/512 chunks, kept 80,076,913,208 (5869s, ETA 2716s)
+[   6475.3s]   S1 375/512 chunks, kept 87,296,728,048 (6242s, ETA 2280s)
+[   6840.8s]   S1 400/512 chunks, kept 93,859,515,266 (6607s, ETA 1850s)
+[   7288.0s]   S1 425/512 chunks, kept 101,264,178,278 (7054s, ETA 1444s)
+[   7764.3s]   S1 450/512 chunks, kept 108,509,176,344 (7531s, ETA 1038s)
+[   8072.0s]   S1 475/512 chunks, kept 116,014,253,787 (7838s, ETA 611s)
+[   8411.0s]   S1 500/512 chunks, kept 123,788,778,792 (8177s, ETA 196s)
+[   8672.2s] S1 kept total 127,975,471,122 vs predicted 127,975,471,122
+[   8672.2s] G2 PASS assembled nnz == exact combinatorial prediction
+[   8672.2s] === S2 concatenation assembly (row-contiguous chunks) ===
+[   8749.0s]   S2 concat 51/512 (77s)
+[   8842.4s]   S2 concat 102/512 (170s)
+[   8954.0s]   S2 concat 153/512 (282s)
+[   9057.2s]   S2 concat 204/512 (385s)
+[   9165.5s]   S2 concat 255/512 (493s)
+[   9284.1s]   S2 concat 306/512 (612s)
+[   9403.8s]   S2 concat 357/512 (732s)
+[   9529.5s]   S2 concat 408/512 (857s)
+[   9665.6s]   S2 concat 459/512 (993s)
+[   9811.4s]   S2 concat 510/512 (1139s)
+[   9824.5s] S2 assembled 127,975,471,122 nnz (1152s); chunk files removed
+[   9824.8s] === S3 warm + Rayleigh-quotient gates ===
+[   9981.6s]   warm root0: RQ -116.591966494 vs cert -116.591966494 |d|=9.66e-13 (147s)
+[  10154.1s]   warm root1: RQ -116.591681684 vs cert -116.591681684 |d|=1.52e-12 (320s)
+[  10326.4s]   warm root2: RQ -116.585446379 vs cert -116.585446379 |d|=1.93e-12 (492s)
+[  10326.4s] G3 PASS warm Rayleigh quotients
+[  10326.4s] === S4 block Davidson: nroots=3 tol=8e-08 ===
+[  11406.8s]     dav it   0 m=  6 E=[-116.591966494 -116.591681684 -116.585446379] res_max=1.25e-05
+[  11943.8s]     dav it   1 m=  9 E=[-116.591966494 -116.591681684 -116.585446379] res_max=9.18e-06
+[  12483.5s]     dav it   2 m= 12 E=[-116.591966494 -116.591681684 -116.585446379] res_max=9.71e-06
+[  13030.3s]     dav it   3 m= 15 E=[-116.591966494 -116.591681684 -116.585446379] res_max=9.52e-06
+[  13577.1s]     dav it   4 m= 18 E=[-116.591966494 -116.591681684 -116.585446379] res_max=9.80e-06
+[  14127.9s]     dav it   5 m= 21 E=[-116.591966494 -116.591681685 -116.585446379] res_max=8.93e-06
+[  14680.2s]     dav it   6 m= 24 E=[-116.591966494 -116.591681685 -116.585446379] res_max=1.15e-05
+[  15244.5s]     dav it   7 m= 27 E=[-116.591966494 -116.591681685 -116.585446379] res_max=8.93e-06
+[  15805.2s]     dav it   8 m= 30 E=[-116.591966494 -116.591681685 -116.585446379] res_max=9.71e-06
+[  16371.6s]     dav it   9 m= 33 E=[-116.591966494 -116.591681685 -116.585446379] res_max=1.13e-05
+[  16942.4s]     dav it  10 m= 36 E=[-116.591966494 -116.591681685 -116.585446379] res_max=1.02e-05
+ABORT_TB7500_CRASH

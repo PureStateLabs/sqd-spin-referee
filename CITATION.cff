@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: >-
+  Which state are you converging? A spin audit of sample-based quantum
+  diagonalization benchmarks on iron-sulfur clusters — supplementary code
+  and data
+authors:
+  - family-names: "Vitale"
+    given-names: "Tyler"
+    affiliation: "Pure State Labs Inc."
+    orcid: "https://orcid.org/0009-0003-6156-0212"
+version: "1.2.5"
+date-released: "2026-07-20"
+license: MIT
+doi: 10.5281/zenodo.21359923
+preferred-citation:
+  type: article
+  title: >-
+    Which state are you converging? A spin audit of sample-based quantum
+    diagonalization benchmarks on iron-sulfur clusters
+  authors:
+    - family-names: "Vitale"
+      given-names: "Tyler"
+      affiliation: "Pure State Labs Inc."
+      orcid: "https://orcid.org/0009-0003-6156-0212"
+  year: 2026

@@ -1,0 +1,10 @@
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[    0.1s] THEIR integrals loaded (ecore 0.000000)
+[    0.1s] stage M1: their template loader (to_scf), reference = identity-MO aufbau det (their dump is already in canonical RHF orbitals; re-running SCF finds a different, WORSE solution)
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[    2.6s] stage M1: reference det E = -116.205816 (their table RHF -116.205816); max offdiag Fock 4.133e-07
+CCSD not converged
+E(CCSD) = -0.2002575431120037  E_corr = -0.2002575431120037
+[    6.1s] stage M1: CCSD E = -0.200258 converged=False (their table CCSD -116.405662)
+[   21.9s] stage M2: UCJ built (their template: t1+t2, n_reps=1, chain aa + every-4th ab pairs)
+[  149.7s] stage M2: statevector done, dim 15504x15504 = 240,374,016

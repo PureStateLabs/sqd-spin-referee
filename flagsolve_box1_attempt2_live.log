@@ -1,0 +1,273 @@
+=== STAGE gate600 Mon Jul 13 19:11:10 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-600/7658 per spin (ranked by their exact-state marginals), dim 600x600 = 360,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=32 ...
+[   394.6s rss  0.44G] E -116.432419541  err  +173.190 mHa  THEIR S2 3.8012  [solve 395s]  amps (600, 600) strs 600x600
+[   394.6s rss  0.44G] GATE vs pyci anchor n=600: dE 0.010 mHa dS2 0.0042 [PASS]
+[   394.6s rss  0.44G] GATE vs exact recon E600: dE 0.08 uHa [PASS]
+FLAGSOLVE_DONE
+=== STAGE probe n1000 NT=16 Mon Jul 13 19:17:45 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-1000/7658 per spin (ranked by their exact-state marginals), dim 1000x1000 = 1,000,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=16 ...
+[  1770.7s rss  0.58G] E -116.475824540  err  +129.785 mHa  THEIR S2 3.7711  [solve 1,771s]  amps (1000, 1000) strs 1000x1000
+[  1770.7s rss  0.58G] GATE vs pyci anchor n=1000: dE 0.015 mHa dS2 0.0149 [FAIL]
+FLAGSOLVE_DONE
+PROBE NT=16 wall=1771
+=== STAGE probe n1000 NT=32 Mon Jul 13 19:47:17 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-1000/7658 per spin (ranked by their exact-state marginals), dim 1000x1000 = 1,000,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=32 ...
+[   903.1s rss  0.62G] E -116.475824540  err  +129.785 mHa  THEIR S2 3.7711  [solve 903s]  amps (1000, 1000) strs 1000x1000
+[   903.1s rss  0.62G] GATE vs pyci anchor n=1000: dE 0.015 mHa dS2 0.0149 [FAIL]
+FLAGSOLVE_DONE
+PROBE NT=32 wall=903
+=== STAGE probe n1000 NT=64 Mon Jul 13 20:02:21 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-1000/7658 per spin (ranked by their exact-state marginals), dim 1000x1000 = 1,000,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=64 ...
+[   898.7s rss  0.70G] E -116.475824540  err  +129.785 mHa  THEIR S2 3.7711  [solve 899s]  amps (1000, 1000) strs 1000x1000
+[   898.7s rss  0.70G] GATE vs pyci anchor n=1000: dE 0.015 mHa dS2 0.0149 [FAIL]
+FLAGSOLVE_DONE
+PROBE NT=64 wall=899
+BEST_NT=64 wall=899
+=== STAGE n2000 Mon Jul 13 20:17:21 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-2000/7658 per spin (ranked by their exact-state marginals), dim 2000x2000 = 4,000,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs={'max_cycle': 300, 'verbose': 5}) NT=64 ...
+davidson 0 1  |r|= 0.242  e= [-116.20581612]  max|de|= -116  lindep=    1
+davidson 1 2  |r|= 0.129  e= [-116.28038374]  max|de|= -0.0746  lindep= 0.979
+davidson 2 3  |r|= 0.125  e= [-116.30789608]  max|de|= -0.0275  lindep= 0.989
+davidson 3 4  |r|= 0.0864  e= [-116.32177606]  max|de|= -0.0139  lindep= 0.999
+davidson 4 5  |r|= 0.0807  e= [-116.32869934]  max|de|= -0.00692  lindep= 0.99
+davidson 5 6  |r|= 0.0617  e= [-116.33257629]  max|de|= -0.00388  lindep= 0.987
+davidson 6 7  |r|= 0.0685  e= [-116.33585298]  max|de|= -0.00328  lindep= 0.99
+davidson 7 8  |r|= 0.0651  e= [-116.33786454]  max|de|= -0.00201  lindep= 0.987
+davidson 8 9  |r|= 0.0561  e= [-116.33956578]  max|de|= -0.0017  lindep= 0.981
+davidson 9 10  |r|= 0.0593  e= [-116.34080325]  max|de|= -0.00124  lindep= 0.977
+davidson 10 11  |r|= 0.0603  e= [-116.34223045]  max|de|= -0.00143  lindep= 0.978
+davidson 11 12  |r|= 0.0534  e= [-116.34361688]  max|de|= -0.00139  lindep= 0.981
+davidson 12 1  |r|= 0.0534  e= [-116.34361688]  max|de|= 1.28e-13  lindep=    1
+davidson 13 2  |r|= 0.0426  e= [-116.34437428]  max|de|= -0.000757  lindep= 0.975
+davidson 14 3  |r|= 0.0434  e= [-116.34508517]  max|de|= -0.000711  lindep= 0.98
+davidson 15 4  |r|= 0.0411  e= [-116.345785]  max|de|= -0.0007  lindep= 0.973
+davidson 16 5  |r|= 0.0494  e= [-116.3466305]  max|de|= -0.000846  lindep= 0.967
+davidson 17 6  |r|= 0.0516  e= [-116.34777221]  max|de|= -0.00114  lindep= 0.982
+davidson 18 7  |r|= 0.0537  e= [-116.34941545]  max|de|= -0.00164  lindep= 0.974
+davidson 19 8  |r|= 0.074  e= [-116.35151855]  max|de|= -0.0021  lindep= 0.98
+davidson 20 9  |r|= 0.0775  e= [-116.35386466]  max|de|= -0.00235  lindep= 0.967
+davidson 21 10  |r|= 0.0787  e= [-116.35632137]  max|de|= -0.00246  lindep= 0.969
+davidson 22 11  |r|= 0.079  e= [-116.35873673]  max|de|= -0.00242  lindep= 0.97
+davidson 23 12  |r|= 0.0612  e= [-116.36079696]  max|de|= -0.00206  lindep= 0.967
+davidson 24 1  |r|= 0.0612  e= [-116.36079696]  max|de|= -7.11e-14  lindep= 0.999
+davidson 25 2  |r|= 0.0504  e= [-116.36175947]  max|de|= -0.000963  lindep= 0.957
+davidson 26 3  |r|= 0.0538  e= [-116.36281178]  max|de|= -0.00105  lindep= 0.982
+davidson 27 4  |r|= 0.0576  e= [-116.36407896]  max|de|= -0.00127  lindep= 0.968
+davidson 28 5  |r|= 0.0636  e= [-116.3654541]  max|de|= -0.00138  lindep= 0.944
+davidson 29 6  |r|= 0.0711  e= [-116.36781577]  max|de|= -0.00236  lindep= 0.957
+davidson 30 7  |r|= 0.0828  e= [-116.37084919]  max|de|= -0.00303  lindep= 0.955
+davidson 31 8  |r|= 0.0803  e= [-116.37409853]  max|de|= -0.00325  lindep= 0.978
+davidson 32 9  |r|= 0.0793  e= [-116.37662845]  max|de|= -0.00253  lindep= 0.912
+davidson 33 10  |r|= 0.0922  e= [-116.37947207]  max|de|= -0.00284  lindep= 0.887
+davidson 34 11  |r|= 0.109  e= [-116.38327781]  max|de|= -0.00381  lindep= 0.962
+davidson 35 12  |r|= 0.124  e= [-116.3877351]  max|de|= -0.00446  lindep= 0.971
+davidson 36 1  |r|= 0.124  e= [-116.3877351]  max|de|= -8.53e-14  lindep=    1
+davidson 37 2  |r|= 0.0967  e= [-116.39115972]  max|de|= -0.00342  lindep= 0.976
+davidson 38 3  |r|= 0.0978  e= [-116.39454426]  max|de|= -0.00338  lindep= 0.986
+davidson 39 4  |r|= 0.104  e= [-116.39828475]  max|de|= -0.00374  lindep= 0.965
+davidson 40 5  |r|= 0.134  e= [-116.40349975]  max|de|= -0.00521  lindep= 0.978
+davidson 41 6  |r|= 0.204  e= [-116.41758749]  max|de|= -0.0141  lindep= 0.976
+davidson 42 7  |r|= 0.212  e= [-116.43894005]  max|de|= -0.0214  lindep= 0.931
+davidson 43 8  |r|= 0.198  e= [-116.46079846]  max|de|= -0.0219  lindep= 0.97
+davidson 44 9  |r|= 0.175  e= [-116.47362312]  max|de|= -0.0128  lindep= 0.975
+davidson 45 10  |r|= 0.152  e= [-116.48401805]  max|de|= -0.0104  lindep= 0.974
+davidson 46 11  |r|= 0.138  e= [-116.49199498]  max|de|= -0.00798  lindep= 0.977
+davidson 47 12  |r|= 0.123  e= [-116.49755375]  max|de|= -0.00556  lindep= 0.965
+davidson 48 1  |r|= 0.123  e= [-116.49755375]  max|de|= 9.95e-14  lindep= 0.998
+davidson 49 2  |r|= 0.0965  e= [-116.50114741]  max|de|= -0.00359  lindep= 0.972
+davidson 50 3  |r|= 0.087  e= [-116.50423028]  max|de|= -0.00308  lindep= 0.988
+davidson 51 4  |r|= 0.0824  e= [-116.50695855]  max|de|= -0.00273  lindep= 0.976
+davidson 52 5  |r|= 0.0805  e= [-116.50934735]  max|de|= -0.00239  lindep= 0.964
+davidson 53 6  |r|= 0.0773  e= [-116.51248156]  max|de|= -0.00313  lindep= 0.982
+davidson 54 7  |r|= 0.0691  e= [-116.51481411]  max|de|= -0.00233  lindep= 0.973
+davidson 55 8  |r|= 0.057  e= [-116.51673852]  max|de|= -0.00192  lindep= 0.984
+davidson 56 9  |r|= 0.0492  e= [-116.51781349]  max|de|= -0.00107  lindep= 0.961
+davidson 57 10  |r|= 0.0471  e= [-116.51868046]  max|de|= -0.000867  lindep= 0.948
+davidson 58 11  |r|= 0.0481  e= [-116.51949362]  max|de|= -0.000813  lindep= 0.977
+davidson 59 12  |r|= 0.0407  e= [-116.52010094]  max|de|= -0.000607  lindep= 0.979
+davidson 60 1  |r|= 0.0407  e= [-116.52010094]  max|de|= -4.26e-14  lindep=    1
+davidson 61 2  |r|= 0.0366  e= [-116.52053351]  max|de|= -0.000433  lindep= 0.988
+davidson 62 3  |r|= 0.0333  e= [-116.52093853]  max|de|= -0.000405  lindep= 0.993
+davidson 63 4  |r|= 0.0314  e= [-116.52131196]  max|de|= -0.000373  lindep= 0.985
+davidson 64 5  |r|= 0.0324  e= [-116.5216822]  max|de|= -0.00037  lindep= 0.985
+davidson 65 6  |r|= 0.0362  e= [-116.5222368]  max|de|= -0.000555  lindep= 0.996
+davidson 66 7  |r|= 0.035  e= [-116.52277667]  max|de|= -0.00054  lindep= 0.985
+davidson 67 8  |r|= 0.0318  e= [-116.52329622]  max|de|= -0.00052  lindep= 0.985
+davidson 68 9  |r|= 0.0324  e= [-116.5236663]  max|de|= -0.00037  lindep= 0.986
+davidson 69 10  |r|= 0.0291  e= [-116.52402869]  max|de|= -0.000362  lindep= 0.988
+davidson 70 11  |r|= 0.0275  e= [-116.5243175]  max|de|= -0.000289  lindep= 0.982
+davidson 71 12  |r|= 0.0286  e= [-116.52456195]  max|de|= -0.000244  lindep= 0.976
+davidson 72 1  |r|= 0.0286  e= [-116.52456195]  max|de|= 4.26e-14  lindep=    1
+davidson 73 2  |r|= 0.0208  e= [-116.5247384]  max|de|= -0.000176  lindep= 0.982
+davidson 74 3  |r|= 0.0189  e= [-116.52487822]  max|de|= -0.00014  lindep= 0.991
+davidson 75 4  |r|= 0.0174  e= [-116.52500464]  max|de|= -0.000126  lindep= 0.989
+davidson 76 5  |r|= 0.0149  e= [-116.52509727]  max|de|= -9.26e-05  lindep= 0.978
+davidson 77 6  |r|= 0.014  e= [-116.52519568]  max|de|= -9.84e-05  lindep= 0.989
+davidson 78 7  |r|= 0.0121  e= [-116.52526781]  max|de|= -7.21e-05  lindep= 0.99
+davidson 79 8  |r|= 0.0098  e= [-116.52532276]  max|de|= -5.49e-05  lindep= 0.987
+davidson 80 9  |r|= 0.00897  e= [-116.52535554]  max|de|= -3.28e-05  lindep= 0.978
+davidson 81 10  |r|= 0.00866  e= [-116.52538397]  max|de|= -2.84e-05  lindep= 0.985
+davidson 82 11  |r|= 0.00853  e= [-116.52540891]  max|de|= -2.49e-05  lindep= 0.988
+davidson 83 12  |r|= 0.00828  e= [-116.52542991]  max|de|= -2.1e-05  lindep= 0.977
+davidson 84 1  |r|= 0.00828  e= [-116.52542991]  max|de|= -4.26e-14  lindep=    1
+davidson 85 2  |r|= 0.00722  e= [-116.52544698]  max|de|= -1.71e-05  lindep= 0.988
+davidson 86 3  |r|= 0.00674  e= [-116.52546315]  max|de|= -1.62e-05  lindep= 0.994
+davidson 87 4  |r|= 0.00637  e= [-116.52547855]  max|de|= -1.54e-05  lindep= 0.987
+davidson 88 5  |r|= 0.00628  e= [-116.52549333]  max|de|= -1.48e-05  lindep= 0.987
+davidson 89 6  |r|= 0.00678  e= [-116.52551279]  max|de|= -1.95e-05  lindep= 0.997
+davidson 90 7  |r|= 0.00645  e= [-116.52553139]  max|de|= -1.86e-05  lindep= 0.99
+davidson 91 8  |r|= 0.00585  e= [-116.52554867]  max|de|= -1.73e-05  lindep= 0.986
+davidson 92 9  |r|= 0.00597  e= [-116.52556122]  max|de|= -1.26e-05  lindep= 0.986
+davidson 93 10  |r|= 0.00542  e= [-116.5255736]  max|de|= -1.24e-05  lindep= 0.992
+davidson 94 11  |r|= 0.00492  e= [-116.52558307]  max|de|= -9.47e-06  lindep= 0.986
+davidson 95 12  |r|= 0.00549  e= [-116.52559125]  max|de|= -8.18e-06  lindep= 0.977
+davidson 96 1  |r|= 0.00549  e= [-116.52559125]  max|de|= 2.84e-14  lindep=    1
+davidson 97 2  |r|= 0.0039  e= [-116.52559749]  max|de|= -6.24e-06  lindep= 0.984
+davidson 98 3  |r|= 0.00363  e= [-116.52560253]  max|de|= -5.04e-06  lindep= 0.991
+davidson 99 4  |r|= 0.00336  e= [-116.52560716]  max|de|= -4.62e-06  lindep= 0.99
+davidson 100 5  |r|= 0.00282  e= [-116.52561058]  max|de|= -3.42e-06  lindep= 0.982
+davidson 101 6  |r|= 0.00261  e= [-116.52561394]  max|de|= -3.36e-06  lindep= 0.991
+davidson 102 7  |r|= 0.00224  e= [-116.52561643]  max|de|= -2.49e-06  lindep= 0.991
+davidson 103 8  |r|= 0.00185  e= [-116.52561831]  max|de|= -1.87e-06  lindep= 0.988
+davidson 104 9  |r|= 0.00168  e= [-116.52561947]  max|de|= -1.17e-06  lindep= 0.981
+davidson 105 10  |r|= 0.00164  e= [-116.52562048]  max|de|= -1.01e-06  lindep= 0.99
+davidson 106 11  |r|= 0.00157  e= [-116.52562134]  max|de|= -8.59e-07  lindep= 0.99
+davidson 107 12  |r|= 0.00159  e= [-116.52562207]  max|de|= -7.27e-07  lindep= 0.976
+davidson 108 1  |r|= 0.00159  e= [-116.52562207]  max|de|= -1.42e-14  lindep=    1
+davidson 109 2  |r|= 0.00136  e= [-116.52562268]  max|de|= -6.1e-07  lindep= 0.988
+davidson 110 3  |r|= 0.00131  e= [-116.52562328]  max|de|= -6e-07  lindep= 0.994
+davidson 111 4  |r|= 0.00123  e= [-116.52562385]  max|de|= -5.73e-07  lindep= 0.988
+davidson 112 5  |r|= 0.00121  e= [-116.52562441]  max|de|= -5.64e-07  lindep= 0.987
+davidson 113 6  |r|= 0.00128  e= [-116.52562511]  max|de|= -6.93e-07  lindep= 0.997
+davidson 114 7  |r|= 0.00122  e= [-116.52562578]  max|de|= -6.75e-07  lindep= 0.991
+davidson 115 8  |r|= 0.00113  e= [-116.5256264]  max|de|= -6.2e-07  lindep= 0.987
+davidson 116 9  |r|= 0.00114  e= [-116.52562687]  max|de|= -4.69e-07  lindep= 0.986
+davidson 117 10  |r|= 0.00105  e= [-116.52562732]  max|de|= -4.5e-07  lindep= 0.992
+davidson 118 11  |r|= 0.000919  e= [-116.52562766]  max|de|= -3.42e-07  lindep= 0.987
+davidson 119 12  |r|= 0.00107  e= [-116.52562796]  max|de|= -2.92e-07  lindep= 0.978
+davidson 120 1  |r|= 0.00107  e= [-116.52562796]  max|de|= -1.42e-14  lindep=    1
+davidson 121 2  |r|= 0.000743  e= [-116.52562818]  max|de|= -2.27e-07  lindep= 0.985
+davidson 122 3  |r|= 0.000709  e= [-116.52562837]  max|de|= -1.89e-07  lindep= 0.992
+davidson 123 4  |r|= 0.00065  e= [-116.52562854]  max|de|= -1.72e-07  lindep= 0.99
+davidson 124 5  |r|= 0.000548  e= [-116.52562867]  max|de|= -1.31e-07  lindep= 0.984
+davidson 125 6  |r|= 0.000496  e= [-116.5256288]  max|de|= -1.21e-07  lindep= 0.991
+davidson 126 7  |r|= 0.000427  e= [-116.52562889]  max|de|= -9.19e-08  lindep= 0.992
+davidson 127 8  |r|= 0.000358  e= [-116.52562895]  max|de|= -6.76e-08  lindep= 0.988
+davidson 128 9  |r|= 0.000323  e= [-116.525629]  max|de|= -4.41e-08  lindep= 0.983
+davidson 129 10  |r|= 0.000319  e= [-116.52562904]  max|de|= -3.72e-08  lindep= 0.991
+davidson 130 11  |r|= 0.000295  e= [-116.52562907]  max|de|= -3.16e-08  lindep= 0.989
+davidson 131 12  |r|= 0.000311  e= [-116.52562909]  max|de|= -2.63e-08  lindep= 0.976
+davidson 132 1  |r|= 0.000311  e= [-116.52562909]  max|de|=    0  lindep=    1
+davidson 133 2  |r|= 0.000261  e= [-116.52562912]  max|de|= -2.24e-08  lindep= 0.988
+davidson 134 3  |r|= 0.000256  e= [-116.52562914]  max|de|= -2.28e-08  lindep= 0.994
+davidson 135 4  |r|= 0.00024  e= [-116.52562916]  max|de|= -2.16e-08  lindep= 0.987
+davidson 136 5  |r|= 0.000237  e= [-116.52562918]  max|de|= -2.18e-08  lindep= 0.988
+davidson 137 6  |r|= 0.000247  e= [-116.52562921]  max|de|= -2.53e-08  lindep= 0.996
+davidson 138 7  |r|= 0.000235  e= [-116.52562923]  max|de|= -2.54e-08  lindep= 0.991
+davidson 139 8  |r|= 0.000223  e= [-116.52562926]  max|de|= -2.28e-08  lindep= 0.987
+davidson 140 9  |r|= 0.00022  e= [-116.52562927]  max|de|= -1.81e-08  lindep= 0.986
+davidson 141 10  |r|= 0.000205  e= [-116.52562929]  max|de|= -1.68e-08  lindep= 0.993
+davidson 142 11  |r|= 0.000175  e= [-116.5256293]  max|de|= -1.29e-08  lindep= 0.988
+davidson 143 12  |r|= 0.00021  e= [-116.52562931]  max|de|= -1.07e-08  lindep= 0.979
+davidson 144 1  |r|= 0.00021  e= [-116.52562931]  max|de|= -5.68e-14  lindep=    1
+davidson 145 2  |r|= 0.000143  e= [-116.52562932]  max|de|= -8.5e-09  lindep= 0.986
+davidson 146 3  |r|= 0.00014  e= [-116.52562933]  max|de|= -7.27e-09  lindep= 0.993
+davidson 147 4  |r|= 0.000127  e= [-116.52562934]  max|de|= -6.5e-09  lindep= 0.99
+davidson 148 5  |r|= 0.000108  e= [-116.52562934]  max|de|= -5.08e-09  lindep= 0.986
+davidson 149 6  |r|= 9.57e-05  e= [-116.52562935]  max|de|= -4.47e-09  lindep= 0.992
+davidson 150 7  |r|= 8.27e-05  e= [-116.52562935]  max|de|= -3.49e-09  lindep= 0.992
+davidson 151 8  |r|= 7.02e-05  e= [-116.52562935]  max|de|= -2.5e-09  lindep= 0.989
+davidson 152 9  |r|= 6.29e-05  e= [-116.52562935]  max|de|= -1.71e-09  lindep= 0.985
+davidson 153 10  |r|= 6.24e-05  e= [-116.52562936]  max|de|= -1.4e-09  lindep= 0.991
+davidson 154 11  |r|= 5.68e-05  e= [-116.52562936]  max|de|= -1.2e-09  lindep= 0.989
+davidson 155 12  |r|= 6.1e-05  e= [-116.52562936]  max|de|= -9.76e-10  lindep= 0.976
+davidson 156 1  |r|= 6.1e-05  e= [-116.52562936]  max|de|= 1.42e-14  lindep=    1
+davidson 157 2  |r|= 5.06e-05  e= [-116.52562936]  max|de|= -8.46e-10  lindep= 0.988
+davidson 158 3  |r|= 5.05e-05  e= [-116.52562936]  max|de|= -8.76e-10  lindep= 0.994
+davidson 159 4  |r|= 4.69e-05  e= [-116.52562936]  max|de|= -8.25e-10  lindep= 0.987
+davidson 160 5  |r|= 4.67e-05  e= [-116.52562936]  max|de|= -8.5e-10  lindep= 0.988
+davidson 161 6  |r|= 4.78e-05  e= [-116.52562936]  max|de|= -9.52e-10  lindep= 0.996
+davidson 162 7  |r|= 4.58e-05  e= [-116.52562936]  max|de|= -9.73e-10  lindep= 0.992
+davidson 163 8  |r|= 4.38e-05  e= [-116.52562936]  max|de|= -8.6e-10  lindep= 0.987
+davidson 164 9  |r|= 4.31e-05  e= [-116.52562936]  max|de|= -7.05e-10  lindep= 0.987
+davidson 165 10  |r|= 4.03e-05  e= [-116.52562937]  max|de|= -6.34e-10  lindep= 0.993
+davidson 166 11  |r|= 3.4e-05  e= [-116.52562937]  max|de|= -4.95e-10  lindep= 0.989
+davidson 167 12  |r|= 4.14e-05  e= [-116.52562937]  max|de|= -4.03e-10  lindep= 0.979
+davidson 168 1  |r|= 4.14e-05  e= [-116.52562937]  max|de|=    0  lindep=    1
+root 0 converged  |r|= 2.79e-05  e= -116.52562936636511  max|de|= -3.24e-10
+converged 169 2  |r|= 2.79e-05  e= [-116.52562937]  max|de|= -3.24e-10
+[  4477.6s rss  1.51G] E -116.525629366  err   +79.980 mHa  THEIR S2 3.5182  [solve 4,478s]  amps (2000, 2000) strs 2000x2000
+[  4477.6s rss  1.51G] GATE vs pyci anchor n=2000: dE 0.020 mHa dS2 0.0010 [PASS]
+[  4478.5s rss  1.51G] saved flagsolve_n2000.npz
+FLAGSOLVE_DONE
+=== STAGE flagship n7500 Mon Jul 13 21:32:00 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-7500/7658 per spin (ranked by their exact-state marginals), dim 7500x7500 = 56,250,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs={'max_cycle': 400, 'verbose': 5}) NT=64 ...
+davidson 0 1  |r|= 0.327  e= [-116.20581612]  max|de|= -116  lindep=    1
+davidson 1 2  |r|= 0.209  e= [-116.311611]  max|de|= -0.106  lindep= 0.986
+davidson 2 3  |r|= 0.185  e= [-116.36957268]  max|de|= -0.058  lindep= 0.994
+davidson 3 4  |r|= 0.134  e= [-116.39191315]  max|de|= -0.0223  lindep=    1
+davidson 4 5  |r|= 0.116  e= [-116.4044594]  max|de|= -0.0125  lindep= 0.998
+davidson 5 6  |r|= 0.106  e= [-116.41206943]  max|de|= -0.00761  lindep= 0.991
+davidson 6 7  |r|= 0.0887  e= [-116.41773681]  max|de|= -0.00567  lindep= 0.994
+davidson 7 8  |r|= 0.089  e= [-116.42184553]  max|de|= -0.00411  lindep= 0.996
+davidson 8 9  |r|= 0.0775  e= [-116.42436577]  max|de|= -0.00252  lindep= 0.992
+davidson 9 10  |r|= 0.078  e= [-116.42649104]  max|de|= -0.00213  lindep= 0.989
+davidson 10 11  |r|= 0.0709  e= [-116.42831388]  max|de|= -0.00182  lindep= 0.991
+davidson 11 12  |r|= 0.0723  e= [-116.42998897]  max|de|= -0.00168  lindep= 0.985
+davidson 12 1  |r|= 0.0723  e= [-116.42998897]  max|de|= -2.56e-13  lindep=    1
+davidson 13 2  |r|= 0.0475  e= [-116.43082177]  max|de|= -0.000833  lindep= 0.983
+davidson 14 3  |r|= 0.0521  e= [-116.43175195]  max|de|= -0.00093  lindep= 0.991
+davidson 15 4  |r|= 0.0524  e= [-116.43262438]  max|de|= -0.000872  lindep= 0.991
+davidson 16 5  |r|= 0.0591  e= [-116.43377305]  max|de|= -0.00115  lindep= 0.984
+davidson 17 6  |r|= 0.0609  e= [-116.43537967]  max|de|= -0.00161  lindep= 0.986
+davidson 18 7  |r|= 0.0737  e= [-116.43759456]  max|de|= -0.00221  lindep= 0.991
+davidson 19 8  |r|= 0.091  e= [-116.44015359]  max|de|= -0.00256  lindep= 0.988
+davidson 20 9  |r|= 0.0891  e= [-116.44242884]  max|de|= -0.00228  lindep= 0.979
+davidson 21 10  |r|= 0.0876  e= [-116.44548766]  max|de|= -0.00306  lindep= 0.987
+davidson 22 11  |r|= 0.0862  e= [-116.44813858]  max|de|= -0.00265  lindep= 0.984
+davidson 23 12  |r|= 0.0749  e= [-116.45085589]  max|de|= -0.00272  lindep= 0.988
+davidson 24 1  |r|= 0.0749  e= [-116.45085589]  max|de|= 2.42e-13  lindep= 0.999
+davidson 25 2  |r|= 0.0567  e= [-116.45209691]  max|de|= -0.00124  lindep= 0.981
+davidson 26 3  |r|= 0.063  e= [-116.453377]  max|de|= -0.00128  lindep= 0.989
+davidson 27 4  |r|= 0.0677  e= [-116.4550523]  max|de|= -0.00168  lindep= 0.984
+davidson 28 5  |r|= 0.0848  e= [-116.4568601]  max|de|= -0.00181  lindep= 0.965
+davidson 29 6  |r|= 0.0915  e= [-116.45953756]  max|de|= -0.00268  lindep= 0.961
+davidson 30 7  |r|= 0.0926  e= [-116.46310843]  max|de|= -0.00357  lindep= 0.985
+davidson 31 8  |r|= 0.0847  e= [-116.4662262]  max|de|= -0.00312  lindep= 0.977
+davidson 32 9  |r|= 0.0731  e= [-116.46870103]  max|de|= -0.00247  lindep= 0.914
+davidson 33 10  |r|= 0.086  e= [-116.47115655]  max|de|= -0.00246  lindep= 0.924
+davidson 34 11  |r|= 0.0824  e= [-116.47370312]  max|de|= -0.00255  lindep= 0.986
+davidson 35 12  |r|= 0.0965  e= [-116.4757318]  max|de|= -0.00203  lindep= 0.979
+davidson 36 1  |r|= 0.0965  e= [-116.4757318]  max|de|= 2.84e-14  lindep=    1
+davidson 37 2  |r|= 0.0683  e= [-116.47719019]  max|de|= -0.00146  lindep= 0.981
+davidson 38 3  |r|= 0.0715  e= [-116.47894015]  max|de|= -0.00175  lindep= 0.989
+davidson 39 4  |r|= 0.0665  e= [-116.48070897]  max|de|= -0.00177  lindep= 0.976
+davidson 40 5  |r|= 0.0829  e= [-116.48289823]  max|de|= -0.00219  lindep= 0.988
+davidson 41 6  |r|= 0.105  e= [-116.4862741]  max|de|= -0.00338  lindep= 0.984
+davidson 42 7  |r|= 0.13  e= [-116.49172891]  max|de|= -0.00545  lindep= 0.971
+davidson 43 8  |r|= 0.15  e= [-116.49847142]  max|de|= -0.00674  lindep= 0.976
+davidson 44 9  |r|= 0.152  e= [-116.50530823]  max|de|= -0.00684  lindep= 0.981
+davidson 45 10  |r|= 0.177  e= [-116.51495975]  max|de|= -0.00965  lindep= 0.99
+davidson 46 11  |r|= 0.176  e= [-116.5259141]  max|de|= -0.011  lindep= 0.988
+davidson 47 12  |r|= 0.204  e= [-116.53790319]  max|de|= -0.012  lindep= 0.984
+davidson 48 1  |r|= 0.204  e= [-116.53790319]  max|de|= -1.14e-13  lindep= 0.999
+davidson 49 2  |r|= 0.138  e= [-116.54615447]  max|de|= -0.00825  lindep= 0.985
+davidson 50 3  |r|= 0.13  e= [-116.55225475]  max|de|= -0.0061  lindep= 0.99

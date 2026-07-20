@@ -1,0 +1,14 @@
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] integrals loaded (ecore 0.000000)
+SQDPEN_DONE
+[   12.1s]   ops 441x441: hop 11698 ms, ssop 199 ms
+[   12.0s] it4: space 441x441 = 194,481
+[  370.3s] it4 lam=0 (Davidson, unpenalized): E -116.560107 (err +45.502) S2 4.8343 Var 1.892
+[  370.3s] it4: lam=0 matches the shipped record (operator kit certified)
+[ 1896.5s] it4 lam=0.2 SQ: E_H -116.077625 (err +527.984) S2 3.0104 Var 0.0092 resid 2.0e-05 conv=True
+[ 2540.5s] it4 lam=0.2 SQ POLISH: E_H -116.077625 (err +527.984) S2 3.0104 Var 0.0092 resid 1.1e-07 conv=True
+[ 2540.6s] it4: singlet-jaw endpoint err +527.984 mHa at S2 3.0104  (linear floor for ref: +2894.7 mHa)
+[ 2540.6s] ==== SQUARED vs LINEAR (lam=0.2 headline + floor) ====
+[ 2540.6s] it4 SQUARED lam=0.2: err +527.984 mHa S2 3.0104 Var 0.0092
+[ 2540.6s] it4 SQUARED floor:     err +527.984 mHa S2 3.0104
+SQDPEN_SQ_DONE

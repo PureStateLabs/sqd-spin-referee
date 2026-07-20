@@ -1,0 +1,11 @@
+[PASS] lucj2ship_symm1.npz: OUR Gram 0.107812 vs THEIR spin_square 0.107812 (|d| 1.39e-17, dim 310x310)
+[PASS] lucj2ship_symm0.npz: OUR Gram 0.123067 vs THEIR spin_square 0.123067 (|d| 5.55e-17, dim 244x235)
+[PASS] ibmship_symm1.npz: OUR Gram 0.235043 vs THEIR spin_square 0.235043 (|d| 1.19e-15, dim 500x500)
+[PASS] ibmship_symm0.npz: OUR Gram 0.231108 vs THEIR spin_square 0.231108 (|d| 3.05e-16, dim 500x500)
+[PASS] lucjoptship_symm1.npz: OUR Gram 2.007679 vs THEIR spin_square 2.007679 (|d| 2.53e-14, dim 500x500)
+[PASS] lucjoptship_symm0.npz: OUR Gram 1.089021 vs THEIR spin_square 1.089021 (|d| 1.55e-15, dim 500x500)
+[PASS] ibm4ship_symm1.npz: OUR Gram 2.000000 vs THEIR spin_square 2.000000 (|d| 4.44e-16, dim 300x300)
+[PASS] ibm4ship_symm0.npz: OUR Gram 3.003382 vs THEIR spin_square 3.003382 (|d| 1.33e-15, dim 300x300)
+
+0 failures
+GRAMXCHECK_DONE

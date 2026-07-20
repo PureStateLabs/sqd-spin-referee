@@ -1,0 +1,28 @@
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] integrals loaded (ecore 0.000000)
+[    0.1s] stage L1: hand-built RHF shell + CCSD (fairfight recipe)
+[    0.4s] stage L1: t2 (15, 15, 5, 5) saved (note=ccsd-FAILED(LinAlgError)->mp2)
+[   20.7s] stage L2: UCJ built (ccsd-FAILED(LinAlgError)->mp2, n_reps=1, pairs=unrestricted)
+[  149.4s] stage L2: statevector done, dim 15504x15504 = 240,374,016
+[  575.9s] stage L2: ANSATZ-STATE <S^2> = -0.000000 (wr 0.615681 s2r -0.0000 | wi 3.84e-01 s2i -0.0000)
+[  630.9s] stage L2: coupon curve done (E[U] at 1e6 shots ~ 153)
+[  685.5s] stage L2: 1000000 shots -> 149 unique dets (top w 0.6672)
+[  685.6s] stage L2: counts + stats saved
+[  686.3s] stage L3: BitArray built (149 unique keys, 1000000 shots)
+[  686.3s] === arm symm1 (symmetrize_spin=True) SPB=500 NBATCH=3 DMAX=500 MAXIT=5 ===
+[  707.5s] symm1 it1 b0: dim 57x57=3,249 E -110.541025 (err +6064.584 mHa) THEIR S2 2.006
+[  707.5s] symm1 it1 b1: dim 57x57=3,249 E -110.541025 (err +6064.584 mHa) THEIR S2 2.006
+[  707.5s] symm1 it1 b2: dim 57x57=3,249 E -110.541025 (err +6064.584 mHa) THEIR S2 2.006
+[  717.6s] symm1 it2 b0: dim 57x57=3,249 E -110.541025 (err +6064.584 mHa) THEIR S2 2.006
+[  717.6s] symm1 it2 b1: dim 57x57=3,249 E -110.541025 (err +6064.584 mHa) THEIR S2 2.006
+[  717.7s] symm1 it2 b2: dim 57x57=3,249 E -110.541025 (err +6064.584 mHa) THEIR S2 2.006
+[  717.7s] symm1 BEST: E -110.541025 (err +6064.584 mHa) THEIR S2 2.006 dim 57x57
+[  717.7s] === arm symm0 (symmetrize_spin=False) SPB=500 NBATCH=3 DMAX=500 MAXIT=5 ===
+[  733.7s] symm0 it1 b0: dim 49x48=2,352 E -110.538666 (err +6066.943 mHa) THEIR S2 1.968
+[  733.7s] symm0 it1 b1: dim 49x48=2,352 E -110.538666 (err +6066.943 mHa) THEIR S2 1.968
+[  733.7s] symm0 it1 b2: dim 49x48=2,352 E -110.538666 (err +6066.943 mHa) THEIR S2 1.968
+[  738.3s] symm0 it2 b0: dim 49x48=2,352 E -110.538666 (err +6066.943 mHa) THEIR S2 1.968
+[  738.4s] symm0 it2 b1: dim 49x48=2,352 E -110.538666 (err +6066.943 mHa) THEIR S2 1.968
+[  738.4s] symm0 it2 b2: dim 49x48=2,352 E -110.538666 (err +6066.943 mHa) THEIR S2 1.968
+[  738.4s] symm0 BEST: E -110.538666 (err +6066.943 mHa) THEIR S2 1.968 dim 49x48
+LUCJFE_DONE

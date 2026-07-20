@@ -1,0 +1,138 @@
+[2026-07-17T23:58:09Z] (re)launching _sqdpen.py
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] integrals loaded (ecore 0.000000)
+[   21.8s] S1: BitArray 38118 unique keys, 1000000 shots; running shipped off-arm MAXIT=4
+[  499.0s] S1 it1 b0: dim 244x244 E -116.508442 (err  +97.167) S2 4.8840
+[  499.1s] S1 it1 b1: dim 245x245 E -116.515503 (err  +90.106) S2 4.9033
+[  499.2s] S1 it1 b2: dim 239x239 E -116.514458 (err  +91.151) S2 4.9092
+[ 1308.0s] S1 it2 b0: dim 345x345 E -116.543757 (err  +61.853) S2 4.8742
+[ 1308.2s] S1 it2 b1: dim 333x333 E -116.541690 (err  +63.919) S2 4.8791
+[ 1308.5s] S1 it2 b2: dim 336x336 E -116.541617 (err  +63.992) S2 4.8712
+[ 2347.6s] S1 it3 b0: dim 392x392 E -116.554248 (err  +51.361) S2 4.8516
+[ 2347.8s] S1 it3 b1: dim 398x398 E -116.551810 (err  +53.800) S2 4.8542
+[ 2347.9s] S1 it3 b2: dim 402x402 E -116.552936 (err  +52.673) S2 4.8412
+[ 3545.9s] S1 it4 b0: dim 441x441 E -116.560107 (err  +45.502) S2 4.8343
+[ 3546.1s] S1 it4 b1: dim 433x433 E -116.559440 (err  +46.169) S2 4.8389
+[ 3546.4s] S1 it4 b2: dim 443x443 E -116.560052 (err  +45.557) S2 4.8374
+[ 3546.7s] S1 BEST: E -116.560107 (err +45.502 mHa) S2 4.8343
+[ 3546.7s] S1 anchors MATCH the published soup row
+[ 3551.6s]   ops 245x245: hop 4531 ms, ssop 297 ms
+[ 3551.6s] S2 it1: space 245x245=60,025 (aufbau in space: False)
+[ 4037.8s] S2 it1 lam=0: E -116.515503 (err +90.106) S2 4.9033 Var 0.779 resid 1.2e-10
+[ 4037.9s] S2 it1: lam=0 matches the shipped record
+[ 4060.0s] S2 it1: pyci xcheck E -116.51550307
+[ 4060.0s] S2 it1: |pyci - eigsh| = 0.00 uHa
+[ 4570.6s] S2 it1 lam=0.1: E_H -116.494460 (err +111.150) S2 4.4690 Var 0.5684 resid 5.6e-09
+[ 5101.7s] S2 it1 lam=0.2: E_H -116.450988 (err +154.621) S2 4.1699 Var 0.3356 resid 4.5e-08
+[ 5643.6s] S2 it1 lam=0.5: E_H -116.224847 (err +380.762) S2 3.4956 Var 0.1573 resid 7.1e-08
+[ 6149.2s] S2 it1 lam=1: E_H -113.571215 (err +3034.394) S2 0.0000 Var 0.0001 resid 8.6e-08
+[ 6489.0s] S2 it1 lam=2: E_H -113.571182 (err +3034.427) S2 0.0000 Var 0.0000 resid 4.8e-14
+[ 6817.1s] S2 it1 lam=5: E_H -113.571142 (err +3034.467) S2 0.0000 Var 0.0000 resid 7.6e-12
+[ 7147.1s] S2 it1 lam=20: E_H -113.571110 (err +3034.499) S2 0.0000 Var 0.0000 resid 2.6e-08
+[ 7147.1s] S2 it1: singlet-jaw endpoint err +3034.499 mHa at S2 0.0000
+[ 7159.9s]   ops 441x441: hop 12514 ms, ssop 177 ms
+[ 7159.9s] S2 it4: space 441x441=194,481 (aufbau in space: True)
+[ 8326.1s] S2 it4 lam=0: E -116.560107 (err +45.502) S2 4.8343 Var 1.892 resid 1.5e-10
+[ 8326.2s] S2 it4: lam=0 matches the shipped record
+[ 8405.0s] S2 it4: pyci xcheck E -116.56010715
+[ 8405.1s] S2 it4: |pyci - eigsh| = 0.00 uHa
+[ 9620.2s] S2 it4 lam=0.1: E_H -116.533031 (err +72.578) S2 4.1646 Var 0.8266 resid 6.2e-09
+[10852.7s] S2 it4 lam=0.2: E_H -116.494963 (err +110.646) S2 3.9021 Var 0.4825 resid 1.9e-08
+[12865.0s] S2 it4 lam=0.5: E_H -116.341427 (err +264.182) S2 3.4411 Var 0.1836 resid 7.1e-08
+[14497.0s] S2 it4 lam=1: E_H -113.722902 (err +2882.707) S2 0.0058 Var 0.0115 resid 7.2e-09
+[15318.5s] S2 it4 lam=2: E_H -113.717484 (err +2888.125) S2 0.0017 Var 0.0035 resid 1.8e-09
+[16529.5s] S2 it4 lam=5: E_H -113.713375 (err +2892.234) S2 0.0003 Var 0.0007 resid 7.1e-10
+[18126.1s] S2 it4 lam=20: E_H -113.710890 (err +2894.719) S2 0.0000 Var 0.0000 resid 5.3e-08
+[18126.1s] S2 it4: singlet-jaw endpoint err +2894.719 mHa at S2 0.0000
+[18624.0s]   ops 245x245: hop 4151 ms, ssop 247 ms
+[18628.8s] S3 it1 shift=0.1 mc=def: E_H -116.274385 (err +331.224) S2 5.0004 conv=False penRQ -115.774348 [493s]
+[19126.3s]   ops 245x245: hop 4747 ms, ssop 112 ms
+[19131.1s] S3 it1 shift=0.2 mc=def: E_H -116.288008 (err +317.602) S2 4.9986 conv=False penRQ -115.288282 [492s]
+[22136.6s]   ops 245x245: hop 4561 ms, ssop 86 ms
+[22141.2s] S3 it1 shift=0.1 mc=600: E_H -116.278376 (err +327.233) S2 5.0000 conv=False penRQ -115.778375 [3001s]
+[25156.0s]   ops 245x245: hop 4904 ms, ssop 82 ms
+[25161.2s] S3 it1 shift=0.2 mc=600: E_H -116.288025 (err +317.584) S2 4.9986 conv=False penRQ -115.288302 [3010s]
+[26412.1s]   ops 441x441: hop 12224 ms, ssop 186 ms
+[26423.8s] S3 it4 shift=0.1 mc=def: E_H -116.283009 (err +322.600) S2 4.9773 conv=False penRQ -115.785274 [1238s]
+[26424.4s] === S5: penalized protocol, ss=0 shift=0.2, converged solves, MAXIT=4 seed 17 ===
+[26439.1s]   ops 244x244: hop 4959 ms, ssop 71 ms
+[27048.5s]   ops 245x245: hop 4683 ms, ssop 56 ms
+[27671.5s]   ops 239x239: hop 4567 ms, ssop 77 ms
+[28267.4s] S5 l0.2 it1 b0: dim 244x244 E -116.443853 (err +161.756) S2 4.0901
+[28267.6s] S5 l0.2 it1 b1: dim 245x245 E -116.450988 (err +154.621) S2 4.1699
+[28267.6s] S5 l0.2 it1 b2: dim 239x239 E -116.448970 (err +156.639) S2 4.1870
+[28277.8s]   ops 345x345: hop 7861 ms, ssop 154 ms
+[29323.6s]   ops 333x333: hop 6241 ms, ssop 210 ms
+[30407.4s]   ops 336x336: hop 6301 ms, ssop 285 ms
+[31271.1s] S5 l0.2 it2 b0: dim 345x345 E -116.478223 (err +127.386) S2 4.0233
+[31271.4s] S5 l0.2 it2 b1: dim 333x333 E -116.459603 (err +146.006) S2 3.9617
+[31271.6s] S5 l0.2 it2 b2: dim 336x336 E -116.478864 (err +126.745) S2 4.0637
+[31281.9s]   ops 387x387: hop 7819 ms, ssop 345 ms
+[32388.3s]   ops 395x395: hop 8311 ms, ssop 257 ms
+[33519.3s]   ops 399x399: hop 8705 ms, ssop 277 ms
+[34652.6s] S5 l0.2 it3 b0: dim 387x387 E -116.488793 (err +116.816) S2 3.9813
+[34653.1s] S5 l0.2 it3 b1: dim 395x395 E -116.487463 (err +118.146) S2 3.9641
+[34653.4s] S5 l0.2 it3 b2: dim 399x399 E -116.487158 (err +118.451) S2 3.9218
+[34665.7s]   ops 434x434: hop 9609 ms, ssop 439 ms
+[35975.1s]   ops 430x430: hop 9629 ms, ssop 358 ms
+[37259.1s]   ops 439x439: hop 9994 ms, ssop 254 ms
+[38590.7s] S5 l0.2 it4 b0: dim 434x434 E -116.495162 (err +110.447) S2 3.9337
+[38591.0s] S5 l0.2 it4 b1: dim 430x430 E -116.492361 (err +113.248) S2 3.8689
+[38591.1s] S5 l0.2 it4 b2: dim 439x439 E -116.492418 (err +113.191) S2 3.9030
+[38591.3s] S5 lam=0.2 BEST: E -116.495162 (err +110.447 mHa) S2 3.9337
+[38591.4s] === S5: penalized protocol, ss=0 shift=0.1, converged solves, MAXIT=4 seed 17 ===
+[38604.8s]   ops 244x244: hop 4331 ms, ssop 71 ms
+[39133.2s]   ops 245x245: hop 3931 ms, ssop 130 ms
+[39668.4s]   ops 239x239: hop 3788 ms, ssop 57 ms
+[40178.0s] S5 l0.1 it1 b0: dim 244x244 E -116.484457 (err +121.152) S2 4.3726
+[40178.0s] S5 l0.1 it1 b1: dim 245x245 E -116.494460 (err +111.150) S2 4.4690
+[40178.1s] S5 l0.1 it1 b2: dim 239x239 E -116.494030 (err +111.580) S2 4.4973
+[40187.0s]   ops 345x345: hop 6500 ms, ssop 218 ms
+[41101.8s]   ops 333x333: hop 6342 ms, ssop 393 ms
+[41974.4s]   ops 336x336: hop 6249 ms, ssop 187 ms
+[42827.8s] S5 l0.1 it2 b0: dim 345x345 E -116.518749 (err  +86.860) S2 4.3025
+[42827.9s] S5 l0.1 it2 b1: dim 333x333 E -116.517142 (err  +88.467) S2 4.3437
+[42828.0s] S5 l0.1 it2 b2: dim 336x336 E -116.517576 (err  +88.033) S2 4.3312
+[42838.8s]   ops 393x393: hop 8364 ms, ssop 232 ms
+[43955.2s]   ops 399x399: hop 9004 ms, ssop 183 ms
+[45120.0s]   ops 403x403: hop 8638 ms, ssop 264 ms
+[46284.5s] S5 l0.1 it3 b0: dim 393x393 E -116.528218 (err  +77.391) S2 4.2335
+[46284.6s] S5 l0.1 it3 b1: dim 399x399 E -116.525692 (err  +79.917) S2 4.2262
+[46284.8s] S5 l0.1 it3 b2: dim 403x403 E -116.525078 (err  +80.532) S2 4.1704
+[46297.1s]   ops 442x442: hop 9846 ms, ssop 374 ms
+[47651.5s]   ops 434x434: hop 9933 ms, ssop 222 ms
+[48948.5s]   ops 444x444: hop 10038 ms, ssop 284 ms
+[50302.1s] S5 l0.1 it4 b0: dim 442x442 E -116.533028 (err  +72.582) S2 4.1643
+[50302.2s] S5 l0.1 it4 b1: dim 434x434 E -116.531403 (err  +74.206) S2 4.1413
+[50302.4s] S5 l0.1 it4 b2: dim 444x444 E -116.533060 (err  +72.550) S2 4.1762
+[50302.7s] S5 lam=0.1 BEST: E -116.533060 (err +72.550 mHa) S2 4.1762
+[50302.7s] ==== SUMMARY ====
+[50302.7s] frontier it1 (245x245):
+[50302.7s]        lam    err_mHa       S2    VarS2     resid
+[50302.7s]          0    +90.106   4.9033   0.7785   1.2e-10
+[50302.7s]        0.1   +111.150   4.4690   0.5684   5.6e-09
+[50302.7s]        0.2   +154.621   4.1699   0.3356   4.5e-08
+[50302.7s]        0.5   +380.762   3.4956   0.1573   7.1e-08
+[50302.7s]          1  +3034.394   0.0000   0.0001   8.6e-08
+[50302.7s]          2  +3034.427   0.0000   0.0000   4.8e-14
+[50302.7s]          5  +3034.467   0.0000   0.0000   7.6e-12
+[50302.7s]         20  +3034.499   0.0000   0.0000   2.6e-08
+[50302.7s] frontier it4 (441x441):
+[50302.7s]        lam    err_mHa       S2    VarS2     resid
+[50302.7s]          0    +45.502   4.8343   1.8920   1.5e-10
+[50302.7s]        0.1    +72.578   4.1646   0.8266   6.2e-09
+[50302.7s]        0.2   +110.646   3.9021   0.4825   1.9e-08
+[50302.7s]        0.5   +264.182   3.4411   0.1836   7.1e-08
+[50302.7s]          1  +2882.707   0.0058   0.0115   7.2e-09
+[50302.7s]          2  +2888.125   0.0017   0.0035   1.8e-09
+[50302.7s]          5  +2892.234   0.0003   0.0007   7.1e-10
+[50302.7s]         20  +2894.719   0.0000   0.0000   5.3e-08
+[50302.7s] their kernel_fixed_space + fix_spin_(ss=0):
+[50302.7s]   it1 shift=0.1 mc=default: err +331.224 S2 5.0004 conv=False penRQ -115.774348
+[50302.7s]   it1 shift=0.2 mc=default: err +317.602 S2 4.9986 conv=False penRQ -115.288282
+[50302.7s]   it1 shift=0.1 mc=600: err +327.233 S2 5.0000 conv=False penRQ -115.778375
+[50302.7s]   it1 shift=0.2 mc=600: err +317.584 S2 4.9986 conv=False penRQ -115.288302
+[50302.7s]   it4 shift=0.1 mc=default: err +322.600 S2 4.9773 conv=False penRQ -115.785274
+[50302.7s] penalized protocol lam=0.1: best err +72.550 mHa S2 4.1762
+[50302.8s] penalized protocol lam=0.2: best err +110.447 mHa S2 3.9337
+SQDPEN_DONE

@@ -1,0 +1,21 @@
+# Exact versions from the WSL2 venv (CPython 3.11.15) that produced every
+# number in the paper. Linux (or WSL) recommended; qc-pyci ships Linux wheels.
+#
+#   python3.11 -m venv .venv && . .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# NOTE: the PyCI used here is qc-pyci (imports as `pyci`). Do NOT
+# `pip install pyci` — that name is an unrelated package on PyPI.
+# NOTE: numpy is pinned at 2.3.0 because ffsim 0.0.80 requires numpy<2.4.
+
+numpy==2.3.0
+scipy==1.17.1
+matplotlib==3.11.0
+pyscf==2.13.1
+qc-pyci==1.0.3
+qiskit==2.4.2
+qiskit-addon-sqd==0.12.1
+ffsim==0.0.80
+
+# optional: only for _pdfcheck-style PDF verification
+pypdf==6.14.2

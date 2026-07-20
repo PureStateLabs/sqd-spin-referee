@@ -1,0 +1,14 @@
+=== STAGE gate600 Mon Jul 13 17:34:48 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-600/7658 per spin (ranked by their exact-state marginals), dim 600x600 = 360,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=32 ...
+[   394.8s rss  0.44G] E -116.432419541  err  +173.190 mHa  THEIR S2 3.8012  [solve 395s]  amps (600, 600) strs 600x600
+[   394.8s rss  0.44G] GATE vs pyci anchor n=600: dE 0.010 mHa dS2 0.0042 [PASS]
+[   394.8s rss  0.44G] GATE vs exact recon E600: dE 0.08 uHa [PASS]
+FLAGSOLVE_DONE
+=== STAGE probe n1000 NT=16 Mon Jul 13 17:41:23 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-1000/7658 per spin (ranked by their exact-state marginals), dim 1000x1000 = 1,000,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=16 ...

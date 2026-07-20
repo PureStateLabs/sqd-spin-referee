@@ -1,0 +1,24 @@
+=== STAGE gate600 Tue Jul 14 01:29:15 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-600/7658 per spin (ranked by their exact-state marginals), dim 600x600 = 360,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs=none) NT=32 ...
+[   381.9s rss  0.43G] E -116.432419541  err  +173.190 mHa  THEIR S2 3.8012  [solve 382s]  amps (600, 600) strs 600x600
+[   381.9s rss  0.43G] GATE vs pyci anchor n=600: dE 0.010 mHa dS2 0.0042 [PASS]
+[   381.9s rss  0.43G] GATE vs exact recon E600: dE 0.08 uHa [PASS]
+FLAGSOLVE_DONE
+=== STAGE flagship n7500 Tue Jul 14 01:35:37 UTC 2026 ===
+[     0.0s rss  0.26G] strings: top-7500/7658 per spin (ranked by their exact-state marginals), dim 7500x7500 = 56,250,000
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[     0.0s rss  0.26G] THEIR MO integrals loaded (ecore 0.000000)
+[     0.0s rss  0.26G] solve_fermion (as shipped, spin_sq unset, kwargs={'max_cycle': 400, 'verbose': 5}) NT=32 ...
+davidson 0 1  |r|= 0.327  e= [-116.20581612]  max|de|= -116  lindep=    1
+davidson 1 2  |r|= 0.209  e= [-116.311611]  max|de|= -0.106  lindep= 0.986
+davidson 2 3  |r|= 0.185  e= [-116.36957268]  max|de|= -0.058  lindep= 0.994
+davidson 3 4  |r|= 0.134  e= [-116.39191315]  max|de|= -0.0223  lindep=    1
+davidson 4 5  |r|= 0.116  e= [-116.4044594]  max|de|= -0.0125  lindep= 0.998
+davidson 5 6  |r|= 0.106  e= [-116.41206943]  max|de|= -0.00761  lindep= 0.991
+davidson 6 7  |r|= 0.0887  e= [-116.41773681]  max|de|= -0.00567  lindep= 0.994
+davidson 7 8  |r|= 0.089  e= [-116.42184553]  max|de|= -0.00411  lindep= 0.996
+davidson 8 9  |r|= 0.0775  e= [-116.42436577]  max|de|= -0.00252  lindep= 0.992
+davidson 9 10  |r|= 0.078  e= [-116.42649104]  max|de|= -0.00213  lindep= 0.989

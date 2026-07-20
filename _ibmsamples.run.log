@@ -1,0 +1,41 @@
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[    0.1s] THEIR integrals loaded (ecore 0.000000, norb 20, nelec 30)
+[    6.2s] stage I1: loaded 2023-12-22T19-07-32.839270_results.npy -- 300 batch dicts
+[    7.8s] stage I1: 2457132 unique strings, 2457600 total shots (their protocol: 300x8192 = 2,457,600), 40 bits/string
+[    8.6s] stage I1: in-sector: 10904 unique (4.438e-03), 10936 shots (4.450e-03)
+[   32.1s] stage I2: BitArray built (2457132 unique keys, 2457600 shots)
+[   32.1s] === arm symm1 (symmetrize_spin=True) SPB=500 NBATCH=3 DMAX=500 MAXIT=5 ===
+[  638.7s] symm1 it1 b0: dim 500x500=250,000 E -116.208430 (err +397.179 mHa) THEIR S2 0.006
+[  638.8s] symm1 it1 b1: dim 500x500=250,000 E -115.927010 (err +678.599 mHa) THEIR S2 0.867
+[  638.9s] symm1 it1 b2: dim 500x500=250,000 E -116.228846 (err +376.763 mHa) THEIR S2 0.053
+[ 1801.9s] symm1 it2 b0: dim 500x500=250,000 E -116.302067 (err +303.542 mHa) THEIR S2 0.147
+[ 1802.0s] symm1 it2 b1: dim 500x500=250,000 E -116.288130 (err +317.479 mHa) THEIR S2 0.189
+[ 1802.1s] symm1 it2 b2: dim 500x500=250,000 E -116.335197 (err +270.413 mHa) THEIR S2 0.245
+[ 2886.7s] symm1 it3 b0: dim 500x500=250,000 E -116.339869 (err +265.740 mHa) THEIR S2 0.246
+[ 2886.8s] symm1 it3 b1: dim 500x500=250,000 E -116.353287 (err +252.322 mHa) THEIR S2 0.244
+[ 2886.9s] symm1 it3 b2: dim 500x500=250,000 E -116.343487 (err +262.122 mHa) THEIR S2 0.201
+[ 3942.5s] symm1 it4 b0: dim 500x500=250,000 E -116.354165 (err +251.444 mHa) THEIR S2 0.241
+[ 3942.6s] symm1 it4 b1: dim 500x500=250,000 E -116.354450 (err +251.159 mHa) THEIR S2 0.243
+[ 3942.7s] symm1 it4 b2: dim 500x500=250,000 E -116.354901 (err +250.708 mHa) THEIR S2 0.240
+[ 5003.9s] symm1 it5 b0: dim 500x500=250,000 E -116.355247 (err +250.363 mHa) THEIR S2 0.241
+[ 5004.0s] symm1 it5 b1: dim 500x500=250,000 E -116.357994 (err +247.615 mHa) THEIR S2 0.241
+[ 5004.1s] symm1 it5 b2: dim 500x500=250,000 E -116.358076 (err +247.533 mHa) THEIR S2 0.235
+[ 5004.2s] symm1 BEST: E -116.358076 (err +247.533 mHa vs their DMRG; +247.333 vs their HCI-best) THEIR S2 0.235 dim 500x500
+[ 5004.2s] === arm symm0 (symmetrize_spin=False) SPB=500 NBATCH=3 DMAX=500 MAXIT=5 ===
+[ 5503.9s] symm0 it1 b0: dim 479x401=192,079 E -116.048725 (err +556.884 mHa) THEIR S2 1.008
+[ 5504.0s] symm0 it1 b1: dim 475x403=191,425 E -115.982121 (err +623.489 mHa) THEIR S2 1.593
+[ 5504.0s] symm0 it1 b2: dim 477x397=189,369 E -116.044480 (err +561.129 mHa) THEIR S2 1.150
+[ 6786.1s] symm0 it2 b0: dim 491x495=243,045 E -116.289874 (err +315.735 mHa) THEIR S2 0.260
+[ 6786.2s] symm0 it2 b1: dim 486x483=234,738 E -116.244565 (err +361.044 mHa) THEIR S2 0.180
+[ 6786.3s] symm0 it2 b2: dim 473x480=227,040 E -116.270803 (err +334.806 mHa) THEIR S2 0.209
+[ 7934.7s] symm0 it3 b0: dim 500x500=250,000 E -116.322678 (err +282.931 mHa) THEIR S2 0.206
+[ 7934.8s] symm0 it3 b1: dim 500x500=250,000 E -116.317996 (err +287.613 mHa) THEIR S2 0.239
+[ 7934.9s] symm0 it3 b2: dim 500x500=250,000 E -116.298821 (err +306.788 mHa) THEIR S2 0.242
+[ 9010.9s] symm0 it4 b0: dim 500x500=250,000 E -116.335129 (err +270.480 mHa) THEIR S2 0.242
+[ 9011.0s] symm0 it4 b1: dim 500x500=250,000 E -116.333844 (err +271.765 mHa) THEIR S2 0.232
+[ 9011.1s] symm0 it4 b2: dim 500x500=250,000 E -116.339668 (err +265.941 mHa) THEIR S2 0.237
+[10112.5s] symm0 it5 b0: dim 500x500=250,000 E -116.348532 (err +257.077 mHa) THEIR S2 0.231
+[10112.6s] symm0 it5 b1: dim 500x500=250,000 E -116.344174 (err +261.435 mHa) THEIR S2 0.231
+[10112.7s] symm0 it5 b2: dim 500x500=250,000 E -116.342608 (err +263.001 mHa) THEIR S2 0.228
+[10112.8s] symm0 BEST: E -116.348532 (err +257.077 mHa vs their DMRG; +256.878 vs their HCI-best) THEIR S2 0.231 dim 500x500
+IBMSAMPLES_DONE

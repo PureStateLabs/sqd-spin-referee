@@ -1,0 +1,44 @@
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[    0.1s] THEIR integrals loaded (ecore 0.000000)
+[   16.0s] stage M2: UCJ built (their template: t1+t2, n_reps=1, chain aa + every-4th ab pairs)
+[  147.7s] stage M2: statevector done, dim 15504x15504 = 240,374,016
+[  214.8s] stage M2: coupon curve done (E[U] at 1e6 shots ~ 5,344)
+[  274.4s] stage M2: 1000000 shots -> 5338 unique dets (top w 0.5579)
+[  274.4s] stage M2: top det is HF
+[  274.4s] stage M2: counts + stats saved
+[  275.1s] stage M3: BitArray built (5338 unique keys, 1000000 shots)
+[  275.1s] === arm symm1 (symmetrize_spin=True) SPB=500 NBATCH=3 DMAX=500 MAXIT=5 ===
+[  355.8s] symm1 it1 b0: dim 177x177=31,329 E -116.348808 (err +256.801 mHa) THEIR S2 0.260
+[  355.8s] symm1 it1 b1: dim 176x176=30,976 E -116.353905 (err +251.704 mHa) THEIR S2 0.206
+[  355.9s] symm1 it1 b2: dim 161x161=25,921 E -116.340873 (err +264.736 mHa) THEIR S2 0.210
+[  470.5s] symm1 it2 b0: dim 231x231=53,361 E -116.365989 (err +239.620 mHa) THEIR S2 0.138
+[  470.6s] symm1 it2 b1: dim 219x219=47,961 E -116.365104 (err +240.505 mHa) THEIR S2 0.126
+[  470.6s] symm1 it2 b2: dim 227x227=51,529 E -116.365385 (err +240.224 mHa) THEIR S2 0.143
+[  620.4s] symm1 it3 b0: dim 259x259=67,081 E -116.369232 (err +236.377 mHa) THEIR S2 0.139
+[  620.4s] symm1 it3 b1: dim 259x259=67,081 E -116.368545 (err +237.064 mHa) THEIR S2 0.128
+[  620.4s] symm1 it3 b2: dim 267x267=71,289 E -116.368499 (err +237.111 mHa) THEIR S2 0.125
+[  798.0s] symm1 it4 b0: dim 287x287=82,369 E -116.372520 (err +233.089 mHa) THEIR S2 0.126
+[  798.0s] symm1 it4 b1: dim 282x282=79,524 E -116.371687 (err +233.922 mHa) THEIR S2 0.131
+[  798.1s] symm1 it4 b2: dim 287x287=82,369 E -116.371730 (err +233.879 mHa) THEIR S2 0.140
+[ 1005.8s] symm1 it5 b0: dim 311x311=96,721 E -116.376010 (err +229.599 mHa) THEIR S2 0.105
+[ 1005.9s] symm1 it5 b1: dim 310x310=96,100 E -116.376680 (err +228.929 mHa) THEIR S2 0.108
+[ 1006.0s] symm1 it5 b2: dim 323x323=104,329 E -116.375640 (err +229.969 mHa) THEIR S2 0.110
+[ 1006.0s] symm1 BEST: E -116.376680 (err +228.929 mHa) THEIR S2 0.108 dim 310x310
+[ 1006.0s] === arm symm0 (symmetrize_spin=False) SPB=500 NBATCH=3 DMAX=500 MAXIT=5 ===
+[ 1062.2s] symm0 it1 b0: dim 129x132=17,028 E -116.323270 (err +282.339 mHa) THEIR S2 0.242
+[ 1062.2s] symm0 it1 b1: dim 135x127=17,145 E -116.343064 (err +262.545 mHa) THEIR S2 0.219
+[ 1062.2s] symm0 it1 b2: dim 119x121=14,399 E -116.325272 (err +280.337 mHa) THEIR S2 0.214
+[ 1128.1s] symm0 it2 b0: dim 182x164=29,848 E -116.359845 (err +245.764 mHa) THEIR S2 0.153
+[ 1128.2s] symm0 it2 b1: dim 170x166=28,220 E -116.359906 (err +245.703 mHa) THEIR S2 0.140
+[ 1128.2s] symm0 it2 b2: dim 176x164=28,864 E -116.358733 (err +246.877 mHa) THEIR S2 0.159
+[ 1209.1s] symm0 it3 b0: dim 196x186=36,456 E -116.363144 (err +242.465 mHa) THEIR S2 0.144
+[ 1209.1s] symm0 it3 b1: dim 196x184=36,064 E -116.362289 (err +243.320 mHa) THEIR S2 0.136
+[ 1209.1s] symm0 it3 b2: dim 192x193=37,056 E -116.361889 (err +243.720 mHa) THEIR S2 0.138
+[ 1310.0s] symm0 it4 b0: dim 215x212=45,580 E -116.365706 (err +239.903 mHa) THEIR S2 0.136
+[ 1310.1s] symm0 it4 b1: dim 216x211=45,576 E -116.365200 (err +240.409 mHa) THEIR S2 0.137
+[ 1310.1s] symm0 it4 b2: dim 221x212=46,852 E -116.365749 (err +239.860 mHa) THEIR S2 0.139
+[ 1448.3s] symm0 it5 b0: dim 242x229=55,418 E -116.368081 (err +237.528 mHa) THEIR S2 0.125
+[ 1448.3s] symm0 it5 b1: dim 239x230=54,970 E -116.368787 (err +236.822 mHa) THEIR S2 0.132
+[ 1448.4s] symm0 it5 b2: dim 244x235=57,340 E -116.368941 (err +236.668 mHa) THEIR S2 0.123
+[ 1448.4s] symm0 BEST: E -116.368941 (err +236.668 mHa) THEIR S2 0.123 dim 244x235
+LUCJFE2_DONE

@@ -1,0 +1,32 @@
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] integrals loaded (ecore 0.000000)
+[   13.4s] stage3: BitArray built (38118 unique keys, 1000000 shots)
+[   13.4s] === arm symm1 (symmetrize_spin=True) SPB=500 NBATCH=3 DMAX=500 MAXIT=4 ===
+[  260.7s] symm1 it1 b0: dim 244x244=59,536 E -116.508442 (err  +97.167 mHa) THEIR S2 4.884
+[  260.8s] symm1 it1 b1: dim 245x245=60,025 E -116.515503 (err  +90.106 mHa) THEIR S2 4.903
+[  260.9s] symm1 it1 b2: dim 239x239=57,121 E -116.514458 (err  +91.151 mHa) THEIR S2 4.909
+[  672.7s] symm1 it2 b0: dim 345x345=119,025 E -116.543757 (err  +61.853 mHa) THEIR S2 4.874
+[  672.8s] symm1 it2 b1: dim 333x333=110,889 E -116.541690 (err  +63.919 mHa) THEIR S2 4.879
+[  672.8s] symm1 it2 b2: dim 336x336=112,896 E -116.541617 (err  +63.992 mHa) THEIR S2 4.871
+[ 1202.5s] symm1 it3 b0: dim 392x392=153,664 E -116.554248 (err  +51.361 mHa) THEIR S2 4.852
+[ 1202.6s] symm1 it3 b1: dim 398x398=158,404 E -116.551810 (err  +53.800 mHa) THEIR S2 4.854
+[ 1202.7s] symm1 it3 b2: dim 402x402=161,604 E -116.552936 (err  +52.673 mHa) THEIR S2 4.841
+[ 1715.6s] symm1 it4 b0: dim 441x441=194,481 E -116.560107 (err  +45.502 mHa) THEIR S2 4.834
+[ 1715.7s] symm1 it4 b1: dim 433x433=187,489 E -116.559440 (err  +46.169 mHa) THEIR S2 4.839
+[ 1715.8s] symm1 it4 b2: dim 443x443=196,249 E -116.560052 (err  +45.557 mHa) THEIR S2 4.837
+[ 1715.8s] symm1 BEST: E -116.560107 (err  +45.502 mHa) THEIR S2 4.834 dim 441x441
+[ 1715.9s] === arm symm0 (symmetrize_spin=False) SPB=500 NBATCH=3 DMAX=500 MAXIT=4 ===
+[ 1779.3s] symm0 it1 b0: dim 125x119=14,875 E -116.508442 (err  +97.167 mHa) THEIR S2 4.884
+[ 1779.3s] symm0 it1 b1: dim 122x123=15,006 E -116.515503 (err  +90.106 mHa) THEIR S2 4.903
+[ 1779.3s] symm0 it1 b2: dim 120x119=14,280 E -116.514458 (err  +91.151 mHa) THEIR S2 4.909
+[ 1873.2s] symm0 it2 b0: dim 173x172=29,756 E -116.543757 (err  +61.853 mHa) THEIR S2 4.874
+[ 1873.2s] symm0 it2 b1: dim 166x167=27,722 E -116.541690 (err  +63.919 mHa) THEIR S2 4.879
+[ 1873.2s] symm0 it2 b2: dim 171x165=28,215 E -116.541617 (err  +63.992 mHa) THEIR S2 4.871
+[ 1991.2s] symm0 it3 b0: dim 194x198=38,412 E -116.554248 (err  +51.361 mHa) THEIR S2 4.852
+[ 1991.2s] symm0 it3 b1: dim 203x195=39,585 E -116.551810 (err  +53.800 mHa) THEIR S2 4.854
+[ 1991.3s] symm0 it3 b2: dim 201x201=40,401 E -116.552936 (err  +52.673 mHa) THEIR S2 4.841
+[ 2136.8s] symm0 it4 b0: dim 216x225=48,600 E -116.560107 (err  +45.502 mHa) THEIR S2 4.834
+[ 2136.8s] symm0 it4 b1: dim 213x220=46,860 E -116.559440 (err  +46.169 mHa) THEIR S2 4.839
+[ 2136.9s] symm0 it4 b2: dim 217x226=49,042 E -116.560052 (err  +45.557 mHa) THEIR S2 4.837
+[ 2136.9s] symm0 BEST: E -116.560107 (err  +45.502 mHa) THEIR S2 4.834 dim 216x225
+SQDSHIP_DONE

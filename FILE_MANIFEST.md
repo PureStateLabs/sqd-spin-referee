@@ -1,0 +1,319 @@
+# File Manifest — paper_sqd_spin_audit ("Which state are you converging?")
+
+*Complete and exact inventory of every file used for the SQD spin-audit paper and its research campaign (2026-07-08 → 2026-07-17). Paths relative to repo root (`indrajala-core/`). Verified against each script's actual I/O (np.load/np.savez/open calls), `launch/REPRO_MAP.md`, and the campaign-window file timestamps. Files from co-resident projects (Cr₂, OLED-VQE, Cepheus H-chain, sutra probes, pivot probes, beat-google2020) are excluded unless this paper consumes them directly — those cases are marked.*
+
+*Updated 2026-07-13 (v4) after the published-construction raw-shots ladder (§2.8, REPRO_MAP #17) landed: new harness + six result archives added, audit grown to 148 checks, zip rebuilt. The package regenerates every REPRO_MAP row from its own contents (plus the public IBM archive for the archive legs).*
+
+*Updated 2026-07-14 (v5) after the flagship-dimension leg landed (§2.8, REPRO_MAP #18): their as-shipped matrix-free `solve_fermion` certified as a third implementation and run to convergence at their largest published [2Fe-2S] dimension (5.625×10⁷ → **+13.6 mHa at their ⟨S²⟩ = 1.287**); driver + 7 result archives + marginals + 3 cloud provenance logs added; audit grown to 172 checks (L4 + batch statistics rebuilt on the verified two-stream evidence structure); zip rebuilt; the 413 MB flagship archive ships as a standalone Zenodo companion file next to the zip.*
+
+*Updated 2026-07-15 (v5.1) after the flagship three-root certification landed (§2.8, REPRO_MAP #26): the delivered flagship state was residual-rotated as our own rescope predicted — certified ground ⟨S²⟩ = **1.371** at +13.643 mHa (ΔE 1.9 µHa from delivered), pair gap 0.285 mHa, invariant S² spectrum {0.038, 2.357, 6.066}; driver + 4 summary archives + cloud log added, the 1.3 GB three-root vector block ships as a second Zenodo companion; audit grown to 194 checks (section N); zip rebuilt.*
+
+*Updated 2026-07-15 (v5.2) after the review-round-2 hardening pass: precision language rebuilt (residual/gap ratio 0.21 disclosed with a Davis–Kahan caveat; "exact"/"fully converged"/"nine digits" retired under permanent audit language-guards; ansatz stated as nearly spin-pure, ⟨S²⟩ = 3.3×10⁻⁴; the [PHP, PS²P] ≠ 0 structural-mechanism paragraph added; 257-word journal abstract with the long statement preserved as an Extended-summary section); uniform-control statistics rebuilt two-sided (7/9 conditions significant; the global sign test withdrawn as pseudoreplication); **package version matrix added (REPRO_MAP #27): the flagship-stated qiskit-addon-sqd 0.1.0 is retrievable from neither PyPI nor GitHub — matrix run at 0.3.0 vs 0.12.1, identical energies/⟨S²⟩ to all printed digits, `spin_sq=None` + `fix_spin_` wiring in both** (`_verm.py` + 2 archives added); audit grown to 224 checks (section M rewritten two-sided, section O language guards + version matrix + a self-referential check-count gate, added after catching a stale title-block count from the v5.1 refreeze); PDF 23 pp (pdflatex); zip rebuilt.*
+
+*Updated 2026-07-15 (v5.3) after the stage-4 certification landed (§2.8/Methods/Limitations, REPRO_MAP #28; 14.8 h cloud run, all gates green, DONE): **residual push 0.212 → 0.0114 of the ground gap (18.6-fold) with ⟨S²⟩ frozen at 1.3711 — the review's Davis–Kahan caveat retired by measurement; fourth root at ⟨S²⟩ = 11.59 (+26.19 mHa); S⁴ second moments Var(S²) = 6.92/3.54/7.41/4.41 with a two-moment sector solve proving ground-root spin support beyond S = 2**; driver + gauge + 5 checkpoint archives + cloud log added, the 1.8 GB four-root vector block ships as a third Zenodo companion; audit grown to 247 checks (section P); PDF 24 pp; zip rebuilt. **v5.4 (review round 3, 2026-07-15):** measured ⟨S⁴⟩ on the eight final pipeline states answers the reviewer's scalar-mean objection by measurement — [4Fe-4S]-mitigated a measured pure triplet (Var 3×10⁻⁶, weights (0,1,0)), [2Fe-2S] set-draw-mitigated a singlet–quintet mixture at ⟨S²⟩ = 2.008 (Var 8.0); four language must-fixes scoped; extended summary → Appendix B + a Principal-findings box; flagship figure + four-root and eight-state moment tables added; audit 261 checks (section Q), PDF 27 pp. **v5.4.1 (review rounds 4–5):** four-root table root-2/3 disqualifier corrected to the negative-weight test, quotable-surface language pass; gates extended, count held at 261. **v5.4.2 (review round 6, 2026-07-15):** measured ⟨S⁶⟩/⟨S⁸⟩ + a linear program over all physical sectors on the eight states answer the two-moment-underdetermination objection by measurement — set-draw-on triplet weight bounded < 10⁻⁴ over all sectors (the 60%-triplet alternative predicts ⟨S⁶⟩ = 120 vs the measured 72.30), [4Fe-4S]-on pure triplet now rigorous (w₁ ∈ [1, 1]), [4Fe-4S]-off a certified ≥ 5% at S ≥ 3; Table 7 root-1 rescoped to "admits S ≤ 2"; abstract trimmed under 300 words; attractor/price-independent scoped; audit 271 checks (section R), PDF 28 pp; `_s6moments.py` + `s6moments.npz` added. **v5.4.3 (review round 7, 2026-07-15):** the ⟨S⁶⟩-alone linear program pins the *full* set-draw-on decomposition — w₀ ∈ [0.665, 0.665] singlet, w₂ ∈ [0.335, 0.335] quintet, w₁ < 3×10⁻⁵ triplet, Σ(S≥3) < 1.2×10⁻⁵ — so "2:1 singlet–quintet" is measured in full, not just "not-triplet"; the moment ladder (all-sector triplet ceiling 0.86 → 8.4×10⁻⁵ → 3.0×10⁻⁵ through ⟨S⁴⟩/⟨S⁶⟩/⟨S⁸⟩) shows ⟨S⁶⟩ alone closes it, so "fixed by its third moment" is literal; a permanent S = 3/4/5 high-spin gauge — built from PySCF's own S² operator, exercising the third/fourth raising steps the H4 gauge cannot reach — added to `_s6moments.py` (reviewer's implementation-independence ask, answered by measurement); "rigorous" → "numerically certified (within stated moment tolerances)", "pure triplet" → "triplet to the measured tolerance"; §2.8 split into §§2.8–2.11, Appendix B (extended summary) removed and a formal References section added; audit 278 checks (section S), PDF 27 pp. **v5.4.3 also folds review round 8 (2026-07-15, one reissue — strongest verdict yet, 9/10, "minor-to-moderate revision"):** an internal-consistency pass that stops the paper using the scalar ⟨S²⟩ mean as a state label — the spin–energy vise no longer calls the low-⟨S²⟩/high-variance hardware+template arms "near-singlet" (Var 0.64–1.36, they are spin mixtures, verified against Table 8), the §2.11 heading/caption read "numerically certified" not "rigorous", the intro's "not any spin eigenstate" is scoped by the one measured triplet, the N₂ "without overtaking" contradiction (−0.6 mHa crossing) is reframed as a proxy artifact, the spin-clean claim is scoped to the rebuilt optimized-circuit leg, the 58.6M-file semantics hedged, and Table 8's [4Fe-4S]-on cell softened to "triplet eigenstate, to tol."; section T (+8 checks, incl. a negative gate banning the scalar-mean "near-singlet" phrasings) → audit 286 checks, PDF 27 pp; no number changed.*
+
+*Updated 2026-07-17 (v5.5) after review rounds 9–11 returned zero defects (validation passes; successor-scoping and representable/present/returned hierarchy folded in v5.4.3, audit 288) and the independent-implementation flagship cross-check landed (§2.10/Methods/Limitations, REPRO_MAP #30): **the certified flagship triple confirmed by a second kernel sharing no Hamiltonian-construction or solver code with the first — PyCI-built 1.6 TB on-disk operator (nonzero count = the exact combinatorial prediction, 127,975,471,122, reproduced exactly by two independent builds on two fresh cloud instances), in-house block Davidson + threaded mat-vec: certified vectors are eigenvectors of the independent operator at 10⁻¹⁴–10⁻¹³ (Rayleigh quotients), re-converged energies ≤8×10⁻¹⁰ Ha, ⟨S²⟩ ladder ≤7.5×10⁻⁴, residual 1.25×10⁻⁵ scoped with Davis–Kahan bounds that contain every observed deviation; Limitations item 1(ii) retired into the closed list.** Driver + strings + result archive + four run logs added; the 1.35 GB three-root vector block ships as a fourth Zenodo companion; audit grown to 307 checks (section W — whose first formulation the audit itself caught comparing full-precision Rayleigh quotients to rounded constants, rebuilt against the run log as primary source); PDF 29 pp; zip rebuilt.*
+
+*Updated 2026-07-17 (v5.5.1) after an external desk review of the v5.5 freeze — no apparent factual or numerical error found; one abstract-level claim vulnerability identified and fixed: the headline sentence is replaced by the two-part audited/uncertified form (**"No audited execution returned the named singlet; for published states unavailable to direct audit, the energy-only records do not establish singlet identity"**), reconstruction attribution is added on every flagship headline surface (abstract, Principal findings, Limitations item 1, both flagship figure captions), "wrong-spin" terminology is unified to "spin-contaminated", §2.8 is retitled "the audit of the experiments as released", "hopeless" → "noncompetitive", and provenance language is selectively thinned ("their own" 27 → 13 per source). The audit's own gates caught the pass in flight (abstract word ceiling + stale v5.4 phrase pins, re-pointed); re-passed 307/0; PDF 29 pp; zip re-frozen. Remaining review guidance (restructure, compression) is retained for the journal version.*
+
+*Updated 2026-07-17 (v5.5.2) after the reviewer re-read the v5.5.1 freeze and judged it release-ready — a two-line claim-precision pass, no correction: the four-root table's two negative-weight rows read "infeasible → requires S ≥ 3 support" (was "→ S ≥ 3", which could be misread as the state lying wholly in S ≥ 3); the Introduction reads "The states returned by the audited executions are not singlets" (was the broader "The states being converged are not singlets"); the fourth root's "≈ S = 3" → "predominantly S = 3" (Var 4.41, a broad mixture); and a Discussion sentence scoped to "the flagship protocol does not produce the named singlet in any audited realization". The promotional-shortening caution was checked against the outreach kit and needed no edit (the sole ⟨S²⟩ = 1.3711 there is a qualified reproduction-spec Expected line). Audit re-passed 307/0; PDF 29 pp.*
+
+*Updated 2026-07-18 (v5.6) — **[⚠ Provenance corrected in v5.9: R14 was right — the flagship's Methods state a λ = 0.2 _squared_ S² penalty (H + λ[S²−s(s+1)]²) in every arXiv version and the journal text; the "no penalty term" reading recorded in this entry was a source-verification false-negative, overturned by raw-byte inspection of the source. The §2.6 measurements below stand; only the provenance framing is corrected. See the v5.9 entry.]** the first added experiment since v5.4, answering review round 14's submission-blocker by measurement. Round 14 alleged the flagship used an active λ = 0.2 spin penalty; the primary source (arXiv:2405.05068v3) carries no penalty term, no λ, no "0.2" — the number is PySCF `fix_spin`'s default, and the shipped SQD path (`solve_sci` → `fix_spin_`) defaults to 0.1 with the *linear* H + shift·S² at M_s = 0. Rather than only rebut, we **ran the penalty on** inside the as-shipped recovery loop on the pipeline's own converged [2Fe-2S] subspaces and swept its strength (`_sqdpen.py`, desktop): a new §2.6 subsection + **Table 4** + **Figure 4** report a spin–energy **frontier with no competitive interior** — λ = 0.1 (shipped default) and 0.2 (the reviewer's number) anneal ⟨S²⟩ only 4.83 → 3.90 as the energy worsens +45.5 → +111 mHa, and the first exact singlet the subspace can express (⟨S²⟩ = Var = 0.0000; pyci-anchored at λ = 0 to 0.00 µHa) lies **+2.9 Ha above the reference**. Corollaries: the shipped penalty path returns `converged = False` on all five arms (0.27–0.33 Ha high) yet confirms our vector when seeded (overlap 1.000000); the full penalized protocol lands on the frontier; positive-semidefiniteness closes the other jaw. A speculative "could target the singlet directly" line was retracted by the measurement and Recommendation 2 sharpened to spin-aware *selection*. Later tables/figures renumbered (+1); audit grown to **323 checks** (section X, incl. a negative gate on the retracted phrase); PDF **31 pp**; zip rebuilt (151 entries); REPRO_MAP #31.*
+
+*Updated 2026-07-18 (v5.7) — the fifth external review's one technical ask, answered by measurement, plus its language items. The review (zero factual errors alleged; every core claim "strongly established/supported") asked that the completion-pair degeneracy be demonstrated rather than asserted — coupling, support structure, added-determinant amplitudes, splitting vs tolerance. `_degen.py` re-solves **all 14 completion checkpoints**: a new §2.6 per-checkpoint table shows |ΔE₀| ≤ 8×10⁻¹³ Ha, splittings ≤ 1.9×10⁻¹² Ha, projector spectra {1.000, ≤ 0.109} (each pair = the state plus its spin image), added-support weight < 10⁻¹⁴, coupling ‖P₊Hv‖ ≤ 2.5×10⁻⁹ Ha — the vanishing coupling is what forces exact degeneracy. The run surfaced **detection #7**: the coarsest [4Fe-4S] checkpoint's stored record had no resolved pair (spurious 93 mHa gap) because the iterative Davidson returned one member per degenerate pair; dense diagonalization (`_degen_dense.py`) restored the exact pair (split 0, S² block [5.2930, 5.2930]) — the paper's claim was right, the stored evidence at that point was a solver artifact, disclosed as item 7 and flagged (†) in the table. Language sweeps from the same review: "matched cost" → "matched diagonalized dimension" throughout; sampling-law scope at the law's introduction; necessary-not-sufficient identity hierarchy at the instrument's introduction; the audit's epistemic scope stated plainly (internal consistency, not external reproduction). New files: `_degen.py`, `_degen_dense.py`, `_degen_flip.py`, `_degen_table.py`, `degen.npz`, `degen_dense.npz`, `_degen.run.log`. Mechanism table = Table 3 (later tables +1); audit **336 checks** (section Y); PDF **33 pp**; zip **158 entries**; REPRO_MAP #32.*
+
+*Updated 2026-07-18 (v5.7.1) — the sixth review's one measurable ask (its §3G), answered in seconds: the LP sector bounds stress-tested against their own uncertainty boxes. `_s6stress.py` re-runs the production LP (copied verbatim, one inflation parameter; factor 1 gated against `s6moments.npz`) at 10×/100×/1000× inflated per-moment boxes for all eight states: the set-draw triplet ceiling moves only 3.1×10⁻⁵ → 3.7×10⁻⁵ → 1.0×10⁻⁴ (5.4×10⁻⁴ at 1000×), its singlet weight stays in [0.6653, 0.6654] at 100×, the [4Fe-4S] triplet floor stays above 0.99998 — conditioning objection measured away (`s6stress.npz`). Micro-language from the same review: "The accuracy ordering does not depend on pricing the samples" (was "price-independent"); "present or future" dropped; the bounds named **moment-constrained sector bounds** at first use; Data availability gains the previously unlisted `_s6moments.py`/`s6moments.npz` plus the new pair. Audit **344 checks** (section Z, incl. negative gate on the dropped phrases); PDF **34 pp**, 32/32 landmarks; zip **160 entries**; REPRO_MAP #33.*
+
+*Updated 2026-07-18 (v5.8) — the seventh review's three runnable asks, all desktop-only, no reframe. (1) **Quasi-degeneracy threshold sensitivity scan** (`_thrscan.py` / `thrscan.npz`): the 2 µHa clustering rule is measured non-load-bearing — re-deriving every partition of all 49 stored root vectors (138 roots) at 0.2/2/20 µHa and under a residual-adaptive criterion reproduces the production clusters and block spectra exactly, on a 2.55×10⁶-fold separation margin (largest intra-cluster split 1.9×10⁻¹² Ha vs smallest inter-cluster gap 4.8 µHa); the sole 20-µHa reassignment is at an unreported [2Fe-2S] aufbau checkpoint (D = 5,053, two mid-mixture ⟨S²⟩ ≈ 2.05/2.07 roots), touching no completion pair, flagship manifold, or reported block spectrum. (2) **Per-source claim-alignment table (Table 11)**: each audited source's own stated claim — verbatim quotes re-verified against the live arXiv sources (2405.05068 "upper bounds for the ground-state energy" / "approximate restoration of the S² symmetry … closure under spin inversion"; 2511.00224 energy-only) — set beside the state diagnostic it reported and what this audit establishes, foreclosing the objection that the critique contests a stronger claim than was made. (3) **Four-senses "certified" terminology note** in Methods (residual-certified / cross-kernel reproduced / numerically certified / artifact-verified). One reworded §2.3 sentence retires the banned "leaves every" overstatement. Audit **356 checks** (section AA, +12: the scan's separation margin recomputed independently, the single 20-µHa reassignment, and md+tex phrase/quote presence); PDF **35 pp**; zip **162 entries** (`_thrscan.py`, `thrscan.npz` added). Companions unchanged.*
+
+*Updated 2026-07-18 (v5.8.1) — a correctness/precision pass responding to review rounds R19/R20; no new results, no recomputation, audit count held at **356**. **(R20 — the one genuine error)** the Discussion "structural mechanism" no longer lists a solver-side spin penalty among commutation-restoring remedies: adding λP·S²P leaves [PHP, PS²P] unchanged (the identity [PHP + λPS²P, PS²P] = [PHP, PS²P] is now stated explicitly), so only an S²-invariant construction (CSF / S²-projected selection) restores commutation, a penalty able to target a singlet only once selection has placed a competitive one in the subspace. **(R19/R20 — scope)** the Layer-1 sampling optimum is scoped to a fixed prepared state's own |c|² distribution, and a deliberately different fixed preparation (flatter amplitudes, up-weighted recoupling determinants) named a separate, untested lever. **(R20 — precision)** abstract "no singlet" → "no singlet **at competitive energy**"; Principal finding "does not rescue the benchmark" → "the **audited benchmark subspaces**"; the recoupling-partner attribution softened to "consistent with"; "energy alone" → "energy-based diagnostics, not spin identity" (abstract re-trimmed to 297 words). **(bibliography)** the References section conventionalized with arXiv-verified authors/titles, fixing two citation errors — the Reinholdt critique title ("Fundamental Limitations in Sample-Based Quantum Diagonalization Methods" → **"Critical Limitations in Quantum-Selected Configuration Interaction Methods,"** JCTC 2025) and the flagship intro's non-verbatim "beyond exact solutions" → title-verbatim **"beyond the scale of exact diagonalization."** **(layout)** Table 11's float constrained (`placeins` + `\FloatBarrier` before Methods) so it renders in the Discussion (p. 26), not after the References. Audit 356/0; PDF **36 pp**; zip 162 entries; companions byte-unchanged.*
+
+*Updated 2026-07-19 (v5.9) — a provenance correction with a confirming run, plus the appendix removal and a cadence pass. **(Provenance — the load-bearing fix)** re-verification against the raw arXiv source (the bytes of v1, v2, v3 plus the ar5iv/PMC renderings, grepped directly, no summarizer in the loop) establishes that the flagship's published Methods **do** state a spin penalty — "conservation of total spin by a soft constraint in the eigenstate solver … H + λ[S²−s(s+1)]²," employed at **λ = 0.2** — present in every version since the first 2024 preprint. The v5.6 "no penalty term" reading was a WebFetch false-negative, now overturned; review round 14's original allegation, and the later external review that repeated it, were both correct. §1, §2.6, §3, and Table 11 are reframed from "the flagship leaves the penalty off" to "we reproduce the flagship's own stated λ = 0.2": the shipped-package default (`spin_sq=None`) is still off, but that is now stated as a property of the *package*, not the *publication*. **(New run)** `_sqdpen_sq.py` solves the flagship's exact stated operator, H + λ[S²−s(s+1)]² at λ = 0.2 (s = 0, so λ[S²]²; PySCF's `fix_spin_` implements only the linear shift, so the squared form required a dedicated matvec applying `contract_ss` twice), on the same benchmark-energy D = 441² subspace: ground at **+528 mHa, ⟨S²⟩ = 3.010** (audit-grade, residual 1.1×10⁻⁷; the λ = 0 anchor recertified against the shipped record) — an 11.6-fold worse energy than unpenalized and still three units of ⟨S²⟩ from the singlet. The +2.9 Ha singlet floor is form-independent (λ[S²]² and λS² share their null space, the exact singlets), so the no-competitive-interior conclusion holds for the stated form verbatim. The stronger form also sharpens the mechanism: the penalized ground is nearly an eigenvector of the projected PS²P at the unphysical value 3.01 — certainty in the wrong operator, the noncommutation made operational. New files `_sqdpen_sq.py`, `sqdpen_sq_it4.npz`, `_sqdpen_sq.run.log`; the IBM disclosure email (finding #4) is corrected in kind; AUDIT_TRAIL Day-17 records the false-negative retraction. **(Appendix removed)** the self-audit narrative (former Appendix A) is dropped from the paper — the single formal AI-use disclosure remains at the end, and the narrative now lives only in AUDIT_TRAIL.md. **(Cadence)** a comprehensive em-dash pass across the paper and kit converts reveal/appositive dashes to colons, semicolons, parentheses, and sentence breaks (no comma splices; en-dashes and the two load-bearing header dashes preserved), leaving the markdown master with 2 em-dashes and the tex with 2 stylistic title-block dashes. Audit **363 checks** (section X2, +7: the squared λ = 0 anchor, the +528 mHa point, the 11.6× ratio, the algebraic physical-variance floor, md+tex phrase presence, and a negative gate on the retracted penalty-off claims); PDF **35 pp**; zip **177 entries** (99.9 MB); companions byte-unchanged.*
+
+*Updated 2026-07-20 (v5.9.1) — an operator correction (review round 12, the strongest of the twelve), the same class as the v5.9 provenance fix caught one level deeper. **(Defect)** the v5.9 squared-penalty run (`_sqdpen_sq.py`) built the penalty as `contract_ss` applied twice — the *projected* square (PS²P)² — whereas the flagship's stated (S²)², compressed onto the fixed subspace P, is the *literal* square P(S²)²P; the two differ by PS²(I−P)S²P ⪰ 0, precisely the leakage the paper's central result says is nonzero, so calling the projected-square number "the flagship's exact stated operator" over-claimed. **(Fix)** `_sqdpen_true.py` builds P(S²)²P from the exact M_s = 0 S⁺ ladder, gauged to machine precision three ways against PySCF's S² (reproduces `contract_ss` to 0.0; matches a dense projected S⁴ to 0.0; differs from the projected square by up to 2.0 — the leakage is real and the gauge discriminates). At the stated λ = 0.2 the two compressions bracket the outcome and neither is a competitive singlet: the projected square stays pinned at ⟨S²⟩ = 3.010 / +528 mHa, while the stronger literal square (it registers the full ⟨S⁴⟩ ≈ 47, not the in-subspace proxy ≈ 23) crosses a sharp threshold to the singlet floor — ⟨S²⟩ = 0.004 at +2,884 mHa on D = 441² (⟨S²⟩ = 0.000 at +3,034 mHa on D = 245²). The endpoint is guaranteed, not fitted: (S²)², (PS²P)², and the linear S² are all positive semidefinite with the identical null space, so every penalty of this family shares the +2.9 Ha floor in any compression. Both compressions now ship side-by-side (§2.6, Table 11); the formal ledger reads two reviewer-prompted corrections. New files `_sqdpen_true.py`, `sqdpen_true_it1.npz`, `sqdpen_true_it4.npz`, `_sqdpen_true.run.log`. Audit **368 checks** (section X2 phrase pins + new X2b two-compression numeric block, +5); PDF **36 pp**; zip **181 entries** (99.9 MB); companions byte-unchanged; AUDIT_TRAIL Day 18.*
+
+*Updated 2026-07-20 (v5.9.2) — a two-phrase scope-precision pass over v5.9.1 answering the thirteenth review; no new results, no recomputation, audit held at **368/0**. **(1)** The Layer-1 sampling ceiling's headline label "device-independent *optimum*" → "noiseless, device-independent sampling *limit*" (and the back-reference "that optimum loses at matched D" → "that limit"): the body already scoped the bound to i.i.d. computational-basis samplings of a fixed prepared state, but "optimum" invited a misread as optimality over all sampling-and-recovery strategies — a scope objection two independent reviewers raised; "limit" states exactly the oracle baseline the formal result licenses. **(2)** The Principal-findings unit comparison reframed dimensionally: "the spin-identity error is the same size as the energy effects under dispute" (⟨S²⟩ vs energy, different units) → "misidentifying the spin state shifts the energy on the same scale as the effects under dispute" (energy vs energy). Both edits paired md+tex; PDF **36 pp**; zip **181 entries** (99.9 MB); companions byte-unchanged. The review's structural items (length ~25–35%, tone, deeper spin-adaptation/CSF/moment-problem citations) remain the standing journal-version work order.*
+
+*Updated 2026-07-20 (v5.9.3) — two internal-consistency fixes prompted by the fourteenth review; no new results, no recomputation, audit held at **368/0**. **(1)** Completion-mechanism table (Table 3) prose/table reconciliation: the parenthetical gloss "p₁ = 1, p₂ = 0 means…" now notes that p₂ is exactly 0 only for [4Fe-4S] (disjoint supports) and small but nonzero (at most 0.11) for [2Fe-2S], where the original support and its spin image share the spin-self-inverse determinants on which the image member keeps a little projector weight — the table always displayed those [2Fe-2S] second eigenvalues (0.0168–0.1085), and the prose now matches it. **(2)** The four-root flagship table and Figure 5 now flag root 3 (⟨S²⟩ = 11.590) with a † as the iteration-capped Ritz vector (residual 3.3×10⁻⁵), a status already disclosed in Methods but not previously marked at the table; its ⟨S²⟩ > 6 infeasibility certificate holds for any vector, only its energy and higher moments are as-returned. Both fixes paired md+tex; PDF **36 pp**; zip **181 entries** (100.0 MB); companions byte-unchanged. The fifteenth review (concurrent) added no new defect — strong validation, one journal-stage ask (a stronger orbital-basis-equivalence certificate) logged for the journal version; the 3×-flagged reconstruction-naming left as-is because the load-bearing surfaces already carry "reconstructed here".*
+
+*Updated 2026-07-20 (v5.9.4) — a presentation pass over v5.9.3; no new results, no recomputation, audit held at **368/0**. **(1)** The back-matter section "Competing interests, funding, and AI-use disclosure" is retitled **"AI-use disclosure"**, and its founder statement now carries the author's name ("Tyler Vitale is the founder of Pure State Labs Inc."); the self-funding/independence sentence and the AI-use text are unchanged. **(2)** A typesetting margin pass closes every overfull line in the PDF: the four wide tables (completion-mechanism, idealized-ranking ladder, four-root flagship, eight-state cross-instrument) are scaled to text width, and the Data-availability file list now line-breaks cleanly (it previously pushed filenames through the right margin on p. 35). Zero overfull boxes remain in the build log. Text edits paired md+tex; the typesetting changes are tex/PDF-only. PDF **36 pp**; zip **181 entries**; companions byte-unchanged.*
+
+*Updated 2026-07-20 (v5.9.5) — the AI-use disclosure rewritten as one plain paragraph (author-requested); no new results, no recomputation, audit held at **368/0**. The competing-interests/funding sentences ("founder of Pure State Labs", "self-funded and performed independently") are dropped from the paper body — they live in the preprint server's own declaration fields — and the remaining disclosure states the same facts in a natural register: agent-executed computations under the author's direction, the author's responsibility for program and text, `_paperaudit.py` re-deriving every claim (368 checks, zero failures), and the full self-audit ledger (five self-caught defects, one self-retraction, two reviewer-prompted corrections) preserved in `AUDIT_TRAIL.md`. Paired md+tex; both audit pins on the section (the parenthesized check-count and the reviewer-prompted-correction phrase) verified intact. PDF **35 pp** (dropping the paragraph pulls the back matter up one page); zip **181 entries**; companions byte-unchanged.*
+
+Legend: **[zip]** = included in `launch/psl_sqd_supplementary.zip` (181-entry rebuild of 2026-07-20, 100.0 MB); **[RM#n]** = artifact of REPRO_MAP claim n.
+
+---
+
+## 1. Manuscript (3)
+
+| File | Role |
+|---|---|
+| `paper_sqd_spin_audit.md` | Markdown master (Draft v5.4.2, 2026-07-15: v5.3 + review-round-3 fold-in — measured ⟨S⁴⟩ on eight states, language scoping, Principal-findings box, flagship figure, four-root + eight-state tables; v5.4.1 corrects the four-root table's root-2/3 disqualifier to the negative-weight sector test the ground root already used and folds in the round-5 quotable-surface pass; v5.4.2 (review round 6) folds in the ⟨S⁶⟩/⟨S⁸⟩ + linear-program measurement — set-draw-on triplet weight bounded < 10⁻⁴ over all sectors, so the 2:1 singlet–quintet reading is measured not assumed; Table 7 root-1 rescoped to "admits S ≤ 2"; abstract trimmed under 300 words; attractor/price-independent scoped; v5.4.3 (round 7) pins the full set-draw decomposition via the ⟨S⁶⟩-alone LP (w₀/w₂ = 0.665/0.335, triplet < 3×10⁻⁵), adds a permanent S = 3/4/5 high-spin moment gauge, calibrates "rigorous" → "numerically certified" and "pure" → "to measured tolerance", splits §2.8 into §§2.8–2.11, removes Appendix B, adds a References section; round 8 adds an internal-consistency pass — no scalar-mean "near-singlet" state labels, "numerically certified" not "rigorous", scoped eigenstate/state-prep/overtaking claims, hedged file-semantics, section T → audit 286, PDF 27 pp; rounds 9–11 zero-defect validation (successor-scoping, mechanism hierarchy) → audit 288; v5.5 (2026-07-17) folds the independent-implementation flagship cross-check — §2.10 closing paragraph, Methods block, Limitations item 1(ii) retired into the closed list — audit 307 (section W), PDF 29 pp; v5.5.1 (2026-07-17) external-review claim-boundary pass — abstract headline sentence hardened to the audited/uncertified two-part form, reconstruction attributions on flagship surfaces, spin-contaminated terminology, selective provenance thinning; audit re-passed 307; v5.5.2 (2026-07-17) two-line claim-precision pass on the "release-ready" re-review — table "requires S ≥ 3 support", intro "states returned by the audited executions", "predominantly S = 3", Discussion scoped to "any audited realization"; audit 307; v5.6 (2026-07-18) adds the penalty-on audit — §2.6 subsection + Table 4 + Figure 4 (the H + λS² frontier: +2.9 Ha singlet floor, shipped-kernel conv=False + seeded endorsement, positive-semidefinite closure of the other jaw), retracts "could target the singlet directly", Recommendation 2 → spin-aware selection; audit 323, PDF 31 pp; v5.7 (2026-07-18) adds the completion-mechanism table (14 checkpoints, coupling/splitting/projector/S²-block measured; dense adjudication of one solver-artifact row = disclosure item 7) and the round-15 language sweeps (matched diagonalized dimension; sampling-law scope up front; identity hierarchy at the instrument; audit = internal consistency); audit 336, PDF 33 pp; v5.7.1 (2026-07-18) adds the LP stress test (10×/100×/1000× uncertainty boxes; set-draw triplet ceiling ≤ 1.0×10⁻⁴ at 100×) and the round-16 micro-language (pricing-the-samples lead, moment-constrained sector bounds, "present or future" dropped); audit 344, PDF 34 pp; v5.8 (round 17) threshold-scan sensitivity + per-source claim-alignment Table 11 + four-senses "certified" terminology note, audit 356, PDF 35 pp; v5.8.1 (R19/R20) correctness pass — penalty no longer described as restoring [PHP,PS²P] commutation, sampling-optimum scoped to a fixed state's own |c|², references conventionalized with two citation fixes, Table 11 float constrained, PDF 36 pp; **v5.9** (2026-07-19) provenance correction — the flagship's stated λ = 0.2 squared S² penalty is now reproduced rather than denied (+528 mHa at ⟨S²⟩ = 3.010, §2.6; §1/§3/Table 11 reframed), former Appendix A removed (the single AI-use disclosure retained), manuscript-wide em-dash/cadence pass; PDF 35 pp; **v5.9.1** (2026-07-20) operator correction — the literal squared-penalty compression P(S²)²P added alongside the projected square, both reported side-by-side (§2.6, Table 11); PDF 36 pp; **v5.9.2** (2026-07-20) two-phrase scope-precision pass (13th review) — sampling ceiling "device-independent optimum"→"noiseless, device-independent sampling limit", principal-finding unit comparison reframed dimensionally; no new results, audit 368/0; PDF 36 pp; **v5.9.3** (2026-07-20) two internal-consistency fixes (14th review) — Table 3 p₂ prose reconciled with its own table, and root 3 flagged † as the iteration-capped Ritz vector in the four-root table + Figure 5; no new results, audit 368/0; PDF 36 pp; **v5.9.4** (2026-07-20) presentation pass — disclosure section retitled "AI-use disclosure" with the founder statement named, four wide tables scaled to text width, Data-availability line-breaking fixed; no new results, audit 368/0; PDF 36 pp; **v5.9.5** (2026-07-20) AI-use disclosure rewritten as one plain paragraph, competing-interests/funding sentences moved to the submission form; no new results, audit 368/0; PDF 35 pp) **[zip]** |
+| `paper_sqd_spin_audit.tex` | LaTeX conversion (same revision, kept in lockstep by the audit's paired-source checks) **[zip]** |
+| `paper_sqd_spin_audit.pdf` | Built PDF, 35 pp (pdflatex/TeX Live, rebuilt 2026-07-20 at v5.9.5, content-verified) **[zip]** |
+
+## 1c. Review-round-2 hardening (v5.2, §2.7/§2.8/Methods/Limitations / RM#24, #27)
+
+| File | Role |
+|---|---|
+| `_verm.py` | Package version matrix: identical inputs through 0.3.0 (earliest publicly auditable release) and 0.12.1, each version's own construction/solver/diagnostic; records `spin_sq` defaults and `fix_spin` wiring **[zip]** [RM#27] |
+| `verm_0_3_0.npz`, `verm_0_12_1.npz` | Matrix results: energies/⟨S²⟩ identical to all printed digits, dims equal up to an α/β half-order convention in the closure-off leg **[zip]** [RM#27] |
+| `_ibmuniform2.py` + `ibmuniform_stats.npz` | Rebuilt two-sided (7/9 conditions significant; legacy sign test stored under an explicitly legacy key) — replaces the one-sided v5 versions in place **[zip]** [RM#24] |
+| `_tier12_codemod.py` | One-shot asserted-count language-edit script for the v5.2 pass (repo only, not in zip; the language guarantees it applied are enforced permanently by audit section O) |
+| `_v010_install.sh` | WSL venv bootstrap for the 0.3.0 matrix leg (repo only) |
+| `_s4gate.py` | Standalone S⁴ moment-kernel gauge (H4/STO-3G FCI: eigenstate Var(S²) < 10⁻⁹, analytic mixture variance; also asserted in-box by the driver before production) **[zip]** [RM#28] |
+
+## 1d. Stage-4 certification (v5.3, §2.8/Methods/Limitations / RM#28)
+
+| File | Role |
+|---|---|
+| `_gram7500s4.py` | Stage-4 driver: warm-start gates (Rayleigh/Gram vs banked), in-box H4 moment gauge, staged `kernel_fixed_space` ladder (3 roots @10⁻¹⁰, 4 roots @10⁻⁸, 4 roots @10⁻¹⁰), per-stage measured residuals + S²-Gram + S⁴ moments + {S=0,1,2} sector solves, checkpoint/resume **[zip]** [RM#28] |
+| `gram7500_s4ck{0,1,2,3}.npz` | Per-stage checkpoints: ck0 = moments of the certified block as published (ratio 0.212); ck1 = 3-root residual push (ratio 0.0255); ck2 = 4th root in at 10⁻⁸; ck3 = final (ratio 0.0114, ⟨S²⟩ ladder 1.371/2.363/4.738/11.590, Var 6.92/3.54/7.41/4.41, ground sector solve (0.82, −0.07, 0.25) infeasible) **[zip]** [RM#28] |
+| `gram7500_s4.npz` | Final summary (= ck3, the driver's terminal artifact) **[zip]** [RM#28] |
+| `gram7500s4_live.log` | Cloud log (c7a.16xlarge NT=64, 14.8 h: G0 gauge PASS, three drift gates −0.00 µHa PASS, full Davidson traces, GRAM7500S4_DONE) **[zip]** [RM#28] |
+| `gram7500_s4_restart.npz` | Converged four-root vector block (1.8 GB) — **standalone Zenodo companion file** (not in zip) [RM#28] |
+
+## 1e. Review round 3 fold-in (v5.4, §2.8/2.3/2.7/Methods, RM#22–23)
+
+| File | Role |
+|---|---|
+| `_s4states.py` | Gauged ⟨S⁴⟩ / Var(S²) / {S=0,1,2} sector solve on the eight final pipeline states (same eight as `_gramxcheck.py`), each gated against the shipped `spin_square` to 10⁻⁶; in-box H4-FCI moment gauge asserted first **[zip]** [RM#22] |
+| `_s6moments.py` | Extends the moment ladder to ⟨S⁶⟩/⟨S⁸⟩ on the same eight states (H4-FCI gauge through the fourth moment) and runs a linear program over the full physical sector grid → rigorous per-sector weight bounds; answers review round 6 by measurement **[zip]** [RM#29] |
+| `s4states.npz` | The eight-state second moments — the scalar-mean fallacy in our own data: [4Fe-4S]-mitigated a **measured** pure triplet (Var 3×10⁻⁶, weights (0,1,0)); [2Fe-2S] set-draw-mitigated a singlet–quintet mixture at ⟨S²⟩ = 2.008 (Var 8.0, triplet weight measured < 10⁻⁴ over all sectors — see `s6moments.npz`); exactly one of the eight a spin eigenstate — the wrong one **[zip]** [RM#22] |
+| `s6moments.npz` | Third/fourth moments + full-sector LP bounds for the eight states: the ⟨S⁶⟩-alone LP pins set-draw-on to w₀ = 0.665 singlet / w₂ = 0.335 quintet / w₁ < 3×10⁻⁵ triplet / Σ(S≥3) < 1.2×10⁻⁵ (2:1 singlet–quintet measured *in full*, not just "not-triplet" — the 60%-triplet alternative predicts ⟨S⁶⟩ = 120 vs the measured 72.30); moment-ladder ceiling 0.86 → 8.4×10⁻⁵ → 3.0×10⁻⁵ shows the third moment closes it; [4Fe-4S]-on pure triplet w₁ ∈ [1, 1]; [4Fe-4S]-off certified ≥ 5% at S ≥ 3; carries the S = 3/4/5 high-spin gauge validating the third/fourth raising steps **[zip]** [RM#29] |
+| `fig_flagship_s4.png` | The flagship figure — panel A the spin ladder, B the 18.6-fold residual collapse against frozen ⟨S²⟩ = 1.3711, C the per-root Var(S²) **[zip]** |
+| `_figflagship.py` | Builds `fig_flagship_s4.png` from `gram7500_s4ck{0,3}.npz` **[zip]** |
+| `_pdfcheck.py` | PDF landmark check (page count + key-string probes, v5.4 landmarks incl. the four-root and eight-state tables and the Principal-findings box) **[zip]** |
+| `gram7500s4_results_aws/` | Raw harvest directory (S3 sync: the files above + `bootstrap.log` + `DONE` sentinel; repo only) |
+| `gram7500s4_tf/` | Terraform stack for the run (self-terminating watchdog + reaper harvest; destroyed 2026-07-15 after DONE; repo only) |
+
+## 1f. Independent-implementation flagship cross-check (v5.5, §2.10/Methods/Limitations / RM#30)
+
+| File | Role |
+|---|---|
+| `_tb7500box.py` | The second-kernel driver: PyCI row-chunked 20-process build of the 5.625×10⁷ subspace's Hamiltonian to a 1.6 TB on-disk CSR triangle (chunk-0 determinism gate; assembled nonzero count gated against the exact combinatorial prediction), in-house block Davidson over threaded symmetric-triangle mat-vec, warm Rayleigh-quotient gates, full-sector ⟨S²⟩ embed **[zip]** [RM#30] |
+| `tb7500_strings.npz` | The N = 7500 string payload (hash-gated by the driver's G0; same ranked half-configurations as the flagship rung) **[zip]** [RM#30] |
+| `tb7500_result_n7500.npz` | Result archive: energies, residuals, ⟨S²⟩, warm Rayleigh quotients, nonzero count, iteration count, gate status (PARTIAL-by-residual: E and ⟨S²⟩ gates inside tolerance, residual 1.25×10⁻⁵ against the 10⁻⁷ strict gate) **[zip]** [RM#30] |
+| `tb7500_ck.npz` | The converged three-root vector block (1.35 GB) — fourth Zenodo companion, beside the two kernel-side blocks and the flagship amplitudes [RM#30] |
+| `tb7500_live.log`, `tb7500_bootstrap.log` | Result run's driver log (all gates, all 38 Davidson iterations, the S5 embed) and cloud bootstrap log **[zip]** [RM#30] |
+| `tb7500_build2_live.log`, `tb7500_build2_bootstrap.log` | Second build on a fresh instance (exact nonzero count reproduced) + the warm-resume attempt and its diagnosed stall (checkpoint stores the Ritz block, not the subspace) and pre-declared termination **[zip]** [RM#30] |
+| `_tbresume_adapter.py` | Checkpoint→warm-block adapter used by the resume attempt (repo only) |
+| `tb7500_results_aws/` | Raw harvest directories for both runs (S3 sync; repo only) |
+| `tb7500_tf/` | Terraform stack (i4i.16xlarge, NVMe RAID-0, self-terminating watchdog + reaper; destroyed 2026-07-17 after harvest; repo only) + `RESUME_RUNBOOK.md` |
+
+## 1b. Flagship-dimension leg (v5, §2.8 / RM#18)
+
+| File | Role |
+|---|---|
+| `_flagsolve.py` | Driver: top-N exact-marginal outer-product subspace → as-shipped `solve_fermion` (kwargs passthrough for `max_cycle`/`verbose`); built-in PyCI anchor gates **[zip]** [RM#18] |
+| `_flagladder.sh` | Desktop certification ladder (n = 300–2000, idempotent per-rung guards) **[zip]** [RM#18] |
+| `lucjopt_marginals.npz` | Exact-state marginals of their rebuilt optimized circuit (ranking input; produced by `_lucjopt.py`) **[zip]** [RM#18] |
+| `flagsolve_n{300,500,600,1000,2000}.npz` | Certified rungs, desktop venue (energies match PyCI anchors to ≤ 0.023 mHa) **[zip]** [RM#18] |
+| `flagsolve_n2000_box1.npz` | n=2000 on cloud NT=64 — the ⟨S²⟩ run-instability datum (3.518 vs desktop 3.393 at 22 µHa energy split) **[zip]** [RM#18] |
+| `flagsolve_n7500_box2.npz` | **The flagship point**: 5.625×10⁷ determinants, +13.6 mHa at their ⟨S²⟩ = 1.287 as delivered (certified 1.371 by the three-root audit below); full 7500×7500 amplitude matrix + string sets (413 MB) — **standalone Zenodo companion file** (not in zip) [RM#18] |
+| `flagsolve_box1_attempt{1,2,3}_live.log` | Cloud provenance: three spot-instance interruptions, per-2-min synced logs, no data loss **[zip]** |
+| `_gram7500.py` | Flagship certification driver: pre-registered warm-start gates (bit-identical strings / Rayleigh-vs-banked / ⟨S²⟩-vs-banked), `kernel_fixed_space` nroots=3, tolerance ladder 10⁻⁶→10⁻⁸, per-stage S²-Gram + checkpoint, resume-capable **[zip]** [RM#26] |
+| `gram7500.npz`, `gram7500_ck{1,2,3}.npz` | Certified flagship manifold + per-stage ladder summaries: ground +13.643 mHa at ⟨S²⟩ = 1.371, pair gap 0.285 mHa (2.357), second root +6.52 mHa (4.732), invariant spectrum {0.038, 2.357, 6.066} **[zip]** [RM#26] |
+| `gram7500.run.log` | Certification cloud log (c7a.16xlarge, 11.3 h: gates, thread probe, full three-stage Davidson trace) **[zip]** [RM#26] |
+| `gram7500_restart.npz` | Converged three-root vector block (1.3 GB) — **standalone Zenodo companion file** (not in zip) [RM#26] |
+| `SHA256SUMS` (repo root) + `launch/SHA256SUMS` | Frozen integrity manifests (v5.4.3, 2026-07-15): every repo file, plus the five release artifacts (zip / three Zenodo companions / PDF) |
+
+## 2. Production harnesses (19 scripts, repo root)
+
+| File | Role (paper section) |
+|---|---|
+| `_fairfight.py` | Diazene matched-cost fight: CIPSI/HCI/CISD-seeded vs exact-distribution vs LUCJ sampling arms (§2.1–2.2). Also the **library home of the Slater–Condon Engine class** imported by `_s2audit.py` and others **[zip]** [RM#10] |
+| `_s2audit.py` | The instrument: rotation-invariant S²-Gram audit; partA diazene gauge gate + partB HCI-ladder audits of [2Fe-2S]/[4Fe-4S] with spin-completion arm (§2.3–2.6) **[zip]** [RM#1–5] |
+| `_s2fig.py` | Builds `fig_s2_vs_d.png`, `fig_err_vs_d.png`, `s2audit_master.csv` from the audit npz archives **[zip]** [RM#12] |
+| `_figcoupon.py` | Builds `fig_coupon.png` from `couponlaw.npz` [RM#13] |
+| `_sqdship.py` | As-shipped `qiskit-addon-sqd` on 10⁶ samples from the converged 170k-det [2Fe-2S] vector (§2.6) **[zip]** [RM#6,9] |
+| `_sqdship_delta.py` | Prints exact symm1-vs-symm0 no-op delta table (§2.6) **[zip]** [RM#7] |
+| `_ibmsamples.py` | IBM's 2,457,600 raw [2Fe-2S] hardware shots → their pipeline; probability→counts reconstruction with per-batch assertions (§2.8) [RM#16] |
+| `_ibmsamples4.py` | IBM's 3,163,742 raw [4Fe-4S] hardware records → their pipeline; triplet-attractor result (§2.8) [RM#19] |
+| `_sqdraw.py` | Published-construction ladder: their raw [2Fe-2S] shots at their protocol (10 batches, 5 recovery iterations, max_dim = N ∈ {500,1000,2000}); per-iteration E + their-⟨S²⟩ recorded per batch (§2.8) **[zip]** [RM#17] |
+| `_ibmuniform.py` | Parses IBM's own uniform-control / hardware energetics files verbatim (§2.7) [RM#15] |
+| `_ibmuniform2.py` + `ibmuniform_stats.npz` | Hardened uniform-vs-hardware statistics on the verified two-stream evidence structure (B⊂C, unB≡unC): means, Welch CIs, Mann–Whitney, sign test at 9 independent (stream, dimension) points (§2.7) **[zip]** [RM#24] |
+| `spin_inversion_is_not_singlet.py` | Standalone ~35 s reproducer: marginal-ranked product space is spin-inversion symmetric by construction, ground state still ⟨S²⟩ = 3.50; cross-checked against their own `solve_fermion`/`spin_square` to 1×10⁻⁴ (§2.6) **[zip]** [RM#25] |
+| `_lucjfe.py` | Noiseless LUCJ leg **v1** — the defective localized-basis/aufbau-reference run (self-audit event #5; retained, labeled). Its stage L2 (`lucj_stats.npz`) feeds the coupon law |
+| `_lucjfe2.py` | Noiseless LUCJ leg **v2** on IBM's MO-basis FCIDUMP with their circuit template; accepted after reproducing their tabulated RHF exactly (§2.8) [RM#20] |
+| `_lucjopt.py` | Their optimized-circuit release: 58.6M-configuration set statistics, exact-state rebuild (⟨S²⟩ = 0.000329), set-sampled ship arms — now the paper's fourth §2.8 input class (⟨S²⟩ = 2.008 @ +501.8 / 1.089 @ +377.8 mHa, spin lottery, mitigation costs 124 mHa) (§2.8) [RM#21] |
+| `_couponlaw.py` | Closed-form sampling-wall law E[U(M)] = Σ 1−(1−pᵢ)^M, validated on four measured distributions (§2.1) [RM#13] |
+| `_costmodel.py` | Price-independence analysis: matched-D gaps, matched-accuracy det inflation (§2.1) [RM#14] |
+| `_n2xval.py` | Reinholdt N₂ replication with their own PyCI, equilibrium + R=2.0 (§2.1) [RM#11] |
+| `_hcicert.py` | Classical-baseline certification: pyscf `selected_ci` (independent heat-bath SCI) on the same diazene systems, three-way Hamiltonian agreement; reproduces the triplet trap (§2.2, Methods) **[zip]** |
+| `_gramxcheck.py` | Cross-instrument certification: our S²-Gram vs their `SCIState.spin_square()` on the 8 stored-vector ship arms (ibmship/lucj2ship/lucjoptship/ibm4ship × symm1/0), max |Δ| = 2.53×10⁻¹⁴ (§2.8) **[zip]** [RM#22] |
+| `_paperaudit.py` | Machine verification of every quantitative claim in the manuscript against the raw archives (194 checks incl. the fourth-leg, ladder-leg L3, flagship-leg L4, two-stream batch-statistics, successor-paper, and flagship-certification section N checks); caught nine stale values in draft v1, one in v4, and the evidence-multiplicity miscount (Methods; AUDIT_TRAIL.md) **[zip]** [RM#23] |
+
+## 3. Support / validation utilities (9 scripts)
+
+| File | Role |
+|---|---|
+| `_sqdraw_synth.py` | Prints the full six-run ladder matrix (per-iteration bands, best rows) from the `sqdraw_*.npz` archives **[zip]** [RM#17] |
+| `_smoke_fairfight.py` | Environment smoke test after ffsim/qiskit-addon-sqd install (numpy downgrade check; pyscf/ffsim/SCI/engine end-to-end toy) |
+| `_probe_pyci.py` | Probes every PyCI API call used by `_n2xval.py`; engine-vs-pyci agreement on the same det set (certification chain) **[zip]** |
+| `_npzpeek.py` | Dumps structure of fairfight/N₂ archives for the paper audit |
+| `_npzpeek2.py` | Drills into fairfight inner results for the paper audit |
+| `_peek3.py` | Generic npz key/shape peeker (IBM-leg debugging) |
+| `_peek4.py` | IBM archive raw-file structure probe (probability-dict format discovery for `_ibmsamples.py`) |
+| `_pdfcheck.py` | PDF build verification (page count + probe strings) |
+| `_peek5.py` | lucjoptship npz best_e/best_s2/history peeker (fourth-leg integration) |
+| `_zipbuild.py` | Supplementary-zip builder: explicit manifest, forward-slash arcnames, hard-fails on missing files; quarantines the run-1 defective leg under `lucj_run1_reference_choice_observation/` |
+| `_ziplist.py` | Zip content lister (build verification) |
+| `_hwrun.py` | **Prepared but never executed**: "Move C" harness to rerun IBM's circuit.qpy on current free-tier hardware (needs `QISKIT_IBM_TOKEN`; no outputs exist on disk) |
+
+## 4. Long-run infrastructure (WSL survival)
+
+| File | Role |
+|---|---|
+| `_s2matrix.sh` | Idempotent, lock-guarded S²-audit matrix driver (arm guards, mid-arm resume from `.partial.npz`) **[zip]** |
+| `_s2resurrect.sh` | Resurrection wrapper relaunching the matrix driver |
+| `_s2guard.ps1` | Windows `schtasks` watchdog that re-enters WSL and fires the resurrect script |
+| `_resurrect.heartbeat` | Watchdog heartbeat file (ticking through the campaign) |
+| *(shared, pre-existing)* `_resurrect.sh` | Generic resurrect pattern from the H-chain campaign this infra was derived from |
+
+## 5. Run logs and console outputs (15 on disk)
+
+`_s2audit.log` (first fe2s2 aufbau run) · `_s2matrix.run.log` **[zip]** [RM#5 partA blocks] · `_s2matrix.resurrect.log` · `_sqdship.run.log` **[zip]** [RM#6,9] · `_ibmsamples.run.log` **[zip]** [RM#16] · `_ibmsamples4.run.log` **[zip]** · `_lucjfe.run.log` **[zip:** run-1 folder**]** · `_lucjfe2.run.log` **[zip]** · `_lucjfe2b.run.log` (symm0 arm continuation) **[zip]** · `_lucjopt.run.log` **[zip]** · `_couponlaw.out` · `_costmodel.out` · `_ibmuniform.out` · `_gramxcheck.out` **[zip]** [RM#22] (8/8 PASS, max |Δ| 2.53×10⁻¹⁴) · `_paperaudit.out` **[zip]** [RM#23] (**version-of-record run: 172 checks / 0 FAILURES**, regenerated 2026-07-14 with the flagship-leg L4 section and the corrected two-stream batch statistics) · ~~`_paperaudit.out2`~~ (superseded run — deleted)
+
+## 6. Result archives (54 npz + 1 csv + 3 png)
+
+### S² audit (§2.4–2.6) [RM#1–4,12]
+| File | Content |
+|---|---|
+| `s2audit_fe2s2.npz` **[zip]** | [2Fe-2S] aufbau seed, first run (valid to 68k dets) |
+| `s2audit_fe2s2bs.npz` **[zip]** | [2Fe-2S] broken-symmetry "good guess" ladder to 155k |
+| `s2audit_fe2s2deep.npz` **[zip]** | [2Fe-2S] aufbau deep ladder to 170,448 dets |
+| `s2audit_fe4s4.npz` **[zip]** | [4Fe-4S] ladder to 40,435 dets (anti-singlet drift) |
+| `s2audit_master.csv` **[zip]** | Master audit table (paper tables §2.4–2.5; mitigation columns) |
+| `fig_s2_vs_d.png`, `fig_err_vs_d.png`, `fig_coupon.png`, `fig_flagship_s4.png` (all **[zip]**) | The paper's four figures |
+| *(transient)* `s2audit_*.partial.npz` | Mid-run checkpoints, consumed on resume (not retained) |
+
+### Diazene fairfight (§2.1–2.2) [RM#10]
+| File | Content |
+|---|---|
+| `fairfight_smoke.npz`, `fairfight_smoke2.npz` | Toy-system smoke arms |
+| `fairfight_dz.npz` **[zip]** | **Round 1 — the retracted spin-inconsistent scoreboard** (kept as evidence for §2.2; AUDIT_TRAIL.md) |
+| `fairfight_dzsinglet.npz` **[zip]** | Round 3 spin-clean scoring, seed 7 |
+| `fairfight_dzs11.npz`, `fairfight_dzs23.npz` **[zip]** | Seeds 11 and 23 |
+
+### N₂ replication (§2.1) [RM#11]
+Equilibrium (root): `n2_ints.npz` **[zip]** · `n2_hci.npz` **[zip]** · `n2_ref.npz` **[zip]** · `n2_qsci.npz` **[zip]** · `n2_ours.npz` **[zip]**
+Stretched R=2.0: `n2_r200/n2_ints.npz` · `n2_r200/n2_hci.npz` · `n2_r200/n2_ref.npz` · `n2_r200/n2_qsci.npz` · `n2_r200/n2_ours.npz` (all five **[zip]**)
+
+### As-shipped pipeline, our samples (§2.6) [RM#6–9]
+`sqdship_vec.npz` (170k-det vector, 4 MB) · `sqdship_counts.npz` (10⁶-shot counts) · `sqdship_symm1.npz` · `sqdship_symm0.npz` (all four **[zip]**)
+
+### Noiseless LUCJ v1 — defective run, retained & labeled (AUDIT_TRAIL.md)
+`lucj_ccsd.npz` · `lucj_stats.npz` (coupon-law input) · `lucjship_counts.npz` · `lucjship_symm1.npz` · `lucjship_symm0.npz` — all five + script + log **[zip:** under `lucj_run1_reference_choice_observation/`**]**
+
+### Noiseless LUCJ v2 — accepted (§2.8) [RM#20]
+`lucj2_ccsd.npz` · `lucj2_stats.npz` · `lucj2ship_counts.npz` · `lucj2ship_symm1.npz` · `lucj2ship_symm0.npz` (all **[zip]**)
+
+### Their optimized circuit — fourth §2.8 input class [RM#21]
+`lucjopt_counts.npz` (**1.4 GB**, excluded from zip per REPRO_MAP note — regenerates from IBM archive) · `lucjopt_stats.npz` **[zip]** · `lucjopt_state.npz` (exact-state ⟨S²⟩) **[zip]** · `lucjoptship_symm1.npz` **[zip]** · `lucjoptship_symm0.npz` **[zip]**
+
+### Their hardware through their pipeline (§2.8) [RM#16,18]
+`ibmraw_counts.npz` (**413 MB**, excluded from zip — regenerates) · `ibmship_symm1.npz` **[zip]** · `ibmship_symm0.npz` **[zip]** · `ibm4raw_counts.npz` (**936 MB**, excluded from zip — regenerates) · `ibm4ship_symm1.npz` **[zip]** · `ibm4ship_symm0.npz` **[zip]**
+
+### Published-construction raw-shots ladder (§2.8) [RM#17]
+Production trio (32-core cloud instance): `sqdraw_results_aws/sqdraw_n500_symm1_s17.npz` · `sqdraw_results_aws/sqdraw_n1000_symm1_s17.npz` · `sqdraw_results_aws/sqdraw_n2000_symm1_s17.npz` (all **[zip]**; directory records venue). Ablations (desktop): `sqdraw_n1000_symm1_s43.npz` (seed) · `sqdraw_n1000_symm0_s17.npz` (mitigation off) · `sqdraw_n500_symm1_s17.npz` (second-hardware repeat) (all **[zip]**). Each stores the full per-iteration × per-batch history (E, err, their-⟨S²⟩, dims, walls) plus knobs. `sqdraw_bits.npz` (**12 MB** packed BitArray cache, excluded from zip — regenerates from IBM archive via `_sqdraw.py` stage 1).
+
+### Archive audit & laws (§2.1, 2.7) [RM#13–15]
+`ibmuniform.npz` **[zip]** · `couponlaw.npz` **[zip]** · `costmodel.npz` (not in zip — REPRO_MAP #14 treats it as recomputed live by `_costmodel.py`)
+
+## 7. Input data — project-generated
+
+| File | Role |
+|---|---|
+| `dz_r090.00.npz` | Diazene rotation-TS diradical CAS(12,10) target — fairfight system 1 **and** the partA gauge gate consumed by every production audit **[zip]** |
+| `dz_i180.00.npz` | Diazene inversion-TS target — fairfight system 2 **[zip]** |
+| `_diazene_targets.py` | Generator of the dz targets (shared with the beat-google2020 project; run 2026-07-06; regenerates the full dz set) **[zip]** |
+| `cepheus_ro.json`, `cepheus_p2.json` | Real-device calibration (Cepheus H-chain project) — optional `REALCAL` noise leg of `_fairfight.py` |
+
+## 8. Input data — external, consumed as released
+
+### Reinholdt qsci-benchmarks checkout: `_qsci_benchmarks/`
+The critique's own tooling/protocol repo (with the Li–Chan active-space submodule). Files actually consumed:
+
+| File | Role |
+|---|---|
+| `_qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2` | **The [2Fe-2S] FCIDUMP** (30e, 20o; 0.99 MB) — Hamiltonian of §2.4, 2.6 |
+| `.../Fe2S2_and_Fe4S4/Fe4S4/fe4s4` | **The [4Fe-4S] FCIDUMP** (54e, 36o; 9.9 MB) — Hamiltonian of §2.5 |
+| `_qsci_benchmarks/fe2s2/fe2s2` | 71-byte pointer stub to the dump path |
+| `_qsci_benchmarks/fe2s2/run_hci.py` | Their aufbau-seed HCI protocol (replicated as SEEDMODE=aufbau) |
+| `_qsci_benchmarks/fe2s2/run_hci_dorbs.py` | Their broken-symmetry-seed protocol (SEEDMODE=bs) |
+| `_qsci_benchmarks/fe2s2/run_qsci.py`, `_qsci_benchmarks/fe2s2/cas.py` | Protocol reference |
+| `_qsci_benchmarks/N2/N2_cas.py` | Their N₂ integral protocol, reproduced verbatim in `_n2xval.py` stage 1 |
+| `_qsci_benchmarks/N2/run_hci_from_npy.py`, `run_qsci_from_npy.py`, `generate_samples_from_npy.py`, `get_lucj_statevec.py` | Their HCI/QSCI/sampling protocol references for the replication |
+| `_qsci_benchmarks/hand-picked/run_hci_from_npy_ethene_90_alternative.py` (+ siblings) | Recon finding: hand-hacked open-shell seed; zero S² handling repo-wide (motivating observation, §1) |
+| `_qsci_benchmarks/README.md`, `.gitmodules` | Repo identity |
+
+### IBM data archive: `_ibm_data/` (arXiv:2405.05068 archive, DOI 10.5281/zenodo.15324153)
+`sqd_data_repository.zip` (302 MB original download) extracted to `sqd_data_repository-main/`. Files consumed:
+
+**Integrals**
+- `integrals/2Fe-2S/fcidump_Fe2S2_MO.txt` — their MO-basis [2Fe-2S] dump (basis certification; H for §2.8 legs)
+- `integrals/4Fe-4S/fcidump_Fe4S4_MO.txt` — their MO-basis [4Fe-4S] dump
+
+**Raw hardware records**
+- `experiments/2Fe-2S/data/experiment_data/2023-12-22T19-07-32.839270_results.npy` (145 MB; 300 batches × 8,192 shots as probability dicts)
+- `experiments/4Fe-4S/data/experiment_data/Fe4S4_measurement_outcomes_04_2024_Job_IDS_25532_25538_25561.pkl` (279 MB; 3,163,742 outcomes)
+- `experiments/{2Fe-2S,4Fe-4S}/data/experiment_data/load_data_dict.py` — their loaders (format documentation)
+
+**Published energetics (parsed verbatim by `_ibmuniform.py` / `_paperaudit.py` section J)**
+- `experiments/2Fe-2S/sqd_hardware_energetics/energy-variance_data_SQD_eigenstate_{A,B,C}.txt`
+- `experiments/2Fe-2S/sqd_on_uniform_distribution/energy-variance_data_SQD_eigenstate_{A,B,C}_uniform.txt` (B/C byte-identical — data-hygiene footnote)
+- `experiments/4Fe-4S/sqd_hardware_energetics/energy-variance_data_SQD.txt`
+- `experiments/4Fe-4S/sqd_hardware_energetics/SQD_energies_100_batches_d-{9M,16M,36M,64M,100M}.txt` (headline scale, ~53 mHa/decade)
+- `experiments/4Fe-4S/sqd_on_uniform_distribution/energy-variance_data_SQD_uniform.txt`
+- `classical_reference_energies/{2Fe-2S,4Fe-4S}/classical_methods_energies.txt` (their DMRG + HCI reference lines)
+- `classical_reference_energies/2Fe-2S/HCI_energy_vs_subspace_dimension_selection_threshold-{5e-05,7e-05,8e-05,0.0001,0.00012}.txt` (their classical HCI ladders — inventoried §2.7)
+- `numerics/N2_6-31G_recovery_effect/no_config_recovery_alpha-*.txt` + `with_config_recovery_alpha-*.txt` (40 files — the recovery ablation, §2.7)
+- `classical_reference_energies/N2_6-31G/energies_n2_6-31g.txt` (reference for the ablation errors)
+
+**Optimized-circuit numerics (consumed by `_lucjopt.py`)**
+- `numerics/2Fe-2S_optimal_circuits/samples_from_circuit/samples_58644964_partition_{0..39}.npy` (40 × 58.6 MB — the "58,644,964 samples" release)
+- `numerics/2Fe-2S_optimal_circuits/circuit_parameters/optimal_params.npy` (state rebuild)
+- `numerics/2Fe-2S_optimal_circuits/active_space_integrals/{fe2s2_fcidump.txt, h1e_Fe2S2_MO.npy, h2e_Fe2S2_MO.npy, run_RHF.py}` (basis equality certification)
+- `numerics/2Fe-2S_optimal_circuits/qiskit_circuit/circuit.qpy` (referenced by the unexecuted `_hwrun.py`)
+- `numerics/2Fe-2S_optimal_circuits/readme.md` + `samples_from_circuit/load_samples.py`, `circuit_parameters/load_params_to_circuit.py`, `qiskit_circuit/load_circuit.py` (documented invariants — row-0 = HF gate, column order)
+
+**Circuit template (consumed by `_lucjfe.py`/`_lucjfe2.py`)**
+- `experiments/circuit_generation_template/circuit_generation_template.py`
+- `README.md` (repo top)
+
+*(Archive portions not used: `experiments/N2_6-31G/` and `experiments/N2_cc-pVDZ/` hardware energetics + experiment_data zips, `numerics/N2_6-31G_noiseless_LUCJ/energies.txt`, MO jpg galleries in the Li–Chan repo.)*
+
+## 9. Launch / companion documents (`launch/`)
+
+| File | Role |
+|---|---|
+| `launch/REPRO_MAP.md` | Claim-by-claim reproduction map (named in the paper's Data availability; #20 updated to 8 arms / <3×10⁻¹⁴, new note on excluded large intermediates) **[zip]** |
+| `launch/AUDIT_TRAIL.md` | Public-facing self-audit timeline (self-audit companion; updated with fourth-leg numbers + successor currency-check paragraph) **[zip]** |
+| `launch/STORY.md`, `launch/LAUNCH_PLAN.md` | Narrative + launch sequencing (STORY updated 07-10 15:44) |
+| `launch/pitches/01_exclusive_pitch.md`, `02_hn_post.md`, `03_x_thread.md` | Outreach drafts (hn_post updated 07-10 15:44) |
+| `launch/emails/01_chan.md`, `02_reinholdt.md`, `03_ibm.md`, `04_aaronson.md`, `05_anthropic.md` | Stakeholder email drafts (03_ibm updated 07-10 15:44) |
+| `launch/psl_sqd_supplementary.zip` | Supplementary package (**final rebuild 07-10 16:20 by `_zipbuild.py`: 84 entries, 20.2 MB — adds dz targets + generator, `_hcicert.py`, `_probe_pyci.py`, root `n2_ints.npz`; defective run-1 leg quarantined under `lucj_run1_reference_choice_observation/`; MD5-verified against disk for paper, audit outputs, and result archives**) |
+| `launch/FILE_MANIFEST.md` | This manifest |
+
+## 10. Software environment (not files, for completeness)
+
+WSL Linux venv (run via `MSYS_NO_PATHCONV=1 wsl -e bash -c '… PYTHONPATH=. ./.venv/bin/python …'`): `pyci` (qc-pyci), `pyscf`, `qiskit-addon-sqd` 0.12.1 (run as shipped), `ffsim`, `qiskit`, `numpy`, `scipy`, `matplotlib`, `pypdf` (PDF check). Full AI session logs (audit-trail evidence, including the discarded uint64-defect revision) live outside the repo in the Claude Code session directory — "available from the author on request."
+
+---
+
+## Discrepancies (v1 findings → status after the 2026-07-10 15:47 update)
+
+1. ~~Supplementary zip stale (v1-era)~~ — **RESOLVED.** Rebuilt by `_zipbuild.py`: 78 entries, 18.7 MB, current paper/scripts/artifacts, all IBM-archive legs included, run-1 defective leg quarantined and labeled. The three large intermediates (`ibmraw_counts.npz` 413 MB, `ibm4raw_counts.npz` 936 MB, `lucjopt_counts.npz` 1.4 GB) are deliberately excluded and documented as deterministic regenerables in REPRO_MAP's auditor notes.
+2. ~~`_gramxcheck.out` missing~~ — **RESOLVED.** Exists (8/8 PASS, max |Δ| = 2.53×10⁻¹⁴), in zip; REPRO_MAP #20 updated to "<3e-14, all 8 arms" to match.
+3. ~~No paperaudit output postdating the final manuscript~~ — **RESOLVED.** `_paperaudit.out` regenerated 15:45:05, 30 s after the final md save (15:44:34): 121 PASS / 0 FAILURES, including new checks for the fourth §2.8 leg (2.008/+501.8, 1.089/+377.8, +124.01 spin-lottery batches) and the arXiv:2511.00224 successor claims.
+4. ~~Zip lacked the fairfight/gauge-gate inputs~~ — **RESOLVED (16:20 rebuild).** `dz_r090.00.npz`, `dz_i180.00.npz`, and `_diazene_targets.py` are in the zip; confirmed by code reading that `_s2audit.py` hard-loads `dz_r090.00.npz` (partA gate) and `_fairfight.py` loads the dz npz for integrals/FCI targets — RM#5 and RM#10 now regenerate from the package alone. (The `cepheus_*.json` calibrations remain optional — `REALCAL`-gated with built-in defaults.)
+
+### v2-review observations — all resolved in the 16:19–16:20 update
+
+5. ~~§2.8 "all eight arms: four input classes × mitigation on/off" imprecise~~ — **RESOLVED.** md + tex now read: "For the final states of the [2Fe-2S] hardware, template, and set-draw legs and of the [4Fe-4S] hardware leg — mitigation on and off in each, eight arms in all…", which exactly matches `_gramxcheck.out`'s certified set. REPRO_MAP #20 tightened the same way ("all 8 saved final pipeline states — hardware/template/set-draw [2Fe-2S] legs + hardware [4Fe-4S] leg"). The alternative (adding the sqdship leg to the certification) was checked and correctly rejected: `sqdship_*.npz` store only hist/best_e/best_s2 — no final vectors — and re-running a landed leg risks drift.
+6. ~~`_hcicert.py`/`_probe_pyci.py` not in zip~~ — **RESOLVED.** Both in the 84-entry zip; the Methods sentences they back are auditable by running them.
+7. ~~Root `n2_ints.npz` asymmetry~~ — **RESOLVED.** Included; `_n2xval.py` runs from the package without regenerating integrals.
+8. ~~Stale `_paperaudit.out2`~~ — **RESOLVED.** Deleted.
+
+**Final package state (2026-07-10 16:20):** every REPRO_MAP row's proof artifact ships in the zip, every regeneration command runs from the zip contents plus the two public external inputs (Li–Chan FCIDUMPs via `_qsci_benchmarks/`, IBM archive via zenodo.15324153), and the version-of-record audit (119 checks, 0 failures) plus the 8-arm Gram certification are byte-identical between zip and disk.

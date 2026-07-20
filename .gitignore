@@ -1,0 +1,20 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# external inputs — fetched per README, never tracked
+_ibm_data/
+_qsci_benchmarks/
+
+# regenerable intermediates (stage-1 outputs; see REPRO_MAP notes)
+ibmraw_counts.npz
+ibm4raw_counts.npz
+lucjopt_counts.npz
+sqdraw_bits.npz
+
+# mid-run checkpoints (consumed on resume)
+s2audit_*.partial.npz
+
+# primary-result archive too large for git — ships in the Zenodo record
+flagsolve_n7500_box2.npz

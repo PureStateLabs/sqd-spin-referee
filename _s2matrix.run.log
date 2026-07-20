@@ -1,0 +1,157 @@
+== matrix pass start 2026-07-09 18:50:11 UTC ==
+=== BS SEED (partA gate) ===
+[   51.3s] partA Engine: r0: E-108.617900 S2 2.0000 (pyscf 2.0000)  r1: E-108.597345 S2 0.0000 (pyscf 0.0000)  r2: E-108.560928 S2 0.0000 (pyscf 0.0000)  gram offdiag max 1.7e-12
+[   51.3s] partA OK
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[   51.4s] partB[fe2s2bs]: _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2: norb 20 nelec (15, 15) ms2 0 seed bs symm True cap 150000
+[  529.9s] partB: Engine built (231288 offdiag paulis)
+[  529.9s] partB: seed (2 dets) E -115.954595 S2 5.000
+[  529.9s] partB: eps=1.000e-01 ndets=      2 E=-115.954595
+[  529.9s] partB: eps=7.943e-02 ndets=      2 E=-115.954595
+[  529.9s] partB: eps=6.310e-02 ndets=      2 E=-115.954595
+[  529.9s] partB: eps=5.012e-02 ndets=      5 E=-116.090321
+[  529.9s] partB: eps=3.981e-02 ndets=      6 E=-116.104175
+[  529.9s] partB: eps=3.162e-02 ndets=     15 E=-116.146011
+[  529.9s] partB: eps=2.512e-02 ndets=     35 E=-116.229483
+[  529.9s] partB: eps=1.995e-02 ndets=     39 E=-116.239156
+[  530.0s] partB: eps=1.585e-02 ndets=    114 E=-116.333873
+[  530.0s] partB: eps=1.259e-02 ndets=    124 E=-116.338158
+[  530.0s] partB: eps=1.000e-02 ndets=    165 E=-116.361130
+[  530.1s] partB: eps=7.943e-03 ndets=    235 E=-116.381048
+[  530.2s] partB: eps=6.310e-03 ndets=    367 E=-116.419083
+[  530.3s] partB: eps=5.012e-03 ndets=    502 E=-116.433532
+[  530.7s] partB: eps=3.981e-03 ndets=    658 E=-116.442823
+[  531.1s] partB: eps=3.162e-03 ndets=   1011 E=-116.456202
+[  539.7s] partB ckpt eps=3.16e-03: ndets=   1011 E0 -116.456202 (eng d +0.0 uHa)  r0: dE   +0.000 mHa S2 4.978  r1: dE  +55.353 mHa S2 4.977  r2: dE  +71.252 mHa S2 4.977
+[  540.1s]     symm ckpt : ndets=   2020 E0 -116.456202  r0: dE   +0.000 mHa S2 4.978  r1: dE   +0.000 mHa S2 4.978  r2: dE  +55.353 mHa S2 4.977  [r0..r1 deg, S2-span [4.978, 4.978]]
+[  540.8s] partB: eps=2.512e-03 ndets=   1460 E=-116.467425
+[  541.8s] partB: eps=1.995e-03 ndets=   1986 E=-116.476192
+[  547.1s] partB: eps=1.585e-03 ndets=   4260 E=-116.512206
+[  550.9s] partB: eps=1.259e-03 ndets=   5574 E=-116.524393
+[  586.6s] partB ckpt eps=1.26e-03: ndets=   5574 E0 -116.524393 (eng d +0.1 uHa)  r0: dE   +0.000 mHa S2 4.978  r1: dE  +62.843 mHa S2 4.949  r2: dE  +88.198 mHa S2 4.968
+[  589.7s]     symm ckpt : ndets=  11146 E0 -116.524393  r0: dE   +0.000 mHa S2 4.978  r1: dE   +0.000 mHa S2 4.978  r2: dE  +62.843 mHa S2 4.949  [r0..r1 deg, S2-span [4.978, 4.978]]
+[  592.8s] partB: eps=1.000e-03 ndets=   7150 E=-116.534137
+[  599.8s] partB: eps=7.943e-04 ndets=   9787 E=-116.544960
+[  609.1s] partB: eps=6.310e-04 ndets=  13427 E=-116.554164
+[  622.4s] partB: eps=5.012e-04 ndets=  18587 E=-116.562180
+[  658.4s] partB: eps=3.981e-04 ndets=  25734 E=-116.569067
+ALREADY_RUNNING (driver pid 18)
+== matrix pass start 2026-07-09 19:08:33 UTC ==
+=== BS SEED (partA gate) ===
+stale lock -- reclaiming
+== matrix pass start 2026-07-09 19:15:03 UTC ==
+=== BS SEED (partA gate) ===
+stale lock -- reclaiming
+== matrix pass start 2026-07-09 19:37:01 UTC ==
+=== BS SEED (partA gate) ===
+== matrix pass start 2026-07-09 19:42:16 UTC ==
+=== BS SEED (partA gate) ===
+[   99.6s] partA Engine: r0: E-108.617900 S2 2.0000 (pyscf 2.0000)  r1: E-108.597345 S2 0.0000 (pyscf 0.0000)  r2: E-108.560928 S2 0.0000 (pyscf 0.0000)  gram offdiag max 1.4e-12
+[   99.6s] partA OK
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[   99.7s] partB[fe2s2bs]: _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2: norb 20 nelec (15, 15) ms2 0 seed bs symm True cap 150000
+[   99.8s] partB RESUME from ckpt eps=1.26e-03: ndets=5574 -> eps 1.000e-03
+[  104.3s] partB: eps=1.000e-03 ndets=   7150 E=-116.534137
+[  110.9s] partB: eps=7.943e-04 ndets=   9787 E=-116.544960
+[  120.0s] partB: eps=6.310e-04 ndets=  13427 E=-116.554164
+[  135.1s] partB: eps=5.012e-04 ndets=  18587 E=-116.562180
+[  172.3s] partB: eps=3.981e-04 ndets=  25734 E=-116.569067
+[  177.4s] partB ckpt eps=3.98e-04: ndets=  25734 E0 -116.569067  r0: dE   +0.000 mHa S2 4.893  r1: dE  +86.332 mHa S2 4.921  r2: dE +105.106 mHa S2 4.899
+[  199.8s]     symm ckpt : ndets=  51466 E0 -116.569067  r0: dE   +0.000 mHa S2 4.893  r1: dE   +0.000 mHa S2 4.893  r2: dE  +86.332 mHa S2 4.921  [r0..r1 deg, S2-span [4.893, 4.893]]
+[  234.9s] partB: eps=3.162e-04 ndets=  35215 E=-116.574997
+[  308.9s] partB: eps=2.512e-04 ndets=  48005 E=-116.580009
+[  420.3s] partB: eps=1.995e-04 ndets=  65124 E=-116.584165
+[  438.6s] partB ckpt eps=2.00e-04: ndets=  65124 E0 -116.584165  r0: dE   +0.000 mHa S2 4.779  r1: dE  +91.943 mHa S2 4.863  r2: dE  +99.513 mHa S2 4.906
+[  498.0s]     symm ckpt : ndets= 130246 E0 -116.584165  r0: dE   +0.000 mHa S2 4.779  r1: dE   +0.000 mHa S2 4.779  r2: dE  +91.943 mHa S2 4.863  [r0..r1 deg, S2-span [4.779, 4.779]]
+[  626.6s] partB: eps=1.585e-04 ndets=  86871 E=-116.587301
+[  892.3s] partB: eps=1.259e-04 ndets= 116270 E=-116.590009
+[  948.0s] partB ckpt eps=1.26e-04: ndets= 116270 E0 -116.590009  r0: dE   +0.000 mHa S2 4.698  r1: dE  +91.024 mHa S2 4.816  r2: dE  +92.816 mHa S2 4.796
+[ 1081.5s]     symm ckpt : ndets= 232538 E0 -116.590009  r0: dE   +0.000 mHa S2 4.698  r1: dE   +0.000 mHa S2 4.698  r2: dE  +91.024 mHa S2 4.816  [r0..r1 deg, S2-span [4.698, 4.698]]
+[ 1166.5s] partB: eps=1.000e-04 ndets= 155030 E=-116.592307
+[ 1277.2s] partB ckpt eps=1.00e-04: ndets= 155030 E0 -116.592307  r0: dE   +0.000 mHa S2 4.659  r1: dE  +89.195 mHa S2 4.809  r2: dE  +92.085 mHa S2 4.731
+[ 1474.7s]     symm ckpt : ndets= 310058 E0 -116.592307  r0: dE   +0.000 mHa S2 4.659  r1: dE   +0.000 mHa S2 4.659  r2: dE  +89.195 mHa S2 4.809  [r0..r1 deg, S2-span [4.659, 4.659]]
+[ 1475.0s] saved s2audit_fe2s2bs.npz
+S2AUDIT_DONE
+=== AUFBAU DEEP ===
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] partB[fe2s2deep]: _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2: norb 20 nelec (15, 15) ms2 0 seed aufbau symm True cap 150000
+[    0.1s] partB: seed (1 dets) E -107.108439 S2 0.000
+[    0.1s] partB: eps=1.000e-01 ndets=      1 E=-107.108439
+[    0.1s] partB: eps=7.943e-02 ndets=      5 E=-107.965996
+[    0.1s] partB: eps=6.310e-02 ndets=      9 E=-110.296047
+[    0.1s] partB: eps=5.012e-02 ndets=     19 E=-111.016792
+[    0.1s] partB: eps=3.981e-02 ndets=     59 E=-113.095925
+[    0.2s] partB: eps=3.162e-02 ndets=    133 E=-114.955220
+[    0.2s] partB: eps=2.512e-02 ndets=    291 E=-115.941520
+[    0.3s] partB: eps=1.995e-02 ndets=    311 E=-115.966703
+[    0.3s] partB: eps=1.585e-02 ndets=    321 E=-115.975861
+[    0.3s] partB: eps=1.259e-02 ndets=    349 E=-115.988746
+[    0.4s] partB: eps=1.000e-02 ndets=    361 E=-115.992686
+[    0.5s] partB: eps=7.943e-03 ndets=    471 E=-116.025930
+[    0.6s] partB: eps=6.310e-03 ndets=    495 E=-116.028426
+[    0.7s] partB: eps=5.012e-03 ndets=    557 E=-116.036100
+[    0.8s] partB: eps=3.981e-03 ndets=    697 E=-116.047315
+[    1.2s] partB: eps=3.162e-03 ndets=   1003 E=-116.060455
+[    4.3s] partB: eps=2.512e-03 ndets=   2807 E=-116.121490
+[    5.9s] partB: eps=1.995e-03 ndets=   3523 E=-116.135256
+[   13.1s] partB: eps=1.585e-03 ndets=   5053 E=-116.155646
+[   78.5s] partB: eps=1.259e-03 ndets=  24570 E=-116.430693
+[  142.2s] partB: eps=1.000e-03 ndets=  33632 E=-116.539233
+[  145.9s] partB ckpt eps=1.00e-03: ndets=  33632 E0 -116.539233  r0: dE   +0.000 mHa S2 4.955  r1: dE  +70.517 mHa S2 4.934  r2: dE  +94.028 mHa S2 4.925
+[  161.4s]     symm ckpt : ndets=  45557 E0 -116.539233  r0: dE   +0.000 mHa S2 4.955  r1: dE   +0.000 mHa S2 4.955  r2: dE  +70.517 mHa S2 4.934  [r0..r1 deg, S2-span [4.955, 4.955]]
+[  188.6s] partB: eps=7.943e-04 ndets=  35774 E=-116.548015
+[  214.6s] partB: eps=6.310e-04 ndets=  38786 E=-116.555844
+[  250.5s] partB: eps=5.012e-04 ndets=  43566 E=-116.563316
+[  307.8s] partB: eps=3.981e-04 ndets=  50219 E=-116.569805
+[  377.7s] partB: eps=3.162e-04 ndets=  59204 E=-116.575448
+[  510.0s] partB: eps=2.512e-04 ndets=  71412 E=-116.580273
+[  557.3s] partB ckpt eps=2.51e-04: ndets=  71412 E0 -116.580273  r0: dE   +0.000 mHa S2 4.810  r1: dE  +90.420 mHa S2 4.873  r2: dE +105.522 mHa S2 4.899
+[  614.5s]     symm ckpt : ndets= 121117 E0 -116.580273  r0: dE   +0.000 mHa S2 4.810  r1: dE   +0.000 mHa S2 4.810  r2: dE  +90.420 mHa S2 4.873  [r0..r1 deg, S2-span [4.81, 4.81]]
+[  779.0s] partB: eps=1.995e-04 ndets=  87961 E=-116.584322
+[ 1096.8s] partB: eps=1.585e-04 ndets= 109151 E=-116.587386
+[ 1149.2s] partB ckpt eps=1.58e-04: ndets= 109151 E0 -116.587386  r0: dE   +0.000 mHa S2 4.745  r1: dE  +91.961 mHa S2 4.835  r2: dE  +94.778 mHa S2 4.879
+[ 1267.7s]     symm ckpt : ndets= 196595 E0 -116.587386  r0: dE   +0.000 mHa S2 4.745  r1: dE   +0.000 mHa S2 4.745  r2: dE  +91.961 mHa S2 4.835  [r0..r1 deg, S2-span [4.745, 4.745]]
+[ 1656.9s] partB: eps=1.259e-04 ndets= 138112 E=-116.590059
+[ 1710.8s] partB: eps=1.000e-04 ndets= 170448 E=-116.591986
+[ 1873.1s] partB ckpt eps=1.00e-04: ndets= 170448 E0 -116.591986  r0: dE   +0.000 mHa S2 4.669  r1: dE  +89.623 mHa S2 4.810  r2: dE  +92.128 mHa S2 4.743
+[ 2091.7s]     symm ckpt : ndets= 319189 E0 -116.591986  r0: dE   +0.000 mHa S2 4.669  r1: dE   +0.000 mHa S2 4.669  r2: dE  +89.623 mHa S2 4.810  [r0..r1 deg, S2-span [4.669, 4.669]]
+[ 2091.9s] saved s2audit_fe2s2deep.npz
+S2AUDIT_DONE
+=== FE4S4 ===
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe4S4/fe4s4
+[    0.8s] partB[fe4s4]: _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe4S4/fe4s4: norb 36 nelec (27, 27) ms2 0 seed aufbau symm True cap 40000
+[    1.2s] partB: seed (1 dets) E -303.112972 S2 0.000
+[    1.2s] partB: eps=1.000e-01 ndets=      9 E=-304.521915
+[    1.2s] partB: eps=7.943e-02 ndets=     20 E=-307.835303
+[    1.2s] partB: eps=6.310e-02 ndets=     26 E=-307.968354
+[    1.3s] partB: eps=5.012e-02 ndets=     26 E=-307.968354
+[    3.4s] partB: eps=3.981e-02 ndets=    495 E=-325.176022
+[    3.8s] partB: eps=3.162e-02 ndets=    516 E=-325.250532
+[    5.3s] partB: eps=2.512e-02 ndets=    710 E=-326.060402
+[    5.8s] partB: eps=1.995e-02 ndets=    732 E=-326.082687
+[    6.2s] partB: eps=1.585e-02 ndets=    758 E=-326.098852
+[    6.7s] partB: eps=1.259e-02 ndets=    788 E=-326.111797
+[    7.9s] partB: eps=1.000e-02 ndets=    825 E=-326.121726
+[   12.6s] partB: eps=7.943e-03 ndets=   1106 E=-326.184317
+[   12.6s] partB ckpt eps=7.94e-03: ndets=   1106 E0 -326.184317  r0: dE   +0.000 mHa S2 5.293  r1: dE  +93.108 mHa S2 5.270  r2: dE +130.223 mHa S2 5.172
+[   16.4s]     symm ckpt : ndets=   2097 E0 -326.184317  r0: dE   +0.000 mHa S2 5.293  r1: dE  +93.108 mHa S2 5.270  r2: dE +130.223 mHa S2 5.172
+[   17.6s] partB: eps=6.310e-03 ndets=   1166 E=-326.191403
+[   26.8s] partB: eps=5.012e-03 ndets=   1943 E=-326.290982
+[   36.2s] partB: eps=3.981e-03 ndets=   2365 E=-326.313162
+[   49.7s] partB: eps=3.162e-03 ndets=   3220 E=-326.341853
+[   65.7s] partB: eps=2.512e-03 ndets=   4222 E=-326.361887
+[  112.7s] partB: eps=1.995e-03 ndets=   5905 E=-326.385018
+[  113.2s] partB ckpt eps=2.00e-03: ndets=   5905 E0 -326.385018  r0: dE   +0.000 mHa S2 6.053  r1: dE  +98.683 mHa S2 5.914  r2: dE +130.952 mHa S2 5.732
+[  137.6s]     symm ckpt : ndets=  11695 E0 -326.385018  r0: dE   +0.000 mHa S2 6.053  r1: dE   +0.000 mHa S2 6.053  r2: dE  +98.683 mHa S2 5.914  [r0..r1 deg, S2-span [6.053, 6.053]]
+[  194.7s] partB: eps=1.585e-03 ndets=   8263 E=-326.405087
+[  270.0s] partB: eps=1.259e-03 ndets=  11872 E=-326.424548
+[  457.1s] partB: eps=1.000e-03 ndets=  17993 E=-326.445889
+[  460.2s] partB ckpt eps=1.00e-03: ndets=  17993 E0 -326.445889  r0: dE   +0.000 mHa S2 6.464  r1: dE  +96.560 mHa S2 6.302  r2: dE +101.195 mHa S2 8.411
+[  541.1s]     symm ckpt : ndets=  35871 E0 -326.445889  r0: dE   +0.000 mHa S2 6.464  r1: dE   +0.000 mHa S2 6.464  r2: dE  +96.560 mHa S2 6.302  [r0..r1 deg, S2-span [6.464, 6.464]]
+[  758.5s] partB: eps=7.943e-04 ndets=  26723 E=-326.465309
+[  875.4s] partB: eps=6.310e-04 ndets=  40435 E=-326.484822
+[  885.8s] partB ckpt eps=6.31e-04: ndets=  40435 E0 -326.484822  r0: dE   +0.000 mHa S2 7.004  r1: dE  +79.006 mHa S2 9.284  r2: dE  +89.727 mHa S2 5.843
+[ 1081.2s]     symm ckpt : ndets=  80755 E0 -326.484822  r0: dE   +0.000 mHa S2 7.004  r1: dE   +0.000 mHa S2 7.004  r2: dE  +79.006 mHa S2 9.284  [r0..r1 deg, S2-span [7.004, 7.004]]
+[ 1081.2s] saved s2audit_fe4s4.npz
+S2AUDIT_DONE
+MATRIX_PASS_DONE

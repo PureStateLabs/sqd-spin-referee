@@ -1,0 +1,12 @@
+Parsing _ibm_data/sqd_data_repository-main/integrals/4Fe-4S/fcidump_Fe4S4_MO.txt
+[    0.6s] THEIR integrals loaded (ecore 0.000000, norb 36, nelec 54)
+[   25.4s] stage J2: BitArray built (3163742 unique keys, 3163742 shots)
+[   25.4s] === arm symm1 (symmetrize_spin=True) SPB=500 NBATCH=1 DMAX=300 MAXIT=2 ===
+[ 1360.2s] symm1 it1 b0: dim 300x300=90,000 E -325.741751 (err +1497.886 mHa) THEIR S2 0.000
+[ 4143.6s] symm1 it2 b0: dim 300x300=90,000 E -325.801643 (err +1437.994 mHa) THEIR S2 2.000
+[ 4143.7s] symm1 BEST: E -325.801643 (err +1437.994 mHa vs their DMRG; +992.211 vs their HCI-best) THEIR S2 2.000 dim 300x300
+[ 4143.8s] === arm symm0 (symmetrize_spin=False) SPB=500 NBATCH=1 DMAX=300 MAXIT=2 ===
+[ 5889.6s] symm0 it1 b0: dim 300x300=90,000 E -325.028803 (err +2210.834 mHa) THEIR S2 3.000
+[ 8921.6s] symm0 it2 b0: dim 300x300=90,000 E -325.090909 (err +2148.727 mHa) THEIR S2 3.003
+[ 8921.8s] symm0 BEST: E -325.090909 (err +2148.727 mHa vs their DMRG; +1702.945 vs their HCI-best) THEIR S2 3.003 dim 300x300
+IBMSAMPLES4_DONE

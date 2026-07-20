@@ -1,0 +1,25 @@
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.6s]    2Fe2S/bs: norb 20 nelec (15, 15)
+[    0.8s] == 2Fe2S/bs: s2audit_fe2s2bs.npz (6 symm checkpoints) ==
+[    1.9s]   2Fe2S/bs   eps=3.16e-03 N    1011->   2020 (+  1009) dE -2.8e-13 split 2.8e-13 p{1.00000,0.01681} w_add -3.1e-15 coup 5.7e-10 S2blk [4.978,4.978] off 7e-12
+[    9.5s]   2Fe2S/bs   eps=1.26e-03 N    5574->  11146 (+  5572) dE -5.7e-14 split 2.6e-13 p{1.00000,0.06446} w_add -2.0e-15 coup 3.2e-10 S2blk [4.978,4.978] off 4e-11
+[   49.3s]   2Fe2S/bs   eps=3.98e-04 N   25734->  51466 (+ 25732) dE -7.1e-14 split 1.3e-13 p{1.00000,0.05101} w_add -1.3e-15 coup 4.5e-11 S2blk [4.893,4.893] off 8e-10
+[  141.0s]   2Fe2S/bs   eps=2.00e-04 N   65124-> 130246 (+ 65122) dE +4.3e-14 split 2.7e-13 p{1.00000,0.04411} w_add 6.7e-16 coup 6.1e-11 S2blk [4.779,4.779] off 3e-13
+[  344.7s]   2Fe2S/bs   eps=1.26e-04 N  116270-> 232538 (+116268) dE -2.4e-13 split 5.1e-13 p{1.00000,0.04108} w_add 6.7e-16 coup 9.9e-12 S2blk [4.698,4.698] off 4e-14
+[  642.3s]   2Fe2S/bs   eps=1.00e-04 N  155030-> 310058 (+155028) dE -4.3e-13 split 4.3e-13 p{1.00000,0.03980} w_add -6.7e-16 coup 2.0e-11 S2blk [4.659,4.659] off 2e-14
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[  642.5s]    2Fe2S/deep: norb 20 nelec (15, 15)
+[  642.6s] == 2Fe2S/deep: s2audit_fe2s2deep.npz (4 symm checkpoints) ==
+[  670.1s]   2Fe2S/deep eps=1.00e-03 N   33632->  45557 (+ 11925) dE +2.0e-13 split 3.8e-13 p{1.00000,0.10852} w_add 3.1e-15 coup 9.7e-10 S2blk [4.955,4.955] off 1e-09
+[  753.3s]   2Fe2S/deep eps=2.51e-04 N   71412-> 121117 (+ 49705) dE -3.0e-13 split 3.4e-13 p{1.00000,0.05111} w_add -6.7e-15 coup 2.5e-09 S2blk [4.810,4.810] off 1e-11
+[  943.5s]   2Fe2S/deep eps=1.58e-04 N  109151-> 196595 (+ 87444) dE -7.4e-13 split 5.0e-13 p{1.00000,0.04757} w_add 6.7e-16 coup 6.4e-10 S2blk [4.745,4.745] off 1e-11
+[ 1310.0s]   2Fe2S/deep eps=1.00e-04 N  170448-> 319189 (+148741) dE +9.9e-14 split 1.4e-14 p{1.00000,0.04601} w_add -4.4e-16 coup 7.5e-10 S2blk [4.669,4.669] off 8e-12
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe4S4/fe4s4
+[ 1311.2s]    4Fe4S: norb 36 nelec (27, 27)
+[ 1311.2s] == 4Fe4S: s2audit_fe4s4.npz (4 symm checkpoints) ==
+[ 1318.2s]   4Fe4S      eps=7.94e-03 N    1106->   2097 (+   991) dE -8.0e-13 split 9.3e-02 p{0.99891,0.99891} w_add 1.1e-03 coup 1.3e-10 S2blk [5.293,5.293] off 0e+00
+[ 1359.3s]   4Fe4S      eps=2.00e-03 N    5905->  11695 (+  5790) dE +3.4e-13 split 1.7e-13 p{1.00000,0.00000} w_add 2.7e-15 coup 1.7e-10 S2blk [6.053,6.053] off 9e-11
+[ 1493.0s]   4Fe4S      eps=1.00e-03 N   17993->  35871 (+ 17878) dE -8.0e-13 split 1.9e-12 p{1.00000,0.00000} w_add -1.1e-15 coup 1.5e-10 S2blk [6.464,6.464] off 1e-09
+[ 1879.1s]   4Fe4S      eps=6.31e-04 N   40435->  80755 (+ 40320) dE -5.7e-14 split 2.3e-13 p{1.00000,0.00000} w_add -2.0e-15 coup 2.9e-10 S2blk [7.004,7.004] off 9e-09
+[ 1879.1s] saved degen.npz: 14 checkpoints
+DEGEN_DONE

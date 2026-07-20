@@ -1,0 +1,35 @@
+=== _sqdpen_true.py run log (it1 D=245^2 frontier, then it4 D=441^2 headline) ===
+--- TAGS=it1 LAMS=0.05,0.1,0.2 ---
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] integrals loaded (ecore 0.000000)
+SQDPEN_DONE
+[    1.7s] G0 gauge: (a) ladder-vs-pyscf S^2 max|dif| 0.0e+00; (b) s4-vs-dense P(S^2)^2P 0.0e+00, leakage max 2.000e+00, sym 0.0e+00; (c) diag-vs-moment 0.0e+00  [PASS]
+[    6.3s]   ops 245x245: hop 4101 ms, ssop 341 ms
+[    7.1s] it1: P0 245x245=60,025  M1=200,165  M2=295,790  nnz(R1,R2)=215,714,631,146  build 0.9s
+[  135.8s] it1: lam=0 matches shipped record (E -116.515503, S2 4.9033); unpenalized <S^4> 48.2608
+[  668.5s] it1 lam=0.05 TRUE  P(S^2)^2P: err +569.335 mHa  S2 3.1832  VarTrue 10.4738  resid 4.6e-12  conv=True
+[ 1181.8s] it1 lam=0.1 TRUE  P(S^2)^2P: err +714.984 mHa  S2 3.0177  VarTrue 9.1445  resid 8.8e-14  conv=True
+[ 1912.5s] it1 lam=0.2 TRUE  P(S^2)^2P: err +3034.402 mHa  S2 0.0000  VarTrue 0.0002  resid 2.1e-13  conv=True
+[ 1912.6s] ==== TRUE  P(S^2)^2P   vs   PROJECTED-SQUARE  (P S^2 P)^2   (lam=0.2) ====
+[ 1912.6s] it1 (245x245; unpenalized <S^4> 48.26):
+[ 1912.6s]    TRUE   P(S^2)^2P : err +3034.402 mHa  S2 0.0000  VarTrue 0.0002  resid 2.1e-13
+[ 1912.6s]    singlet floor ref +3034.5 mHa  (true form reaches it at lam=0.2; projsq does not)
+SQDPEN_TRUE_DONE
+
+--- TAGS=it4 LAMS=0.2 ---
+Parsing _qsci_benchmarks/fe2s2/Active-space-model-for-Iron-Sulfur-Clusters/Fe2S2_and_Fe4S4/Fe2S2/fe2s2
+[    0.1s] integrals loaded (ecore 0.000000)
+SQDPEN_DONE
+[    0.8s] G0 gauge: (a) ladder-vs-pyscf S^2 max|dif| 0.0e+00; (b) s4-vs-dense P(S^2)^2P 0.0e+00, leakage max 2.000e+00, sym 0.0e+00; (c) diag-vs-moment 0.0e+00  [PASS]
+[   11.5s]   ops 441x441: hop 10190 ms, ssop 365 ms
+[   14.2s] it4: P0 441x441=194,481  M1=632,715  M2=902,789  nnz(R1,R2)=708,742,1,986,917  build 2.7s
+[  330.6s] it4: lam=0 matches shipped record (E -116.560107, S2 4.8343); unpenalized <S^4> 47.0231
+[ 2352.1s] it4 lam=0.2 TRUE  P(S^2)^2P: err +2884.379 mHa  S2 0.0042  VarTrue 0.0253  resid 1.1e-08  conv=True
+[ 2352.1s] it4 lam=0.2 PROJSQ (P S^2 P)^2 [frozen sqdpen_sq]: err +527.984 mHa  S2 3.0104  Var(proj) 0.0092
+[ 2352.1s] it4 lam=0.2 LEAKAGE (true - projsq): dErr +2356.4 mHa, dS2 -3.0062  (true reaches the singlet floor +2894.7; projsq stays contaminated)
+[ 2352.1s] ==== TRUE  P(S^2)^2P   vs   PROJECTED-SQUARE  (P S^2 P)^2   (lam=0.2) ====
+[ 2352.2s] it4 (441x441; unpenalized <S^4> 47.02):
+[ 2352.2s]    TRUE   P(S^2)^2P : err +2884.379 mHa  S2 0.0042  VarTrue 0.0253  resid 1.1e-08
+[ 2352.2s]    PROJSQ (PS^2P)^2 : err  +527.984 mHa  S2 3.0104  Var(proj) 0.0092  [frozen]
+[ 2352.2s]    singlet floor ref +2894.7 mHa  (true form reaches it at lam=0.2; projsq does not)
+SQDPEN_TRUE_DONE
