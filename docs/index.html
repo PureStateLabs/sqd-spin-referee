@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nobody checked which state the quantum computer computed — Pure State Labs</title>
+<meta name="description" content="A spin audit of the IBM iron-sulfur SQD/QSCI quantum chemistry benchmarks. The calculations converge to spin mixtures, not the singlet they target, and the resulting energy error is the size of the effect under dispute. Every number reproduces from one command.">
+<meta name="author" content="Tyler Vitale">
+<link rel="canonical" href="https://purestatelabs.github.io/sqd-spin-referee/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nobody checked which state the quantum computer computed">
+<meta property="og:description" content="IBM's iron-sulfur SQD benchmarks converge to spin mixtures rather than the target singlet. The error is the size of the effect under dispute. Verify it in your browser in two seconds.">
+<meta property="og:url" content="https://purestatelabs.github.io/sqd-spin-referee/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#fbfaf8; --fg:#1a1a18; --muted:#5f5d57; --rule:#e0ddd6;
+    --accent:#7a2e1e; --card:#f4f2ed; --code-bg:#f0eee8;
+    --measure:38rem;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#131316; --fg:#e8e6e1; --muted:#a09d95; --rule:#2e2e33;
+           --accent:#e0876a; --card:#1b1b1f; --code-bg:#1e1e23; }
+  }
+  :root[data-theme="dark"]{
+    --bg:#131316; --fg:#e8e6e1; --muted:#a09d95; --rule:#2e2e33;
+    --accent:#e0876a; --card:#1b1b1f; --code-bg:#1e1e23;
+  }
+  :root[data-theme="light"]{
+    --bg:#fbfaf8; --fg:#1a1a18; --muted:#5f5d57; --rule:#e0ddd6;
+    --accent:#7a2e1e; --card:#f4f2ed; --code-bg:#f0eee8;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:400 17px/1.65 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    padding:0 1.25rem;
+  }
+  .wrap{max-width:var(--measure); margin:0 auto; padding:3.5rem 0 5rem}
+  header{border-bottom:1px solid var(--rule); padding-bottom:1.75rem; margin-bottom:2.5rem}
+  .kicker{
+    font:600 .72rem/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+    margin:0 0 1.1rem;
+  }
+  h1{font-size:2rem; line-height:1.18; margin:0 0 .9rem; font-weight:600; letter-spacing:-.01em}
+  h2{font-size:1.2rem; margin:2.8rem 0 .8rem; font-weight:600; letter-spacing:-.005em}
+  .standfirst{color:var(--muted); font-size:1.02rem; margin:0}
+  p{margin:0 0 1.15rem}
+  a{color:var(--accent); text-underline-offset:2px}
+  a:hover{text-decoration-thickness:2px}
+  code{
+    font:0.86em/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--code-bg); padding:.12em .34em; border-radius:3px;
+    word-break:break-word;
+  }
+  .cta{
+    display:block; background:var(--card); border:1px solid var(--rule);
+    border-left:3px solid var(--accent);
+    border-radius:4px; padding:1.4rem 1.5rem; margin:2rem 0; text-decoration:none; color:inherit;
+  }
+  .cta:hover{border-color:var(--accent)}
+  .cta strong{display:block; font-size:1.06rem; margin-bottom:.35rem; color:var(--accent)}
+  .cta span{color:var(--muted); font-size:.94rem; display:block; line-height:1.55}
+  .scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1.5rem 0}
+  pre{
+    background:var(--code-bg); border:1px solid var(--rule); border-radius:4px;
+    padding:1rem 1.1rem; margin:0; min-width:min-content;
+    font:0.8rem/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  pre code{background:none; padding:0}
+  ul,ol{margin:0 0 1.15rem; padding-left:1.4rem}
+  li{margin-bottom:.5rem}
+  .links{list-style:none; padding:0; margin:1.2rem 0 0}
+  .links li{margin-bottom:.7rem}
+  .links .lbl{color:var(--muted); font-size:.9rem}
+  footer{
+    border-top:1px solid var(--rule); margin-top:3.5rem; padding-top:1.5rem;
+    color:var(--muted); font-size:.92rem;
+  }
+  .note{color:var(--muted); font-size:.94rem; font-style:italic}
+  @media (max-width:34rem){
+    body{font-size:16px; padding:0 1rem}
+    .wrap{padding:2.5rem 0 3.5rem}
+    h1{font-size:1.6rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">Pure State Labs</p>
+  <h1>Nobody checked which state the quantum computer computed</h1>
+  <p class="standfirst">A spin audit of the iron&ndash;sulfur SQD benchmarks at the centre of the
+  quantum-advantage-in-chemistry dispute. Every number below regenerates from one command.</p>
+</header>
+
+<p>There&rsquo;s an argument running in quantum chemistry about whether quantum computers are useful yet. IBM
+published results in <em>Science Advances</em> last year on iron&ndash;sulfur clusters, the metal cores that sit
+inside enzymes like nitrogenase, and presented them as evidence that quantum hardware now contributes something
+real to a genuinely hard problem. A group at the University of Southern Denmark published a critique arguing
+that the quantum samples never beat classical selected-CI once you match the cost. Neither side has moved much
+since.</p>
+
+<p>I spent a few months checking the one thing both sides skipped.</p>
+
+<p>When you run a calculation like this, you get an energy out. What you don&rsquo;t get, unless you go looking,
+is the identity of the state that energy belongs to. Molecules like these have a stack of electronic states
+sitting very close together, distinguished by how the electron spins line up, and in the iron&ndash;sulfur
+systems that stack spans roughly 15 to 30 millihartree from bottom to top. The accuracy improvements under
+dispute are the same size. So if your calculation quietly settles on a rung above the one you meant, your
+reported number is wrong by about as much as the entire effect being argued about, and nothing in the output
+says so.</p>
+
+<p>There&rsquo;s a standard way to check: you measure &#10216;S&sup2;&#10217;, the total spin squared. For the
+singlet ground state everyone is targeting, it should come out at zero.</p>
+
+<p>Nobody had measured it. Not IBM, not the critics. So I did.</p>
+
+<a class="cta" href="https://colab.research.google.com/github/PureStateLabs/sqd-spin-referee/blob/main/verify_sqd_spin.ipynb">
+  <strong>Verify the core result yourself &mdash; two seconds, in your browser &rarr;</strong>
+  <span>Opens a notebook in Google Colab. Nothing to download, nothing to install. It reads two archives
+  produced by IBM&rsquo;s own shipped pipeline and prints what came back. The archives are embedded with their
+  SHA-256 hashes, so you can confirm they match the public deposit.</span>
+</a>
+
+<h2>What came out</h2>
+
+<p>For [2Fe-2S], every starting guess I tried converged to the same state, with &#10216;S&sup2;&#10217; around
+4.66. That isn&rsquo;t zero, and it isn&rsquo;t any clean spin state either; it&rsquo;s a mixture of several.
+The energy sat about 13 millihartree above the reference, which is to say roughly the height of the whole
+ladder.</p>
+
+<p>[4Fe-4S] failed in a more interesting direction. There, &#10216;S&sup2;&#10217; <em>climbs</em> as you
+enlarge the subspace, from about 5.3 to 7.0. Making the calculation bigger walks it further from the target
+rather than closer, which is the opposite of how these methods are supposed to behave.</p>
+
+<p>IBM ships a mitigation aimed at this problem, called spin completion, and it does what it says: it makes the
+spin-symmetric combinations representable inside the subspace. Measured effect on the ground-state energy,
+though, is under a microhartree. The reason turns out to be structural rather than a tuning failure. In the
+ground manifold the S&sup2; operator&rsquo;s block comes out proportional to the identity, so completion permits
+a singlet without ever preferring one. It opens the door and nothing walks through.</p>
+
+<p>Then I ran their actual software. Their published pipeline, <code>qiskit-addon-sqd</code>, as shipped, on a
+million samples drawn from a converged benchmark state. Their own <code>spin_square()</code> diagnostic reports
+&#10216;S&sup2;&#10217; = 4.83 after four recovery iterations. Toggling <code>symmetrize_spin</code> on versus
+off changes the ground energy by less than a nanohartree, at exactly four times the subspace dimension:</p>
+
+<div class="scroll">
+<pre><code>                                best energy (Ha)       &lt;S^2&gt;    determinants
+BEFORE completion (off)            -116.56010715     4.83432          49,042
+AFTER  completion (on)             -116.56010715     4.83432         196,249
+delta                                  -0.001 nHa     2.6e-11           4.00x</code></pre>
+</div>
+
+<p class="note">That is the output of the notebook linked above, run on this page&rsquo;s author&rsquo;s machine.
+You should get the same bytes.</p>
+
+<p>The detail that took me a while to believe: the solver underneath accepts a <code>spin_sq</code> argument
+that would target the singlet directly, via pyscf&rsquo;s <code>fix_spin_</code>. The top-level driver has no
+such parameter, and when you don&rsquo;t hand it a custom solver it calls the default one with positional
+arguments only, so <code>spin_sq</code> stays <code>None</code> on every default run. You can reach it by
+supplying your own solver; I did, and it works. But any benchmark run through the default path and reported
+without a spin measurement cannot have targeted the singlet, because nothing in that path ever asks.</p>
+
+<h2>Their own data</h2>
+
+<p>The part I wasn&rsquo;t expecting was in IBM&rsquo;s own archive. Their data-availability deposit for the
+flagship paper contains the raw hardware measurement records: 2.46 million shots on [2Fe-2S], 3.16 million
+outcomes on [4Fe-4S]. Nobody seems to have run them back through.</p>
+
+<p>Doing that, with their shots and their pipeline, [2Fe-2S] lands near-singlet but 248 millihartree off their
+own reference, and 99.55% of the raw shots aren&rsquo;t in the right particle-number sector to begin with.
+[4Fe-4S] converges to a spin-pure triplet. A clean state, and the wrong one, 1.4 hartree from their own
+reference value.</p>
+
+<p>Two more things sit in that archive and need no analysis from me at all. Their uniform-random control matches
+or beats their quantum hardware on every [2Fe-2S] eigenstate they publish. And their largest [4Fe-4S] runs, the
+ones at subspace dimensions around 10&#8312;, sit roughly 149 millihartree above their own classical HCI
+reference file.</p>
+
+<h2>How it was done, since it matters here</h2>
+
+<p>The first pass through all of this was executed by an AI research agent, Claude, working under my direction.
+It replicated both sides, built the spin instrument, ran the compute campaign, and wrote the first draft. Since
+then it&rsquo;s been through many rounds of adversarial review, and twice, when reviewers pushed back on its
+reading of IBM&rsquo;s methods, it corrected itself on the record and re-ran everything downstream.</p>
+
+<p>I&rsquo;d rather not oversell that. The part I&rsquo;ll actually defend is narrower: it caught five defects in
+its own work through validation gates written before the runs, and it retracted its own strongest pro-quantum
+result once the instrument showed that result was a spin-sector artifact. Whatever else you think about AI doing
+science, output that retracts its own best finding is not the failure mode people usually worry about. The full
+timeline, including every self-caught error and both reviewer-prompted corrections, is published in the archive
+as <code>AUDIT_TRAIL.md</code>. You don&rsquo;t have to take any of it on trust, which is rather the point.</p>
+
+<h2>What would show I&rsquo;m wrong</h2>
+
+<p>I&rsquo;d genuinely like to know, so here&rsquo;s what would do it:</p>
+
+<ol>
+  <li>Exhibit any state in a spin-completed ground manifold of these benchmarks with
+      &#10216;S&sup2;&#10217; below 1.</li>
+  <li>Produce a quantum-sampled subspace at matched determinant count whose spin-identified energy beats HCI
+      or CIPSI.</li>
+  <li>Show me any run of the shipped pipeline on IBM&rsquo;s archived samples that lands
+      &#10216;S&sup2;&#10217; under 1 and error under 50 millihartree at the same time, without a spin
+      penalty.</li>
+</ol>
+
+<p>The harness for all three is in the archive. If someone does it, I&rsquo;ll publish that.</p>
+
+<h2>What this doesn&rsquo;t mean</h2>
+
+<p>It doesn&rsquo;t mean quantum computing is fake, and it doesn&rsquo;t mean the people involved did anything
+dishonest. Spin contamination in selected-CI methods is known in principle; what hadn&rsquo;t happened was
+anyone measuring it on these systems at these scales, where it turns out to be large enough to swallow the
+result. The limitations section of the paper is real and I&rsquo;d rather you read it than the hot take: the
+comparison dimensions are fixed, the [4Fe-4S] reference is approximate, and the large deduplicated sample file
+IBM published doesn&rsquo;t preserve shot-level statistics, so part of their numerics can&rsquo;t be audited by
+anyone from public data.</p>
+
+<p>What I think should change is small and cheap. Report &#10216;S&sup2;&#10217; with a variance alongside the
+energy, the way you&rsquo;d report an error bar. It costs almost nothing and it would have caught this.</p>
+
+<h2>The record</h2>
+
+<ul class="links">
+  <li><span class="lbl">Paper</span><br>
+      <a href="https://doi.org/10.26434/chemrxiv.15006382/v1">doi:10.26434/chemrxiv.15006382/v1</a></li>
+  <li><span class="lbl">Data, code and audit trail</span><br>
+      <a href="https://doi.org/10.5281/zenodo.21359923">doi:10.5281/zenodo.21359923</a></li>
+  <li><span class="lbl">The narrow technical question, on IBM&rsquo;s own tracker</span><br>
+      <a href="https://github.com/Qiskit/qiskit-addon-sqd/issues/337">qiskit-addon-sqd issue #337</a></li>
+</ul>
+
+<p style="margin-top:1.4rem">Every number above maps to a file and a one-command regeneration; that mapping is
+<code>REPRO_MAP.md</code> in the archive. A validation script re-derives all 368 quantitative claims from the
+raw result files and fails if any one of them drifts. If you check something and it doesn&rsquo;t reproduce,
+write to me.</p>
+
+<footer>
+  <p>Tyler Vitale, Pure State Labs &middot;
+  <a href="mailto:founder@purestatelabs.com">founder@purestatelabs.com</a><br>
+  ORCID <a href="https://orcid.org/0009-0003-6156-0212">0009-0003-6156-0212</a></p>
+</footer>
+
+</div>
+<script>
+  // Respect an explicit choice if one was stored; otherwise follow the OS setting.
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "dark" || t === "light") document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+</body>
+</html>
