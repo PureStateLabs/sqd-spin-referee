@@ -10,6 +10,9 @@ This repository contains the complete evidence base for the paper: the paper its
 
 > **New here?** [START_HERE.md](START_HERE.md) has one-command setup and three short reproducers that show the core result in minutes. [VALIDATE.md](VALIDATE.md) lays out three levels of verification, [FALSIFY.md](FALSIFY.md) is the Singlet Challenge, and [EXPECTED_OUTPUTS.md](EXPECTED_OUTPUTS.md) pins the numbers to match.
 
+> **Want the plain-English version first?** The writeup is at
+> [purestatelabs.github.io/sqd-spin-referee](https://purestatelabs.github.io/sqd-spin-referee/).
+
 ## Integrity
 
 Every file in this repository is frozen in [`SHA256SUMS`](SHA256SUMS) — verify a clone with `sha256sum -c SHA256SUMS`. The Zenodo release artifacts (supplementary zip, the four companion archives, paper PDF) are hashed in the record's own `SHA256SUMS`.
