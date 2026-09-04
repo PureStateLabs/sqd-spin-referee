@@ -13,6 +13,13 @@ This repository contains the complete evidence base for the paper: the paper its
 > **Want the plain-English version first?** The writeup is at
 > [purestatelabs.github.io/sqd-spin-referee](https://purestatelabs.github.io/sqd-spin-referee/).
 
+> **Want the results without the machinery?** [SUMMARY.md](SUMMARY.md) is the
+> short version (~3 pages): the tables and the verdicts, no derivations.
+
+> **Ran it yourself?** Please add your number to [RESULTS.md](RESULTS.md), via the
+> [reproduction report template](.github/ISSUE_TEMPLATE/reproduction_report.md) or a
+> pull request. Disagreements are as welcome as confirmations.
+
 ## Integrity
 
 Every file in this repository is frozen in [`SHA256SUMS`](SHA256SUMS) — verify a clone with `sha256sum -c SHA256SUMS`. The Zenodo release artifacts (supplementary zip, the four companion archives, paper PDF) are hashed in the record's own `SHA256SUMS`.
