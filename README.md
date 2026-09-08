@@ -6,6 +6,16 @@ This repository contains the complete evidence base for the paper: the paper its
 
 **Headline:** on the public [2Fe-2S] and [4Fe-4S] benchmark systems, neither classically-selected nor quantum-sampled selected-CI subspaces converge the singlet target — the followed states are high-spin mixtures (⟨S²⟩ ≈ 4.7–5.0 on [2Fe-2S], *rising* to 7.0 on [4Fe-4S]) with errors the size of the entire Heisenberg exchange ladder, the shipped spin mitigation is measurably a no-op on realistic input, and IBM's own published archive shows its uniform-random control matching its hardware samples. State identity is load-bearing at the claimed accuracy scales, and it is currently unmeasured field-wide.
 
+> **Did the quantum hardware beat random guessing? Check it in ten seconds, using only
+> IBM's own published files — [open it in Colab](https://colab.research.google.com/github/PureStateLabs/sqd-spin-referee/blob/main/verify_hardware_vs_random.ipynb).**
+> Nothing to download or install, and it reads nothing from this repository: it fetches six
+> small files live from [IBM's own data archive](https://github.com/jrm874/sqd_data_repository)
+> and re-derives the comparison. Their uniform-random null control reaches a lower mean energy
+> than their quantum-hardware samples at **9 of 9** matched subspace dimensions (7 of 9 at
+> p < 0.05, two-sided), by 4.8 to 26.7 mHa against a per-batch scatter of 3.7 to 16.3 mHa.
+> Notebook: [`verify_hardware_vs_random.ipynb`](verify_hardware_vs_random.ipynb); method
+> [`_ibmuniform2.py`](_ibmuniform2.py); paper §2.7.
+
 > **Check the core result in your browser, in two seconds — [open the verifier in Colab](https://colab.research.google.com/github/PureStateLabs/sqd-spin-referee/blob/main/verify_sqd_spin.ipynb).** Nothing to download, nothing to install. It shows that the shipped spin mitigation quadruples the determinant count, moves the ground-state energy by under a nanohartree, and leaves the returned state at ⟨S²⟩ = 4.83 when the singlet target is 0. The two archives it reads are embedded in the notebook as base64 with their SHA-256 hashes, and those hashes are the ones for [`sqdship_symm0.npz`](sqdship_symm0.npz) and [`sqdship_symm1.npz`](sqdship_symm1.npz) in this repository, so you can confirm it is reading the real thing rather than a prepared demo.
 
 > **New here?** [START_HERE.md](START_HERE.md) has one-command setup and three short reproducers that show the core result in minutes. [VALIDATE.md](VALIDATE.md) lays out three levels of verification, [FALSIFY.md](FALSIFY.md) is the Singlet Challenge, and [EXPECTED_OUTPUTS.md](EXPECTED_OUTPUTS.md) pins the numbers to match.
