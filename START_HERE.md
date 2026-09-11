@@ -11,7 +11,7 @@ mixture, not the singlet target, and the shipped spin mitigation is a measured
 no-op. State identity is load-bearing at the claimed accuracy and is currently
 unmeasured field-wide.
 
-You do not need to read the 35-page paper to check the core of this. Three short
+You do not need to read the 33-page paper to check the core of this. Three short
 scripts reproduce it from data committed in this repository.
 
 ## 1. Set up (one command)

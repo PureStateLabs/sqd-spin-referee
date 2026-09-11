@@ -23,6 +23,39 @@ def close(a, b, tol):
     return abs(a - b) <= tol
 
 
+# ---- manuscript sources: main file + optional Supporting Information ----
+# For journal submission the manuscript splits into a main file and an SI file.
+# Prose pins run against the concatenation: a required phrase counts as present
+# if it survives anywhere in the manuscript, and a banned phrase must be absent
+# from both halves (x not in main+SI is exactly x not in main and x not in SI).
+# Gates about the main file's own layout -- the abstract in particular -- read
+# _MD_MAIN instead. With no SI file on disk the concatenation is the main file,
+# so an unsplit manuscript audits exactly as it did before.
+_SI_JOIN = "\n\n%%AUDIT-SI-BOUNDARY%%\n\n"
+
+
+def _read_ms(main, si):
+    _m = open(main, encoding="utf-8").read()
+    _s = ""
+    if os.path.exists(si):
+        _s = open(si, encoding="utf-8").read()
+    return _m, _s, (_m + _SI_JOIN + _s) if _s else _m
+
+
+# The four filenames are overridable so one audit engine serves both the frozen
+# preprint (the default: the version of record on ChemRxiv) and a journal
+# main+SI pair, without either version having to overwrite the other.
+_MS_MD = os.environ.get("AUDIT_MD", "paper_sqd_spin_audit.md")
+_MS_TX = os.environ.get("AUDIT_TEX", "paper_sqd_spin_audit.tex")
+_MD_MAIN, _MD_SI, _MD_ALL = _read_ms(
+    _MS_MD, os.environ.get("AUDIT_MD_SI", _MS_MD[:-3] + "_si.md"))
+_TX_MAIN, _TX_SI, _TX_ALL = _read_ms(
+    _MS_TX, os.environ.get("AUDIT_TEX_SI", _MS_TX[:-4] + "_si.tex"))
+print(f"   sources: {_MS_MD} / {_MS_TX}")
+print(f"   manuscript: main {len(_MD_MAIN.split())} words"
+      + (f" + SI {len(_MD_SI.split())} words" if _MD_SI else " (no SI file)"))
+
+
 # ============ A. flagship tables (paper 2.4 / 2.5) ============
 E2 = -116.6056091
 E4 = -327.2396369
@@ -336,7 +369,7 @@ check("uniform advantage individually significant (TWO-sided MWU p<0.05, "
       and all(p < 0.05 for p in _mwu2[2:]),
       f"sig {sum(1 for p in _mwu2 if p < 0.05)}/9, "
       f"p[0:2]=[{_mwu2[0]:.3f},{_mwu2[1]:.3f}]")
-_md_stats = open("paper_sqd_spin_audit.md", encoding="utf-8").read()
+_md_stats = _MD_ALL
 check("no global sign test cited (pseudoreplication guard): 'sign test' and "
       "'2^-9' absent from the paper; per-condition tests two-sided",
       "sign test" not in _md_stats and "2⁻⁹" not in _md_stats
@@ -413,6 +446,23 @@ if os.path.exists("lucjopt_stats.npz"):
     check("their config set: 100% in-sector (noiseless provenance)",
           int(lo["insec_uniq"]) == int(lo["nuniq"]),
           f"{int(lo['insec_uniq']):,}")
+    # v5.9.7: v5.9.5-v5.9.6 said the set held NO Hartree-Fock string. It holds
+    # exactly one, row 0. The O1 log prints hf_weight at .4f, and 1/58.6M reads
+    # as 0.0000; the claim was never pinned, so 368/0 could not catch it.
+    # Re-derived three ways from IBM's raw files by _hfcheck.py.
+    check("their config set: the Hartree-Fock string appears EXACTLY ONCE "
+          "(hf_weight x tot == 1; row 0, as their load_samples.py labels it)",
+          round(float(lo["hf_weight"]) * int(lo["tot"])) == 1,
+          f"hf_weight {float(lo['hf_weight']):.6e} x {int(lo['tot']):,} = "
+          f"{float(lo['hf_weight']) * int(lo['tot']):.6f}")
+# ... and the manuscript must say so: the v5.9.5-v5.9.6 phrasing is forbidden
+check("HF string stated as present once, never as absent (md + tex)",
+      "none is the Hartree" not in _MD_ALL
+      and "none is the Hartree" not in _TX_ALL
+      and "string appears exactly once, as row" in _MD_ALL
+      and "string appears exactly once, as row" in _TX_ALL,
+      "md ok" if "string appears exactly once, as row" in _MD_ALL
+      else "md missing corrected phrase")
 if os.path.exists("lucjopt_state.npz"):
     ls = np.load("lucjopt_state.npz")
     check("THEIR optimized ansatz state (their params): exact singlet "
@@ -826,8 +876,8 @@ check("campaign 11.3 h, peak RSS 41.8 GB",
 # residual/gap precision-limit disclosure, the structural-mechanism equation,
 # the abstract restructure, and the package version matrix.
 print("\n-- section O: review-round-2 hardening (v5.2) --")
-_mdO = open("paper_sqd_spin_audit.md", encoding="utf-8").read()
-_txO = open("paper_sqd_spin_audit.tex", encoding="utf-8").read()
+_mdO = _MD_ALL
+_txO = _TX_ALL
 
 for _b in ("pins the exact", "is an exact singlet", "exact singlet's marginals",
            "of an exact singlet", "fully converged", "nine digits",
@@ -848,7 +898,7 @@ check("Davis-Kahan caveat + stability-carries-certification present",
       and _txO.count("stability and invariance") >= 1)
 check("structural-mechanism equation present in both sources",
       "[PHP, PS²P] ≠ 0" in _mdO and "[PHP,\\, PS^2P] \\neq 0" in _txO)
-_absO = _mdO.split("## Abstract\n\n", 1)[1].split("\n\n---", 1)[0]
+_absO = _MD_MAIN.split("## Abstract\n\n", 1)[1].split("\n\n---", 1)[0]
 check("journal abstract <= 300 words",
       len(_absO.split()) <= 300, f"{len(_absO.split())} words")
 check("front matter (review round 7): Principal findings box present; "
@@ -1110,7 +1160,7 @@ _posMD = ("No audited execution returned the named singlet", "A scalar mean does
           "no energy advantage over the corresponding uniform-random control",
           "reconstructed from this small in-sector fraction",
           "now confirmed by its second moment (Var(S²) = 3×10⁻⁶",
-          "but this is *not* a triplet", "singlet–quintet mixture",
+          "but this is not a triplet", "singlet–quintet mixture",
           "triplet eigenstate, to tol. (S = 1)",
           "exactly one of the eight is a spin eigenstate to measured tolerance",
           "without labeling that root converged", "_s4states.py",
@@ -1130,7 +1180,7 @@ _posTX = ("No audited execution returned the named singlet", "A scalar mean does
           "no energy advantage over the corresponding uniform-random control",
           "reconstructed from this small in-sector fraction",
           "now confirmed by its second moment",
-          "this is \\emph{not} a triplet", "singlet--quintet mixture",
+          "this is not a triplet", "singlet--quintet mixture",
           "triplet eigenstate, to tol.\\ ($S=1$)",
           "exactly one of the eight is a spin eigenstate to measured tolerance",
           "without labeling that root converged", "\\_s4states.py",
@@ -1581,16 +1631,16 @@ if os.path.exists("sqdpen_frontier.npz") and os.path.exists("sqdpen_theirs.npz")
                       and abs(r["theirs_rq"] - r["ours_rq"]) < 1e-6
                       for r in _s3b),
               f"{[(bool(r['conv']), round(float(r['overlap']),6)) for r in _s3b]}")
-    _pen_md = ("The penalty, switched on", "2.9 Hartree above the reference",
+    _pen_md = ("run with the penalty on", "2.9 Hartree above the reference",
                "penalty-matched rerun of the published protocol",
                "no competitive singlet", "converged = False` on all five",
                "the deficit is upstream in the subspace",
-               "the certification of the frontier is their own code's")
-    _pen_tx = ("The penalty, switched on", "2.9~Hartree above the reference",
+               "the package's own kernel certifies the frontier")
+    _pen_tx = ("run with the penalty on", "2.9~Hartree above the reference",
                "penalty-matched rerun of the published protocol",
                "no competitive singlet", "converged = False} on all five",
                "the deficit is upstream in the subspace",
-               "the certification of the frontier is their own code's")
+               "the package's own kernel certifies the frontier")
     check("X: md carries the v5.6 penalty-on phrases",
           all(s in _mdO for s in _pen_md),
           "; ".join(s[:26] for s in _pen_md if s not in _mdO) or "all present")
@@ -1783,7 +1833,7 @@ if os.path.exists("degen.npz") and os.path.exists("degen_dense.npz"):
           and bool(np.allclose(np.asarray(_rowY[80755]["s2_block"], float),
                                7.0044, atol=5e-5)),
           f"split {float(_rowY[80755]['split']):.1e}")
-    _mechmdY = ("The mechanism, measured per checkpoint.",
+    _mechmdY = ("The completion mechanism at each checkpoint.",
                 "‖P₊Hv‖ ≤ 2.5×10⁻⁹ Ha",
                 "splitting ≤ 1.9×10⁻¹² Ha against a solver tolerance of 10⁻⁹",
                 "carrying < 10⁻¹⁴ of its weight on the added determinants",
@@ -1793,7 +1843,7 @@ if os.path.exists("degen.npz") and os.path.exists("degen_dense.npz"):
           all(_s in _mdO for _s in _mechmdY),
           "; ".join(_s[:30] for _s in _mechmdY if _s not in _mdO)
           or "all present")
-    _mechtxY = ("The mechanism, measured per checkpoint.",
+    _mechtxY = ("The completion mechanism at each checkpoint.",
                 "$\\|P_+ H v\\| \\le 2.5\\times10^{-9}$~Ha",
                 "One checkpoint required adjudication ($\\dagger$).",
                 "dynamically disconnected from that support")
@@ -1913,7 +1963,10 @@ if os.path.exists("thrscan.npz"):
         "changes none of the paper's reported clusters or block spectra",
         "That convention sits on a measured plateau",
         "49 stored root vectors (138 roots)",
-        "the wandering point of Section 2.4",
+        # numbering-agnostic: the JCTC variant renumbers Results, so this
+        # pin checks the prose, not the section number (the tex pin below
+        # is already agnostic via a LaTeX cross-reference)
+        "the wandering point of Section",
         "merge into a cluster the paper never reported as one")
     check("AA: md carries the v5.8 threshold-scan phrases",
           all(_s in _mdO for _s in _thrmdA),

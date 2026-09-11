@@ -1,3 +1,5 @@
+   sources: paper_sqd_spin_audit.md / paper_sqd_spin_audit.tex
+   manuscript: main 19567 words (no SI file)
 [PASS] fe2s2bs D=1011 table row  (E -116.456202 S2 4.978/4.977)
 [PASS] fe2s2bs D=25734 table row  (E -116.569067 S2 4.893/4.921)
 [PASS] fe2s2bs D=65124 table row  (E -116.584165 S2 4.779/4.863)
@@ -106,6 +108,8 @@
 [PASS] ibmship symm0 BEST: +257.1 mHa, S2 ~0.231  (E -116.348532 S2 0.231)
 [PASS] their 'samples' file: 58,644,960 entries, ALL unique (=> the deduplicated subspace-defining configuration set, not raw shots)  (tot 58,644,960 uniq 58,644,960)
 [PASS] their config set: 100% in-sector (noiseless provenance)  (58,644,960)
+[PASS] their config set: the Hartree-Fock string appears EXACTLY ONCE (hf_weight x tot == 1; row 0, as their load_samples.py labels it)  (hf_weight 1.705176e-08 x 58,644,960 = 1.000000)
+[PASS] HF string stated as present once, never as absent (md + tex)  (md ok)
 [PASS] THEIR optimized ansatz state (their params): exact singlet S2 ~3e-4  (0.000329)
 [PASS] raw-draw hypothesis refuted: closed form from their own state predicts ~5.4M distinct at 58.6M draws (file has 58.6M distinct)  (5,401,429)
 [PASS] fe4s4 hw: 3,163,742 recorded outcomes, every one unit-count  (3,163,742)
@@ -213,7 +217,7 @@
 [PASS] ratio disclosed in both sources (21% of the 0.285 mHa gap)
 [PASS] Davis-Kahan caveat + stability-carries-certification present
 [PASS] structural-mechanism equation present in both sources
-[PASS] journal abstract <= 300 words  (291 words)
+[PASS] journal abstract <= 300 words  (297 words)
 [PASS] front matter (review round 7): Principal findings box present; Appendix B extended summary removed; References section added
 [PASS] compressed-block caveat present (not full spin-sector projector weights)
 [PASS] ansatz spin identity stated as measured value 3.3e-4 (never 'exact singlet')
@@ -391,7 +395,7 @@
 [PASS] AA: md carries the Table 11 claim-alignment verbatim quotes  (all present)
 [PASS] AA: tex carries the Table 11 claim-alignment quotes and label  (all present)
 [PASS] AA: the banned 'leaves every' overstatement is absent from both sources (v5.8 reword held)
-[PASS] stated check-count equals the audit's actual count in md header, md disclosure, and tex disclosure (self-referential gate)  (actual 368; header 368, md ['368'], tex ['368'])
+[PASS] stated check-count equals the audit's actual count in md header, md disclosure, and tex disclosure (self-referential gate)  (actual 370; header 370, md ['370'], tex ['370'])
 
 ============================================================
-368 checks, 0 FAILURES — ALL CLAIMS VERIFIED
+370 checks, 0 FAILURES — ALL CLAIMS VERIFIED

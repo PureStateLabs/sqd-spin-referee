@@ -1,0 +1,37 @@
+Parsing _ibm_data/sqd_data_repository-main/integrals/2Fe-2S/fcidump_Fe2S2_MO.txt
+[   0.1s] row 0 raw   alpha 00000111111111111111  (15 occupied)
+[   0.1s] row 0 raw   beta  00000111111111111111  (15 occupied)
+[   0.1s] ECORE in FCIDUMP        0.0
+[   0.1s] aufbau det (orbs 0-14)  -116.205816   IBM RHF -116.205816   diff 1.2e-07
+[   0.1s] row 0, column j = orb j      -> -113.851610
+[   0.1s] row 0, column j = orb 19-j   -> -116.205816
+[   0.1s] CHECK 1 PASS: row 0 is the RHF determinant (under the orbital-19->0 column order; the other order gives +2.354 Ha)
+[   0.1s] CHECK 2 PASS: load_samples.py's 'Hartree Fock string:' is bit_arrays[0] == the row CHECK 1 identified as RHF
+[   4.1s] scanned 10/40 partitions, 14,661,240 rows
+[   7.9s] scanned 20/40 partitions, 29,322,480 rows
+[  11.8s] scanned 30/40 partitions, 43,983,720 rows
+[  16.3s] scanned 40/40 partitions, 58,644,960 rows
+[ 107.0s] rows                          58,644,960
+[ 107.0s] distinct rows                 58,644,960
+[ 107.0s] distinct in first 100,000     100,000
+[ 107.0s] rows equal to the RHF row     1 at global index [0]
+[ 107.0s] distinct alpha halves         7,658
+[ 107.0s] distinct beta halves          7,658
+[ 107.0s] alpha x beta                  58,644,964   (7658^2 = 58,644,964)
+[ 107.0s] missing from full grid        4
+[ 107.0s] alpha halves short of a full row: 1 (pairs with 7654 betas)
+[ 107.0s] beta halves short of a full column: 4
+[ 107.0s] CHECK 3 PASS: the RHF row occurs exactly once, at global row 0
+
+Claims in issue #4, re-derived from IBM's raw files:
+  OK   58,644,960 rows
+  OK   no two the same
+  OK   first 100,000 all distinct
+  OK   HF once, as row 0
+  OK   7,658 distinct alpha halves
+  OK   7,658 distinct beta halves
+  OK   7,658 x 7,658 = 58,644,964
+  OK   grid minus exactly 4
+  OK   all four share one alpha half
+
+VERDICT: ALL CONFIRMED - the HF string IS in the file, once, at row 0

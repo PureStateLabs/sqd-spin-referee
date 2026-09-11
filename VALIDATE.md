@@ -106,9 +106,9 @@ The instrument is small and meant to be read. Inspect:
 
 [REPRO_MAP.md](REPRO_MAP.md) ties each headline claim to the artifact that
 proves it and the command that regenerates it. `_paperaudit.py` re-derives all
-**368** quantitative claims from the raw archives and exits nonzero on any
+**370** quantitative claims from the raw archives and exits nonzero on any
 mismatch (a reduced clone without the 413 MB flagship companion skips 19
-companion-gated checks and runs the remaining 349).
+companion-gated checks and runs the remaining 351).
 
 ---
 

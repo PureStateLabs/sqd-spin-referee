@@ -1,9 +1,10 @@
 # Expected outputs
 
 Canonical outputs for the three quick reproducers, captured on the frozen
-**v5.9.5** archives (2026-07-20). Your run should match the **numbers** below.
+**v5.9.6** archives (2026-08-04); they are unchanged through **v6.0**
+(2026-09-11). Your run should match the **numbers** below.
 
-_(v5.9.5 = v5.9.4 with the AI-use disclosure rewritten as a single plain paragraph (the competing-interests/funding sentences moved to the submission form); v5.9.4 was a presentation pass — disclosure section retitled, four wide tables scaled to text width, Data-availability line-breaking fixed; no new results anywhere in this chain, the reproducer numbers below are unchanged. v5.9.3 added two review-prompted internal-consistency fixes: a projector-spectrum prose/table clarification and a flag on the unconverged fourth flagship root.)_
+_(v6.0 = v5.9.7 with the prose of both masters rewritten for readability; no number, claim, scope limit or citation changed, audit 370/0, PDF 33 pp. v5.9.7 = v5.9.6 with one factual clause corrected: the 58.6M-configuration file contains the Hartree–Fock string exactly once, as row 0 (checked by `_hfcheck.py`), where v5.9.5 and v5.9.6 said it contains none; audit 370/0. v5.9.6 = v5.9.5 with a typography pass only — the manuscript is set in newtx (Times) throughout, the title-page URL and email are no longer monospaced, and the tables are uniformly \small with the resizebox scaling removed; no text changes, no new results, audit 368/0, PDF 34 pp. v5.9.5 = v5.9.4 with the AI-use disclosure rewritten as a single plain paragraph (the competing-interests/funding sentences moved to the submission form); v5.9.4 was a presentation pass — disclosure section retitled, four wide tables scaled to text width, Data-availability line-breaking fixed; no new results anywhere in this chain, the reproducer numbers below are unchanged. v5.9.3 added two review-prompted internal-consistency fixes: a projector-spectrum prose/table clarification and a flag on the unconverged fourth flagship root.)_
 Cosmetic differences are expected and fine: package-version strings, float
 formatting, and column widths depend on your environment. The demo/measured
 sampling numbers are closed-form (no randomness) and analytic moments are exact,

@@ -163,10 +163,10 @@ I will publish whatever comes back, including if it turns out I am the one who i
 **Paper:** doi:10.26434/chemrxiv.15006382/v1 · **Data, code, audit trail:**
 doi:10.5281/zenodo.21359923 · **Repository:** github.com/PureStateLabs/sqd-spin-referee
 
-`_paperaudit.py` re-derives every quantitative claim in the full paper from the raw archives (368
+`_paperaudit.py` re-derives every quantitative claim in the full paper from the raw archives (370
 checks, zero failures), and `REPRO_MAP.md` maps each claim to the command that regenerates it. The
 computations were carried out by an AI research agent (Claude, Anthropic) under my direction; its
-self-audit record, including five self-caught defects and one self-retraction, ships as
-`AUDIT_TRAIL.md`.
+self-audit record, including five self-caught defects, one self-retraction, two reviewer-prompted
+corrections and one post-publication correction, ships as `AUDIT_TRAIL.md`.
 
 Tyler Vitale, Pure State Labs · founder@purestatelabs.com · ORCID 0009-0003-6156-0212
