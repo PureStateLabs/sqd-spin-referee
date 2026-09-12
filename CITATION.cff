@@ -12,7 +12,11 @@ authors:
 version: "6.0"
 date-released: "2026-09-11"
 license: MIT
-doi: 10.5281/zenodo.21359923
+doi: 10.5281/zenodo.21359922
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22713341
+    description: "Archived snapshot of version 6.0"
 preferred-citation:
   type: article
   title: >-

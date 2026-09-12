@@ -161,7 +161,7 @@ I will publish whatever comes back, including if it turns out I am the one who i
 ---
 
 **Paper:** doi:10.26434/chemrxiv.15006382/v1 · **Data, code, audit trail:**
-doi:10.5281/zenodo.21359923 · **Repository:** github.com/PureStateLabs/sqd-spin-referee
+doi:10.5281/zenodo.21359922 · **Repository:** github.com/PureStateLabs/sqd-spin-referee
 
 `_paperaudit.py` re-derives every quantitative claim in the full paper from the raw archives (370
 checks, zero failures), and `REPRO_MAP.md` maps each claim to the command that regenerates it. The
