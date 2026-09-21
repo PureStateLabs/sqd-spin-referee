@@ -10,7 +10,7 @@ number below is reproduced with its harness and its raw data.*
 IBM published SQD/QSCI results on the [2Fe-2S] and [4Fe-4S] iron-sulfur clusters (Sci. Adv. 2025)
 as utility-scale evidence for quantum chemistry; a critique (arXiv:2501.07231) argues the quantum
 samples never beat classical selected-CI at matched subspace dimension. Both sides report
-energies. Neither reports which electronic state the energy belongs to.
+energies, and neither says which electronic state the energy belongs to.
 
 On these particular systems that omission is expensive. The low-lying spectrum is a Heisenberg
 exchange ladder: two high-spin ferric centres at S = 5/2 apiece, coupling to a total S of anywhere
@@ -18,7 +18,7 @@ from 0 to 5, so S² takes the values 0, 2, 6, 12, 20, 30. The whole ladder is on
 30 mHa wide, the same size as the accuracy differences under dispute, so landing on the wrong rung
 costs you roughly the size of the effect being argued about with nothing in the output to say so.
 ⟨S²⟩ is the standard way to check, and it should come out at 0 for the singlet everyone is
-targeting. So I measured it.
+targeting, so I measured it.
 
 ## 1. [2Fe-2S]: where the growth ladders land
 
@@ -39,17 +39,17 @@ seed (the "bad guess").
 | aufbau | 68,825 | −116.579203 | +26.4 | 4.824 | 4.876 |
 | aufbau | 170,448 | −116.591986 | **+13.6** | **4.669** | 4.810 |
 
-⟨S²⟩ ≈ 4.7 falls between the S = 1 rung (S² = 2) and the S = 2 rung (S² = 6), so what is being
-followed is a mixture rather than any clean spin state, and root 1 is no better anywhere.
+⟨S²⟩ ≈ 4.7 falls between the S = 1 rung (S² = 2) and the S = 2 rung (S² = 6), so the state being
+followed is a mixture of spin states, and root 1 is no better anywhere.
 
-The two seeds are worth dwelling on, because the controversy frames convergence quality as a
+The two seeds matter because the controversy frames convergence quality as a
 function of the initial guess. By D ≈ 1.6×10⁵ the arms agree to 0.3 mHa in energy and 0.01 in
 ⟨S²⟩, so at scale the seed stops mattering and selection dynamics decide what gets converged.
 ⟨S²⟩ does come down, 0.085 to 0.133 per doubling of D, but with no sign of acceleration; at that
 rate ⟨S²⟩ < 1 needs some 28 more doublings, five orders past the whole 2.4×10⁸ sector.
 
-Both seeds also stall about +13 mHa above the exact singlet, against that 15 to 30 mHa ladder. A
-state you cannot identify, carrying an error the width of the ladder, will not resolve the ladder.
+Both seeds also stall about +13 mHa above the exact singlet. That error is comparable to the whole
+15 to 30 mHa ladder, so the energy can't tell you which rung the calculation is on.
 The mechanism is not new: high-spin components need fewer determinants, so incremental CI
 selection over-rewards them, and that bias is textbook. What I have not found measured anywhere is
 its size and persistence out to 1.7×10⁵ determinants on these systems.
@@ -68,14 +68,14 @@ Public active space (54e, 36o); sector dimension ~8.8×10¹⁵; approximate DMRG
 
 From a closed-shell seed at S² = 0, ⟨S²⟩ climbs with subspace size instead of falling, reaching
 7.0 by 4×10⁴ determinants, past pure S = 2. Enlarging the calculation walks it away from the
-target. This is a probe regime energetically, so the direction is the point rather than the
-endpoint; flagship SQD runs on this system at sector fractions around 10⁻⁸.
+target. This is a probe regime energetically, so what counts is which way ⟨S²⟩ moves; flagship
+SQD runs on this system at sector fractions around 10⁻⁸.
 
 ## 3. What the shipped spin mitigation actually does
 
 IBM ships spin-inversion completion (`symmetrize_spin`) for exactly this problem. Run as shipped
-on a million samples from a converged benchmark state, using their driver, their recovery loop and
-their own `spin_square()`:
+on a million samples from a converged benchmark state, using IBM's driver, recovery loop and
+`spin_square()`:
 
 | | best energy (Ha) | ⟨S²⟩ | determinants |
 |---|---|---|---|
@@ -83,7 +83,7 @@ their own `spin_square()`:
 | completion on | −116.56010715 | 4.83432 | 196,249 |
 | delta | −0.001 nHa | 2.6×10⁻¹¹ | **4.00×** |
 
-The reason it does nothing here turns out to be structural rather than a tuning failure. Under
+The reason it does nothing here turns out to be structural. Under
 completion the ground state becomes an exactly degenerate pair {v, v̄}, and the 2×2 S² block
 across that pair comes out proportional to the identity, eigenvalues [x, x] at the original
 mixture value. Since every rotation inside the mitigated ground manifold carries that same mixed
@@ -115,7 +115,7 @@ half-configuration support, then solving four roots to convergence:
 | 3 | +12.54 | 11.590 | 4.41 | predominantly S = 3 |
 
 This construction lands 170.3 mHa below IBM's published energy at that dimension while sitting
-+13.6 mHa above the exact singlet reference, so the difficulty is not that the energy came out bad.
++13.6 mHa above the exact singlet reference, so on energy alone it looks like a good result.
 
 Spin identity turns out to be far more convergence-sensitive than energy, which is why I did not
 stop at the first answer. At residual 3.5×10⁻⁴ the energy was stable to under 0.1 µHa per
@@ -124,8 +124,8 @@ moved the energy by 1.9 µHa and moved ⟨S²⟩ from 1.287 to 1.371; a further 
 roughly 1% of the 0.285 mHa ground gap, left it at 1.3711 unchanged in the fourth decimal.
 
 The variances are probably the more informative column. An eigenstate of S² gives Var(S²) = 0 and
-none of these four is close, so the ⟨S²⟩ figures are means over broad mixtures, not labels for
-slightly perturbed eigenstates. Feeding ⟨S²⟩ and ⟨S⁴⟩ for the ground root into a two-moment sector
+none of these four is close, so each ⟨S²⟩ figure is an average over a broad mixture of spin
+states. Feeding ⟨S²⟩ and ⟨S⁴⟩ for the ground root into a two-moment sector
 solve returns weights (0.82, −0.07, 0.25) on S ∈ {0, 1, 2}, which is infeasible, so there is
 provably S ≥ 3 character in it.
 
@@ -136,11 +136,10 @@ with S² ([PHP, PS²P] ≠ 0), so the eigenbasis has no reason to align with spi
 
 ## 5. Scope, limitations, and how to falsify this
 
-None of this means quantum computing is fake, or that anybody involved was dishonest. The
-variational upper bound is granted throughout, so these energies are true statements about
-energies, and spin contamination in selected-CI has been understood in principle for a long time.
-What had not happened, as far as I can find, is anyone measuring it on these systems at these
-scales, where it is big enough to swallow the result. Limitations: comparison dimensions are
+None of this means quantum computing is fake, or that anybody involved was dishonest. These
+energies are still valid variational upper bounds, and spin contamination in selected-CI has been
+understood in principle for a long time. What I can't find is anyone measuring it on these systems
+at these scales, where it is about as large as the effects under dispute. Limitations: comparison dimensions are
 fixed, the [4Fe-4S] reference is approximate, and IBM's large deduplicated sample file does not
 preserve shot-level statistics, so part of their numerics is not auditable from public data.
 
@@ -162,8 +161,8 @@ I will publish whatever comes back, including if it turns out I am the one who i
 
 ---
 
-**Paper:** doi:10.26434/chemrxiv.15006382/v2 · **Data, code, audit trail:**
-doi:10.5281/zenodo.21359922 · **Repository:** github.com/PureStateLabs/sqd-spin-referee
+Paper: doi:10.26434/chemrxiv.15006382/v2 · Data, code, audit trail:
+doi:10.5281/zenodo.21359922 · Repository: github.com/PureStateLabs/sqd-spin-referee
 
 `_paperaudit.py` re-derives every quantitative claim in the full paper from the raw archives (370
 checks, zero failures), and `REPRO_MAP.md` maps each claim to the command that regenerates it. The
