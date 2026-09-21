@@ -94,8 +94,10 @@ a spin sector directly. The top-level driver has no such parameter, and with no 
 supplied it calls the batch solver positionally, so `spin_sq` stays `None` on every default run.
 You can reach it by passing your own solver, and I have. But a benchmark run through the default
 path and reported without a spin measurement cannot have been targeting the singlet, since nothing
-along that path ever asks. A Qiskit maintainer has since agreed the docstring should say the flag
-"does not impose or improve the total spin of the returned state" (qiskit-addon-sqd #337, #338).
+along that path ever asks. After my reports, a maintainer merged two documentation changes
+(qiskit-addon-sqd #364, backported as #365, and #366). The `symmetrize_spin` docstring now says it
+"does *not* guarantee that the state is an eigenvector of the total spin operator S^2", and that
+the subspace dimension can grow by up to a factor of four.
 
 If you only check one thing here, check that table. It runs in a browser with nothing to install:
 [the Colab verifier](https://colab.research.google.com/github/PureStateLabs/sqd-spin-referee/blob/main/verify_sqd_spin.ipynb).
@@ -160,7 +162,7 @@ I will publish whatever comes back, including if it turns out I am the one who i
 
 ---
 
-**Paper:** doi:10.26434/chemrxiv.15006382/v1 · **Data, code, audit trail:**
+**Paper:** doi:10.26434/chemrxiv.15006382/v2 · **Data, code, audit trail:**
 doi:10.5281/zenodo.21359922 · **Repository:** github.com/PureStateLabs/sqd-spin-referee
 
 `_paperaudit.py` re-derives every quantitative claim in the full paper from the raw archives (370
